@@ -1,0 +1,5 @@
+.form {
+    display: flex;
+    background-color: pink;
+    justify-content: space-between;
+}

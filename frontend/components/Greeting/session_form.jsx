@@ -9,8 +9,8 @@ class SessionForm extends React.Component {
     }
 
     handleInput(type){
-        return (event) => {
-            this.setState({ [type]: event.target.value })
+        return (e) => {
+            this.setState({ [type]: e.target.value })
         }
     }
 
@@ -21,20 +21,27 @@ class SessionForm extends React.Component {
     }
 
     render () {
-        let redirectPath = this.props.formType === 'signup' ? '/login' : '/signup'
-        let redirectText = this.props.formType === 'signup' ? 'login' : 'signup'
-        //not currently in use 
+        let formText = this.props.formType === 'signup' ? 'Login' : 'Create Account';
+        let redirectText = this.props.formType === 'signup' ? "Don't have a TuTube Account?" : "Already have an account?";
+        let redirectPath = this.props.formType === 'signup' ? <Link to='/login'>Create Account</Link> : <Link to='/signup'>Sign In</Link>;
+        
         return (
-            <div>
-                <h2>{this.props.formType} ...or <Link to={redirectPath}>{redirectText}</Link></h2>
+            <div className='form'>
+                <p>{formText}</p>
                 <form>
                     <label>Email:
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
                     </label>
+                    <br/>
                     <label>Password:
                         <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
                     </label>
+                    <br/>
                     <button onClick={this.handleSubmit}>{this.props.formType}</button>
+                    <br/><br/>
+                    <span>{redirectText}</span>
+                    <br/>
+                    <span>{redirectPath}</span>
                 </form>
             </div>
         )

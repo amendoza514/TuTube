@@ -9,17 +9,17 @@ class Greeting extends React.Component {
     render() {
         let button = 
         <div>
-            <Link to='/login'>Login</Link>
-            <br/>
-            <Link to='/signup'>Signup</Link>
+                <Link to='/login'>Sign In</Link>
+                {/* <Link to='/signup'>Create Account</Link> */}
+                {/* Do I need this??? */}
         </div>
 
         if (this.props.currentUser) {
-            button = 
-            <div>
-                <p>Welcome, {this.props.currentUser.email}</p>
-                <button onClick={this.props.logout}>Logout</button>
-            </div>
+            button = <div>
+                        <span>{this.props.currentUser.email}</span>
+                        <p>Hello, {this.props.currentUser.email}</p>
+                        <button onClick={this.props.logout}>Logout</button>
+                    </div>
         };
 
         return (

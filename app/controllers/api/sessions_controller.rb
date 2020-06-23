@@ -19,5 +19,6 @@ class Api::SessionsController < ApplicationController
             render json: { message: 'Logout unsuccessful'}, status: 404
         end
     end
+    
 
 end
