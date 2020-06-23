@@ -1,5 +1,10 @@
-.form {
+.user-button {
     display: flex;
+    justify-content: right;
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
     background-color: pink;
-    justify-content: space-between;
 }

@@ -5,13 +5,18 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {email:'', password:''}
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     handleInput(type){
         return (e) => {
             this.setState({ [type]: e.target.value })
         }
+    }
+
+    demoLogin(){
+        this.setState({email:'cargo_pants@gmail.com', password:'123456'})
     }
 
     handleSubmit(e){
@@ -21,14 +26,14 @@ class SessionForm extends React.Component {
     }
 
     render () {
-        let formText = this.props.formType === 'signup' ? 'Login' : 'Create Account';
-        let redirectText = this.props.formType === 'signup' ? "Don't have a TuTube Account?" : "Already have an account?";
-        let redirectPath = this.props.formType === 'signup' ? <Link to='/login'>Create Account</Link> : <Link to='/signup'>Sign In</Link>;
+        let formText = this.props.formType === 'signup' ? 'Create Account' : 'Sign In';
+        let redirectText = this.props.formType === 'login' ? "Don't have a TuTube Account?" : "Already have an account?";
+        let redirectPath = this.props.formType === 'login' ? <Link to='/signup'>Create Account</Link> : <Link to='/login'>Sign in</Link>;
         
         return (
-            <div className='form'>
-                <p>{formText}</p>
-                <form>
+            <div>
+                <h5 className='button'>{formText}</h5>
+                <form className='dropdown'>
                     <label>Email:
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
                     </label>
@@ -42,6 +47,9 @@ class SessionForm extends React.Component {
                     <span>{redirectText}</span>
                     <br/>
                     <span>{redirectPath}</span>
+                    <br/><br/><br/>
+                    <span>Demo User?</span>
+                    <button onClick={this.demoLogin}>Sign in as a demo user</button>
                 </form>
             </div>
         )

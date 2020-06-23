@@ -1,4 +1,4 @@
 .main-logo {
     display: flex;
-    align-items: left;
+    justify-content: space-between;
 }
