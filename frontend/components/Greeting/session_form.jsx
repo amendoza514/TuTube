@@ -15,8 +15,12 @@ class SessionForm extends React.Component {
         }
     }
 
-    demoLogin(){
-        this.setState({email:'cargo_pants@gmail.com', password:'123456'})
+    demoLogin(e){
+        // this.setState({email:'cargo_pants@gmail.com', password:'123456'})
+        e.preventDefault();
+        this.setState({ email: 'cargo_pants@gmail.com', password: '123456' }) 
+        const demoUser = Object.assign({}, this.state)       
+        this.props.processForm(demoUser)
     }
 
     handleSubmit(e){
@@ -31,27 +35,33 @@ class SessionForm extends React.Component {
         let redirectPath = this.props.formType === 'login' ? <Link to='/signup'>Create Account</Link> : <Link to='/login'>Sign in</Link>;
         
         return (
-            <div>
-                <h5 className='button'>{formText}</h5>
-                <form className='dropdown'>
-                    <label>Email:
+            <section className='form-button'>
+                <form className='form-dropdown'>
+                    <label>Email
+                        <br/>
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
                     </label>
                     <br/>
-                    <label>Password:
+                    <label>Password
+                        <br/>
                         <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
                     </label>
                     <br/>
                     <button onClick={this.handleSubmit}>{this.props.formType}</button>
-                    <br/><br/>
-                    <span>{redirectText}</span>
                     <br/>
-                    <span>{redirectPath}</span>
-                    <br/><br/><br/>
-                    <span>Demo User?</span>
                     <button onClick={this.demoLogin}>Sign in as a demo user</button>
+                    <br/>
+                    <br /><br />
+                    <span>{redirectText}</span>
+                    <br />
+                    <span>{redirectPath}</span>
+                    <br /><br /><br />
+                    <button id='exit-form'>
+                        <Link to='./'>back</Link>
+                        <br/>
+                    </button>
                 </form>
-            </div>
+            </section>
         )
     }
 }

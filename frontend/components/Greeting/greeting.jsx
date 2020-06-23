@@ -5,6 +5,7 @@ class Greeting extends React.Component {
     constructor(props){
         super(props)
         this.usernameParse = this.usernameParse.bind(this);
+        this.buttonParse = this.buttonParse.bind(this)
     }
 
     usernameParse() {
@@ -13,22 +14,17 @@ class Greeting extends React.Component {
         let idx = s.indexOf(searchString);
         return s.slice(0, idx);
     }
+    buttonParse() {
+        let s = this.props.currentUser.email;
+        return s.slice(0, 1);
+    }
 
     render() {
         let button = 
-            <section className='user-button'>
-                <Link to='/login'>Sign In</Link>
-                {/* <Link to='/signup'>Create Account</Link> */}
-                {/* Do I need this??? */}
-            </section>
+            <button className='login-button'><Link to='/login' id='link'>SIGN IN</Link></button>
 
         if (this.props.currentUser) {
-            button = <section className='user-button'>
-                        {/* <span>{this.props.currentUser.email}</span> */}
-                        <p>Hello, {this.usernameParse()}</p>
-                        <button onClick={this.props.logout}>Logout</button>
-                    </section>
-        };
+            button = <button className='user-button' onClick={this.props.logout}>{this.buttonParse()}</button>};
 
         return (
             <>

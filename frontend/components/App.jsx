@@ -11,6 +11,7 @@ const App  = () => (
             <Link to='./'>► TuTube</Link>
             <GreetingContainer />
         </header>
+        
     
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
@@ -18,6 +19,3 @@ const App  = () => (
 );
 
 export default App;
-
-//QUESTION: high level summary of why we consolidate App and Root into 
-// seperate files 
