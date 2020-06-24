@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../Greeting/login_form_container';
 import SignupFormContainer from '../Greeting/signup_form_container';
+import LogoutFormContainer from '../Greeting/logout_form_container'
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -16,15 +17,29 @@ function Modal({ modal, closeModal }) {
         case 'signup':
             component = <SignupFormContainer />;
             break;
+        case 'logout':
+            component = <LogoutFormContainer />;
+            break;
         default:
             return null;
     }
-    return (
-        <div className="modal-background" onClick={closeModal}>
-            <div className="modal-child" onClick={e => e.stopPropagation()}>
+    
+    let modalReturn = <div className="greeting-modal-background" onClick={closeModal}>
+        <div className="greeting-modal-child" onClick={e => e.stopPropagation()}>
+            {component}
+        </div>
+    </div>;
+
+    if (modal === 'logout') {
+        modalReturn = <div className="user-modal-background" onClick={closeModal}>
+            <div className="user-modal-child" onClick={e => e.stopPropagation()}>
                 {component}
             </div>
-        </div>
+        </div>;
+    }
+
+    return (
+        <div>{modalReturn}</div>
     );
 }
 

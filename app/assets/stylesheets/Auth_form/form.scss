@@ -9,6 +9,18 @@
     padding: 25px;
 }
 
+.user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 240px;
+    height: 367px;
+    background-color: white;
+    padding: 25px;
+    border: 1px solid lightgray;
+}
+
 #form-type {
     font-size: 22px;
 }

@@ -34,8 +34,12 @@ class Greeting extends React.Component {
                     SIGN IN
             </button>
             
+        // if (this.props.currentUser) {
+        //     button = <button className='user-button' onClick={this.props.logout}>{this.buttonParse()}</button>};
+
         if (this.props.currentUser) {
-            button = <button className='user-button' onClick={this.props.logout}>{this.buttonParse()}</button>};
+            button = <button className='user-button' onClick={() => this.props.openModal('logout')}>{this.buttonParse()}</button>
+        };
 
         return (
             <>
