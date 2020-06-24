@@ -30,14 +30,29 @@ class SessionForm extends React.Component {
     }
 
     render () {
-        let formText = this.props.formType === 'signup' ? 'Create Account' : 'Sign In';
-        let redirectText = this.props.formType === 'login' ? "Create an account" : "Sign in instead";
-        let redirectPath = this.props.formType === 'login' ? <Link to='/signup'>Create Account</Link> : <Link to='/login'>Sign in</Link>;
-        
+        let submitText = this.props.formType === 'signup' ? 'Sign Up' : 'Sign in';
+        let formType = this.props.formType !== 'login' ? "Create an account" : "Sign in";
+        // let redirectPath = this.props.formType === 'login' ? <Link to='/signup'>Sign Up</Link> : <Link to='/login'>Sign in</Link>;
+        let otherFormButton = 
+            this.props.formType !== 'signup' ? 
+                <div id='signup-form-button'> {this.props.otherForm}</div> : 
+                <div id='create-account-form-button'> {this.props.otherForm}</div> 
+
         return (
                 <form className='auth-form'>
+                    <div className='form-title'>
+                        <div id='T'>T</div>
+                        <div id='U1'>U</div>
+                        <div id='U2'>U</div>
+                        <div id='G'>G</div>
+                        <div id='L'>L</div>
+                        <div id='E'>E</div>
+                    </div>
+                    <div id='form-type'>{formType}</div>
+                    <br/>
+                    <div>to continue to TuTube</div>
+                    <br/><br/>
                     <label className='input-name'>
-                        
                         <input 
                                type="text" 
                                className ="form-input" 
@@ -46,26 +61,20 @@ class SessionForm extends React.Component {
                                onChange={this.handleInput('email')} />
                     </label>
                         <br/><br/>
-                    <label className='input-name'>
-                        
+                    <label className='input-name'>  
                         <input type="password" 
                                className="form-input" 
                                placeholder="Password"
                                value={this.state.password} 
                                onChange={this.handleInput('password')} />
                     </label>
-                        <br/>
-                        <br />
-                    <span>{redirectText}</span>
-                        <br />
-                    <span>{redirectPath}</span>
-                        <br/>
-                <div id="demo-text" >Not your fullstack project? Use demo mode to sign in anonymously</div>
+                        <br /><br/>
+                    <div id="demo-text" >Not your fullstack project? Use demo mode to sign in anonymously.</div>
                     <div id="demo-button" onClick={this.demoLogin}>Demo sign in</div>
-                    
                     <div className='action-buttons'>
-                        <div id='back-button' onClick={this.props.closeModal} >Create account</div>
-                        <button id='submit-button'  onClick={this.handleSubmit}>{formText}</button>
+                        {otherFormButton}
+                        <button id='submit-button'  onClick={this.handleSubmit}>{submitText}</button>
+                        {/* <div id='back-button' onClick={this.props.closeModal} >back</div> */}
                     </div>
                 </form>
         )
@@ -73,3 +82,5 @@ class SessionForm extends React.Component {
 }
 
 export default SessionForm;
+
+// otherForm()

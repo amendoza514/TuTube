@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(mapStateToProps, mapDispatchToProps)(Greeting)
 
 //QUESTION I need to walk back own the dispatch process here
-// function having same name as action creator has been confusing me
+// function having same name as action creator has been confusi
