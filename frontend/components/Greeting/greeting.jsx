@@ -5,7 +5,7 @@ class Greeting extends React.Component {
     constructor(props){
         super(props)
         this.usernameParse = this.usernameParse.bind(this);
-        this.buttonParse = this.buttonParse.bind(this)
+        this.buttonParse = this.buttonParse.bind(this);
     }
 
     usernameParse() {
@@ -20,12 +20,18 @@ class Greeting extends React.Component {
     }
 
     render() {
+    // const sessionLinks = () => (
+    //         <nav className="login-signup">
+    //             <button onClick={() => this.props.openModal('login')}>Login</button>
+    //   &nbsp;or&nbsp;
+    //             <button onClick={() => this.props.openModal('signup')}>Signup</button>
+    //         </nav>
+    //     );
+
         let button = 
-            <button className='login-button'>
-                <Link to='/login' id='link'>
+            <button className='login-button' onClick={() => this.props.openModal('login')}>
                     <i className="fas fa-user-circle"></i>
                     SIGN IN
-                </Link>
             </button>
             
         if (this.props.currentUser) {
@@ -34,6 +40,7 @@ class Greeting extends React.Component {
         return (
             <>
                 {button}
+                {/* {sessionLinks()} */}
             </>
         )
     }

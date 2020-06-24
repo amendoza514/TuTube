@@ -26,12 +26,12 @@ class SessionForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state)
-        this.props.processForm(user)
+        this.props.processForm(user).then(this.props.closeModal())
     }
 
     render () {
         let formText = this.props.formType === 'signup' ? 'Create Account' : 'Sign In';
-        let redirectText = this.props.formType === 'login' ? "Don't have a TuTube Account?" : "Already have an account?";
+        let redirectText = this.props.formType === 'login' ? "Create an account" : "Sign in instead";
         let redirectPath = this.props.formType === 'login' ? <Link to='/signup'>Create Account</Link> : <Link to='/login'>Sign in</Link>;
         
         return (
@@ -55,10 +55,7 @@ class SessionForm extends React.Component {
                     <br />
                     <span>{redirectPath}</span>
                     <br /><br /><br />
-                    <button id='exit-form'>
-                        <Link to='./'>back</Link>
-                        <br/>
-                    </button>
+                    <div onClick={this.props.closeModal} className="close-x">back</div>
                 </form>
         )
     }

@@ -26,7 +26,6 @@
 }
 
 .login-button{
-    text-decoration: none;
     float: right;
     background:white;
     width: 100px;
@@ -35,6 +34,15 @@
     margin-top: -7px;
     border-radius: 3px;
     border: 1px solid #3863bf;;
+    color: #3863bf;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 500;;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #1a73e8;
+    cursor: pointer;
 }
 .fa-user-circle:before {
     content: "\f2bd";
@@ -55,5 +63,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    color: #1a73e8;
+  cursor: pointer;
 }
 
