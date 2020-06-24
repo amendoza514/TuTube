@@ -21,8 +21,13 @@ class Greeting extends React.Component {
 
     render() {
         let button = 
-            <button className='login-button'><Link to='/login' id='link'>SIGN IN</Link></button>
-
+            <button className='login-button'>
+                <Link to='/login' id='link'>
+                    <i className="fas fa-user-circle"></i>
+                    SIGN IN
+                </Link>
+            </button>
+            
         if (this.props.currentUser) {
             button = <button className='user-button' onClick={this.props.logout}>{this.buttonParse()}</button>};
 

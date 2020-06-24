@@ -4,13 +4,15 @@ import LoginFormContainer from './Greeting/login_form_container';
 import SignupFormContainer from './Greeting/signup_form_container'
 import { Link, Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util'
+import Navbar from './Navbar/navbar';
 
 const App  = () => (
     <div>
-        <header className='main-logo'>
+        {/* <header className='main-logo'>
             <Link to='./'>► TuTube</Link>
-            <GreetingContainer />
-        </header>
+            <Navbar />
+        </header> */}
+        <Navbar /> 
         
     
         <AuthRoute path="/login" component={LoginFormContainer} />

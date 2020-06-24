@@ -13,7 +13,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-weight: inherit;
   font-style: inherit;
   font-size: 100%;
-  font-family: 'Roboto', sans-serif;  
+  font-family: Roboto, Arial, sans-serif;
   vertical-align: baseline;
 }
 /* remember to define focus styles! */

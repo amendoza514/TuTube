@@ -35,14 +35,13 @@ class SessionForm extends React.Component {
         let redirectPath = this.props.formType === 'login' ? <Link to='/signup'>Create Account</Link> : <Link to='/login'>Sign in</Link>;
         
         return (
-            <section className='form-button'>
-                <form className='form-dropdown'>
-                    <label>Email
+                <form className='auth-form'>
+                    <label className='input-name'>Email
                         <br/>
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
                     </label>
                     <br/>
-                    <label>Password
+                    <label className='input-name'>Password
                         <br/>
                         <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
                     </label>
@@ -61,7 +60,6 @@ class SessionForm extends React.Component {
                         <br/>
                     </button>
                 </form>
-            </section>
         )
     }
 }

@@ -1,0 +1,76 @@
+.main-header {
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    padding: 15px;
+}
+
+#main-logo {
+    float: left;
+    color: black;
+    text-decoration: none;
+    margin-left: 35px;
+    color: #FA0000;
+    font-size: 28px;
+    margin-top: -5px;
+}
+
+#main-text {
+    float: left;
+    color: black;
+    text-decoration: none;
+    font-stretch: -1;
+    margin-left: 5px;
+    padding-top: -5px;
+   font-size: 19px;;
+}
+
+// .fa-youtube {
+//     content: "\f0f3";
+//     float: left;
+//     margin-right: 5px;
+//     color: #FA0000;
+//     font-size: 28px;
+// }
+
+#search-bar {
+    text-decoration: none;
+    float: left;
+    background:white;
+    color: gray;
+    width: 50%;
+    height: 30px;
+    margin-right: 25px;
+    margin-top: -6px;
+    border-radius: 3px;
+    margin-left: 5%;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+#search-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: left;
+    background: white;
+    width: 50px;
+    height: 32px;
+    margin-top: -1px;
+    margin-left: 93%;
+    /* margin-right: 25px; */
+    border-radius: 3px;
+    border: 1px solid gray;
+    padding-right: 15px;
+}
+
+
+
+#video-logo, #notifications-logo{
+    text-decoration: none;
+    float: right;
+    margin-right: 15px;
+}
+

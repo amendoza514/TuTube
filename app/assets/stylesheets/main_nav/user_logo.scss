@@ -1,34 +1,59 @@
+// .user-button {
+//     display: flex;
+//     background:lightseagreen;
+//     width: 35px;
+//     height: 35px;
+//     border-radius: 50%;
+//     color: white;
+//     font-weight: bold;
+//     font-size: 25px;
+//     margin-right: 15px;
+//     margin-top: -5px;
+//     justify-content: center;
+// }
 .user-button {
-    display: flex;
+    float: right;
     background:lightseagreen;
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    margin-top: -7px;
+    //font
     color: white;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 15px;
     margin-right: 15px;
-    margin-top: -5px;
-    justify-content: center;
 }
 
-.login-button {
-   display: flex;
+.login-button{
+    text-decoration: none;
+    float: right;
     background:white;
     width: 100px;
     height: 35px;
+    margin-right: 25px;
+    margin-top: -7px;
+    border-radius: 3px;
+    border: 1px solid #3863bf;;
+}
+.fa-user-circle:before {
+    content: "\f2bd";
+    font-size: 20px;
+}
+.fa-bell, .fa-video {
+    content: "\f0f3";
     margin-right: 15px;
-    margin-top: -5px;
-    border-radius: 2px;
-    border: 2px solid blue;
-    
+    color: #606060;
+    font-size: 20px;
 }
 
 #link {
-    color: blue;
+    color: #3863bf;
     font-size: 15px;
-    font-stretch: wider;
     text-decoration: none;
+    font-weight: 500;;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
