@@ -36,26 +36,37 @@ class SessionForm extends React.Component {
         
         return (
                 <form className='auth-form'>
-                    <label className='input-name'>Email
-                        <br/>
-                        <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
+                    <label className='input-name'>
+                        
+                        <input 
+                               type="text" 
+                               className ="form-input" 
+                               placeholder="Email"
+                               value={this.state.email} 
+                               onChange={this.handleInput('email')} />
                     </label>
-                    <br/>
-                    <label className='input-name'>Password
-                        <br/>
-                        <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
+                        <br/><br/>
+                    <label className='input-name'>
+                        
+                        <input type="password" 
+                               className="form-input" 
+                               placeholder="Password"
+                               value={this.state.password} 
+                               onChange={this.handleInput('password')} />
                     </label>
-                    <br/>
-                    <button onClick={this.handleSubmit}>{this.props.formType}</button>
-                    <br/>
-                    <button onClick={this.demoLogin}>Sign in as a demo user</button>
-                    <br/>
-                    <br /><br />
+                        <br/>
+                        <br />
                     <span>{redirectText}</span>
-                    <br />
+                        <br />
                     <span>{redirectPath}</span>
-                    <br /><br /><br />
-                    <div onClick={this.props.closeModal} className="close-x">back</div>
+                        <br/>
+                <div id="demo-text" >Not your fullstack project? Use demo mode to sign in anonymously</div>
+                    <div id="demo-button" onClick={this.demoLogin}>Demo sign in</div>
+                    
+                    <div className='action-buttons'>
+                        <div id='back-button' onClick={this.props.closeModal} >Create account</div>
+                        <button id='submit-button'  onClick={this.handleSubmit}>{formText}</button>
+                    </div>
                 </form>
         )
     }
