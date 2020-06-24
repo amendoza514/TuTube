@@ -24,6 +24,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
     "start": "webpack --watch --mode=development"
   },
   "keywords": [],
@@ -31,5 +32,9 @@
   "license": "ISC",
   "devDependencies": {
     "webpack-cli": "^3.3.12"
+  },
+  "engines": {
+    "node": "14.3.0",
+    "npm": "6.14.4"
   }
 }

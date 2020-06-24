@@ -34,6 +34,8 @@ class SessionForm extends React.Component {
         this.props.logout();
         this.props.closeModal();
     }
+
+    //why do I invoke here but not in the onclick action
     
 
     render () {
