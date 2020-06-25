@@ -119,7 +119,7 @@ input[type=text]:focus, input[type=password]:focus{
     flex-direction: column;
     align-items: space-between;
     width: 215px;
-    height: 260px;
+    height: 246px;
     background-color: white;
     justify-content: flex-start;
     border: 1px solid lightgray;
@@ -133,7 +133,7 @@ input[type=text]:focus, input[type=password]:focus{
     padding-bottom: 10px;
     box-sizing: border-box;
     cursor: pointer;
-    color: #909090
+    color: #909090;
 }
 
 #user-icon:hover, #logout-icon:hover, #dark-mode-icon:hover {
@@ -142,8 +142,10 @@ input[type=text]:focus, input[type=password]:focus{
 
 #logout-icon {
     border-bottom: 1px solid lightgray;
-    margin-bottom: 10px;
+    margin-bottom: 13px;
     width: 100%;
+    padding-bottom: 14px;
+
 }
 
 #user-show-text {
@@ -177,11 +179,15 @@ input[type=text]:focus, input[type=password]:focus{
   display: flex;
   font-size: 15px;
   padding-left: 15px;
-  padding-top: 10px;
+  padding-top: 3px;
   align-items: flex-end;
   box-sizing: border-box;
   cursor: pointer;
-  color: #1a73e8;
+  color: #909090;
+}
+
+#back-button:hover {
+    color: #1a73e8;
 }
 
 //MAKE FONT SMALLER FOR ICON AND LOUGOUT BUTTON TEXTS
@@ -200,6 +206,12 @@ input[type=text]:focus, input[type=password]:focus{
     color: white;
     background-color: #1a73e8;
     border-radius: 3px;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+#submit-button:hover {
+    background: #3882e3;
 }
 
 #signup-form-button {

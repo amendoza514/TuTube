@@ -23,6 +23,17 @@ class SessionForm extends React.Component {
     //     this.props.processForm(demoUser);
     // }
 
+    usernameParse() {
+        let s = this.props.currentUser.email;
+        let searchString = "@";
+        let idx = s.indexOf(searchString);
+        return s.slice(0, idx);
+    }
+    buttonParse() {
+        let s = this.props.currentUser.email;
+        return s.slice(0, 1);
+    }
+
     demoLogin() {
         this.props.processForm({ email: 'cargo_pants@gmail.com', password: '123456' })
         .then(() => this.props.closeModal());
@@ -136,8 +147,15 @@ class SessionForm extends React.Component {
 
         if (this.props.formType === 'logout') form = 
         <form className='user-form'>
-            {/* QUESTION how do I pull username information here? */}
-            {/* username with email below and divider border underneath that matches outside border */}
+            <div >
+                <div className='user-button-menu'>{this.buttonParse()}</div>
+                <div className='user-name-menu'>{this.usernameParse()}
+                    <div className='user-email-menu'>
+                        {this.props.currentUser.email}
+                    </div>
+                </div>
+            </div>
+            
             <i id='user-icon' className="fas fa-user"><div id='user-show-text' onClick={<Link to='/login'></Link>}>&nbsp;&nbsp;&nbsp;Your profile</div></i>
             <i id='dark-mode-icon' className="fas fa-adjust"><div id='dark-mode-text' onClick={<Link to='/login'></Link>}>&nbsp;&nbsp;&nbsp;Dark mode</div></i>
             <i id='logout-icon' className="fas fa-sign-out-alt"><div id='logout-text' onClick={this.handleLogout}>&nbsp;&nbsp;&nbsp; Sign out</div></i>
