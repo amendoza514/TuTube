@@ -1,3 +1,14 @@
+.error-list {
+    display: flex;
+    align-self: flex-start;
+    color: #d93025;
+    font-size: 12px;
+    font-weight: thin;
+    margin-left: 4px;
+    margin-top: 7px;
+    margin-bottom: -10px;
+}
+
 .auth-form {
     display: flex;
     flex-direction: column;
@@ -45,7 +56,7 @@ input[type=text], input[type=password] {
   -ms-transition: all 0.30s ease-in-out;
   -o-transition: all 0.30s ease-in-out;
   outline: none;
-  width: 350px;
+  width: 400px;
   height: 45px;
   padding: 15px;
   box-sizing: border-box;
@@ -56,7 +67,7 @@ input[type=text], input[type=password] {
  
 input[type=text]:focus, input[type=password]:focus{
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  width: 350px;
+  width: 400px;
   height: 45px;
   padding: 15px;
   box-sizing: border-box;

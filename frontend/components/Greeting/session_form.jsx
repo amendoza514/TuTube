@@ -23,13 +23,42 @@ class SessionForm extends React.Component {
         this.props.processForm(demoUser)
     }
 
-    errors() {
+    loginError() {
         return (
-            <ul>
+            <ul className='error-list'>
                 {this.props.errors.map((error, i) => (
+                    this.props.formType !== 'login' ? '' :
+                        <li key={`error-${i}`}>
+                            <i className="fas fa-exclamation-circle"></i>
+                        &nbsp;&nbsp;{error}
+                        </li>
+                ))}
+            </ul>
+        )
+    }
+    emailError() {
+        return (
+            <ul className='error-list'>
+                {this.props.errors.map((error, i) => (
+                    !error.includes('Email') ? '' :
                     <li key={`error-${i}`}>
-                        {error}
+                        <i className="fas fa-exclamation-circle"></i>
+                        &nbsp;&nbsp;{error}
                     </li>
+                ))}
+            </ul>
+        )
+    }
+
+    passwordError() {
+        return (
+            <ul className='error-list'>
+                {this.props.errors.map((error, i) => (
+                    !error.includes('Password') ? '' :
+                        <li key={`error-${i}`}>
+                            <i className="fas fa-exclamation-circle"></i>
+                        &nbsp;&nbsp;{error}
+                        </li>
                 ))}
             </ul>
         )
@@ -60,7 +89,6 @@ class SessionForm extends React.Component {
                 <div id='create-account-form-button'> {this.props.otherForm}</div> 
 
         let form = <form className='auth-form'>
-            {this.errors()}
             <div className='form-title'>
                 <div id='T'>T</div>
                 <div id='U1'>U</div>
@@ -80,6 +108,7 @@ class SessionForm extends React.Component {
                     placeholder="Email"
                     value={this.state.email}
                     onChange={this.handleInput('email')} />
+                    {this.emailError()}
             </label>
             <br /><br />
             <label className='input-name'>
@@ -88,6 +117,8 @@ class SessionForm extends React.Component {
                     placeholder="Password"
                     value={this.state.password}
                     onChange={this.handleInput('password')} />
+                    {this.passwordError()}
+                    {this.loginError()}
             </label>
             <br /><br />
             <div id="demo-text" >Not your fullstack project? Use demo mode to sign in anonymously.</div>
