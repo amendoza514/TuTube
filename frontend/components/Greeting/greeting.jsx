@@ -43,7 +43,7 @@ class Greeting extends React.Component {
 
         return (
             <>
-                {button}
+                {button }
                 {/* {sessionLinks()} */}
             </>
         )

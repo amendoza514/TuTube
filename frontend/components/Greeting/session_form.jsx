@@ -87,16 +87,11 @@ class SessionForm extends React.Component {
 
         if (this.props.formType === 'logout') form = 
         <form className='user-form'>
-            <div className='form-title'>
-                <div id='T'>T</div>
-                <div id='U1'>U</div>
-                <div id='U2'>U</div>
-                <div id='G'>G</div>
-                <div id='L'>L</div>
-                <div id='E'>E</div>
-            </div>
-            <div id='form-type'>{formType}</div>            
-            <button id='logout-button' onClick={this.handleLogout}>Sign out</button>
+            {/* QUESTION how do I pull username information here? */}
+            {/* username with email below and divider border underneath that matches outside border */}
+            <i id='user-icon' class="fas fa-user"><div id='user-show-text' onClick={<Link to='/login'></Link>}>&nbsp;&nbsp;&nbsp;Your profile</div></i>
+            <i id='dark-mode-icon' class="fas fa-adjust"><div id='dark-mode-text' onClick={<Link to='/login'></Link>}>&nbsp;&nbsp;&nbsp;Dark mode</div></i>
+            <i id='logout-icon' class="fas fa-sign-out-alt"><div id='logout-text' onClick={this.handleLogout}>&nbsp;&nbsp;&nbsp; Sign out</div></i>
             <div id='back-button' onClick={this.props.closeModal} >back</div>
         </form>;
 

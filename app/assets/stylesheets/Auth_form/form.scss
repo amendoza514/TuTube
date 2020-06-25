@@ -9,18 +9,6 @@
     padding: 25px;
 }
 
-.user-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-    width: 240px;
-    height: 367px;
-    background-color: white;
-    padding: 25px;
-    border: 1px solid lightgray;
-}
-
 #form-type {
     font-size: 22px;
 }
@@ -115,6 +103,59 @@ input[type=text]:focus, input[type=password]:focus{
     font-size: 15px;
 }
 
+.user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    box-sizing: border-box;
+    width: 215px;
+    height: 260px;
+    background-color: white;
+    padding: 15px;
+    justify-content: flex-start;
+    border: 1px solid lightgray;
+}
+
+#user-icon, #logout-icon, #dark-mode-icon {
+    display: flex;
+    font-size: 20px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #909090
+}
+#logout-icon {
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#logout-text {
+    font-weight: normal;
+    font-size: 13px;
+    color: #030303;
+    margin-left: 2px;
+    margin-top: 4px;
+}
+
+#user-show-text {
+    font-weight: normal;
+    font-size: 13px;
+    margin-left: 8px;
+    margin-top: 4px;
+    color: #030303
+}
+
+#dark-mode-text {
+    font-weight: normal;
+    font-size: 13px;
+    margin-left: 5px;
+    margin-top: 4px;
+    color: #030303
+}
+
+//MAKE FONT SMALLER FOR ICON AND LOUGOUT BUTTON TEXTS
+
 #submit-button {
     display: flex;
     align-self: flex-end;
@@ -161,19 +202,12 @@ input[type=text]:focus, input[type=password]:focus{
     color: #1a73e8;
 }
 
-// #back-button {
-//     display: flex;
-//     align-self: flex-start;
-//     margin-right: 50px;
-//     font-size: 15px;
-//     border-radius: 3px;
-//     width: 150px;
-//     height: 45px;
-//     padding: 15px;
-//     box-sizing: border-box;
-//     cursor: pointer;
-//     margin-top: 18px;
-//     color: #1a73e8
-// }
+#back-button {
+  display: flex;
+  align-items: flex-end;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #1a73e8;
+}
 
 
