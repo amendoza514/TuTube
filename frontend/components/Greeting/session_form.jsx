@@ -7,7 +7,7 @@ class SessionForm extends React.Component {
         this.state = {email:'', password:''}
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
-        this.handleLogout = this.handleLogout.bind(this)
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
     handleInput(type){
@@ -16,11 +16,16 @@ class SessionForm extends React.Component {
         }
     }
 
-    demoLogin(e){
-        e.preventDefault();
-        this.setState({ email: 'cargo_pants@gmail.com', password: '123456' }) 
-        const demoUser = Object.assign({}, this.state)       
-        this.props.processForm(demoUser)
+    // demoLogin(e){
+    //     e.preventDefault();
+    //     this.setState({ email: 'cargo_pants@gmail.com', password: '123456'});
+    //     const demoUser = Object.assign({}, this.state);
+    //     this.props.processForm(demoUser);
+    // }
+
+    demoLogin() {
+        this.props.processForm({ email: 'cargo_pants@gmail.com', password: '123456' })
+        .then(() => this.props.closeModal());
     }
 
     loginError() {

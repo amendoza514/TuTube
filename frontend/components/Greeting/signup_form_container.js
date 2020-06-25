@@ -25,3 +25,5 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm)
 
 //QUESTION why did I need react here? just for the {} snippets?
+
+//explain promise functgion here?

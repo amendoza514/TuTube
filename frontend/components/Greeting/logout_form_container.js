@@ -6,6 +6,7 @@ import { openModal, closeModal } from '../../actions/modal_actions'
 
 const mapStateToProps = state => ({
     formType: 'logout',
+    currentUser: state.entities.users[state.session.id],
     errors: state.errors.session 
 });
 
