@@ -17,17 +17,29 @@ class SessionForm extends React.Component {
     }
 
     demoLogin(e){
-        // this.setState({email:'cargo_pants@gmail.com', password:'123456'})
         e.preventDefault();
         this.setState({ email: 'cargo_pants@gmail.com', password: '123456' }) 
         const demoUser = Object.assign({}, this.state)       
         this.props.processForm(demoUser)
     }
 
+    errors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        )
+    }
+
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state)
-        this.props.processForm(user).then(this.props.closeModal())
+        this.props.processForm(user)
+        .then(() => this.props.closeModal())
     }
 
     handleLogout() {
@@ -48,6 +60,7 @@ class SessionForm extends React.Component {
                 <div id='create-account-form-button'> {this.props.otherForm}</div> 
 
         let form = <form className='auth-form'>
+            {this.errors()}
             <div className='form-title'>
                 <div id='T'>T</div>
                 <div id='U1'>U</div>
@@ -89,12 +102,12 @@ class SessionForm extends React.Component {
         <form className='user-form'>
             {/* QUESTION how do I pull username information here? */}
             {/* username with email below and divider border underneath that matches outside border */}
-            <i id='user-icon' class="fas fa-user"><div id='user-show-text' onClick={<Link to='/login'></Link>}>&nbsp;&nbsp;&nbsp;Your profile</div></i>
-            <i id='dark-mode-icon' class="fas fa-adjust"><div id='dark-mode-text' onClick={<Link to='/login'></Link>}>&nbsp;&nbsp;&nbsp;Dark mode</div></i>
-            <i id='logout-icon' class="fas fa-sign-out-alt"><div id='logout-text' onClick={this.handleLogout}>&nbsp;&nbsp;&nbsp; Sign out</div></i>
+            <i id='user-icon' className="fas fa-user"><div id='user-show-text' onClick={<Link to='/login'></Link>}>&nbsp;&nbsp;&nbsp;Your profile</div></i>
+            <i id='dark-mode-icon' className="fas fa-adjust"><div id='dark-mode-text' onClick={<Link to='/login'></Link>}>&nbsp;&nbsp;&nbsp;Dark mode</div></i>
+            <i id='logout-icon' className="fas fa-sign-out-alt"><div id='logout-text' onClick={this.handleLogout}>&nbsp;&nbsp;&nbsp; Sign out</div></i>
             <div id='back-button' onClick={this.props.closeModal} >back</div>
         </form>;
-
+        
         return (
             <>
                 {form}
@@ -104,5 +117,3 @@ class SessionForm extends React.Component {
 }
 
 export default SessionForm;
-
-// otherForm()

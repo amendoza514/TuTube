@@ -107,16 +107,16 @@ input[type=text]:focus, input[type=password]:focus{
     display: flex;
     flex-direction: column;
     align-items: space-between;
-    box-sizing: border-box;
     width: 215px;
     height: 260px;
     background-color: white;
-    padding: 15px;
     justify-content: flex-start;
     border: 1px solid lightgray;
 }
 
 #user-icon, #logout-icon, #dark-mode-icon {
+    padding-left: 15px;
+    padding-top: 15px;
     display: flex;
     font-size: 20px;
     padding-bottom: 10px;
@@ -124,34 +124,53 @@ input[type=text]:focus, input[type=password]:focus{
     cursor: pointer;
     color: #909090
 }
+
+#user-icon:hover, #logout-icon:hover, #dark-mode-icon:hover {
+    background-color: lightgrey;
+}
+
 #logout-icon {
     border-bottom: 1px solid lightgray;
     margin-bottom: 10px;
     width: 100%;
 }
 
-#logout-text {
-    font-weight: normal;
-    font-size: 13px;
-    color: #030303;
-    margin-left: 2px;
-    margin-top: 4px;
-}
-
 #user-show-text {
     font-weight: normal;
-    font-size: 13px;
+    font-size: 14px;
     margin-left: 8px;
     margin-top: 4px;
-    color: #030303
+    color: #030303;
+    width: 100%;
 }
 
 #dark-mode-text {
     font-weight: normal;
-    font-size: 13px;
+    font-size: 14px;
     margin-left: 5px;
     margin-top: 4px;
-    color: #030303
+    color: #030303;
+    width: 100%;
+}
+
+#logout-text {
+    font-weight: normal;
+    font-size: 14px;
+    color: #030303;
+    margin-left: 2px;
+    margin-top: 4px;
+    width: 100%;
+}
+
+#back-button {
+  display: flex;
+  font-size: 15px;
+  padding-left: 15px;
+  padding-top: 10px;
+  align-items: flex-end;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #1a73e8;
 }
 
 //MAKE FONT SMALLER FOR ICON AND LOUGOUT BUTTON TEXTS
@@ -202,12 +221,5 @@ input[type=text]:focus, input[type=password]:focus{
     color: #1a73e8;
 }
 
-#back-button {
-  display: flex;
-  align-items: flex-end;
-    box-sizing: border-box;
-    cursor: pointer;
-    color: #1a73e8;
-}
 
 
