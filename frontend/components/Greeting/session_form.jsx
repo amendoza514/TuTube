@@ -53,30 +53,29 @@ class SessionForm extends React.Component {
         )
     }
     emailError() {
-        return (
-            <ul className='error-list'>
-                {this.props.errors.map((error, i) => (
-                    !error.includes('Email') ? '' :
+        return (this.props.errors.map((error, i) => (
+            !error.includes('Email') ? '' :
+                <ul className='error-list'>
                     <li key={`error-${i}`}>
                         <i className="fas fa-exclamation-circle"></i>
                         &nbsp;&nbsp;{error}
                     </li>
-                ))}
-            </ul>
+                </ul>
+        ))
         )
     }
 
     passwordError() {
         return (
-            <ul className='error-list'>
-                {this.props.errors.map((error, i) => (
+                this.props.errors.map((error, i) => (
                     !error.includes('Password') ? '' :
+                    <ul className='error-list'>
                         <li key={`error-${i}`}>
                             <i className="fas fa-exclamation-circle"></i>
                         &nbsp;&nbsp;{error}
                         </li>
-                ))}
-            </ul>
+                    </ul>
+                ))
         )
     }
 

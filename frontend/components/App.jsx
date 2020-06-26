@@ -18,9 +18,7 @@ const App  = () => (
             <Route path="/signup" component={SignupComponentContainer} />
             <Route exact path="/" component={HomeComponentContainer} />
             <Redirect to="/" component={HomeComponentContainer} />
-            
         </Switch>
-       
     </div>
 );
 
