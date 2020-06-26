@@ -82,7 +82,7 @@ input[type=text]:focus, input[type=password]:focus{
 #demo-text {
    display: flex;
     /* align-self: flex-start; */
-    margin-left: 50px;
+    /* margin-left: 50px; */
     font-size: 13px;
     /* border-radius: 3px; */
     width: 100%;
@@ -92,14 +92,16 @@ input[type=text]:focus, input[type=password]:focus{
     /* margin-top: 18px; */
     color: #5F6368;
     font-weight: 100;
+    justify-content: space-around;
+    align-items: end;
 }
 #demo-button {
     display: flex;
     /* align-self: flex-start; */
-    margin-left: 50px;
+    /* margin-left: 50px; */
     font-size: 13px;
     border-radius: 3px;
-    width: 100%;
+    width: 77%;
     height: 45px;
     /* padding: 15px; */
     box-sizing: border-box;
@@ -107,6 +109,15 @@ input[type=text]:focus, input[type=password]:focus{
     /* margin-top: 18px; */
     color: #1a73e8;
     font-weight: bolder;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1a73e8;
+    margin-bottom: 4px;
+}
+
+#demo-button:hover {
+    background-color: #3882e3;
 }
 
 .action-buttons {
@@ -145,7 +156,6 @@ input[type=text]:focus, input[type=password]:focus{
     margin-bottom: 13px;
     width: 100%;
     padding-bottom: 14px;
-
 }
 
 #user-show-text {
