@@ -2,19 +2,28 @@
     display: inline-block;
     box-sizing: border-box;
     background-color: white;
-    height: 50px;
+    height: 55px;
     width: 100%;
     padding: 15px;
+}
+
+#hamburger-icon {
+    display: flex;
+    cursor: pointer;
+    border-style: none;
+    position: absolute;
+    margin: 1px;
+    font-size: 18px;
 }
 
 #main-logo {
     float: left;
     color: black;
     text-decoration: none;
-    margin-left: 35px;
+    margin-left: 55px;
     color: #FA0000;
     font-size: 28px;
-    margin-top: -5px;
+    margin-top: -2px;
 }
 
 #main-text {
@@ -27,43 +36,45 @@
    font-size: 19px;;
 }
 
-// .fa-youtube {
-//     content: "\f0f3";
-//     float: left;
-//     margin-right: 5px;
-//     color: #FA0000;
-//     font-size: 28px;
-// }
-
-#search-bar {
-    text-decoration: none;
+.search {
+    width: 45%;
+    height: 30px;
+        text-decoration: none;
     float: left;
     background:white;
     color: gray;
-    width: 50%;
-    height: 30px;
     margin-right: 25px;
-    margin-top: -6px;
+    margin-top: -5px;
     border-radius: 3px;
-    margin-left: 5%;
-    border: 1px solid gray;
+    margin-left: 10%;
     text-align: center;
+    cursor: pointer;
+}
+#search-bar {
+    cursor: pointer;
+    float: left;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px 0px 0px 3px;
 }
 
 #search-button {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: left;
-    background: white;
-    width: 50px;
+    cursor: pointer;
+    float: right;
+    justify-content: center;
+    background: #eee;
+    width: 61px;
     height: 32px;
-    margin-top: -1px;
-    margin-left: 93%;
-    /* margin-right: 25px; */
-    border-radius: 3px;
-    border: 1px solid gray;
-    padding-right: 15px;
+    margin-top: 0px;
+    border-radius: 0px 3px 3px 0px;
+    border: 1px solid rgb(222, 217, 217);    
+    border-left: none;
+    position: absolute;
+    margin-right: -60px;
+}
+
+#search-button:hover {
+    border: 1px solid rgb(193, 191, 191);    
 }
 
 
@@ -72,5 +83,6 @@
     text-decoration: none;
     float: right;
     margin-right: 15px;
+    margin-top: 3px;
 }
 

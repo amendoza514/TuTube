@@ -1,0 +1,21 @@
+.main-sidebar {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    width: 60px;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding-top: 15px;
+    margin-top: -5px;
+    color: #606060;
+}
+
+.fa-home, .fa-linkedin, .fa-github  {
+    content: "\f0f3";
+    padding-bottom: 50px;
+    color: #606060;
+    font-size: 20px;
+}

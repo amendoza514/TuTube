@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { openModal, closeModal } from '../../actions/modal_actions'
+import { openModal } from '../../actions/modal_actions'
 import AuthComponent from './auth_component'
 
 const mapStateToProps = (state, ownProps) => ({

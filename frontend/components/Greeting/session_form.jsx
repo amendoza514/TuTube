@@ -16,13 +16,6 @@ class SessionForm extends React.Component {
         }
     }
 
-    // demoLogin(e){
-    //     e.preventDefault();
-    //     this.setState({ email: 'cargo_pants@gmail.com', password: '123456'});
-    //     const demoUser = Object.assign({}, this.state);
-    //     this.props.processForm(demoUser);
-    // }
-
     usernameParse() {
         let s = this.props.currentUser.email;
         let searchString = "@";

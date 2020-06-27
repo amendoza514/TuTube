@@ -1,15 +1,19 @@
+//Video Index
+
 import Home from './home'
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
-import { openModal } from '../../actions/modal_actions'
+import { closeModal } from '../../actions/modal_actions'
+import { fetchVideo, fetchVideos } from '../../actions/video_actions'
 
 const mapStateToProps = state => ({
-    currentUser: state.entities.users[state.session.id]
+    videos: Object.values(state.entities.videos),
+
 });
 
 const mapDispatchToProps = dispatch => ({
-    // logout: () => dispatch(logout()),
-    // openModal: modal => dispatch(openModal(modal))
+    fetchVideos: () => dispatch(fetchVideos()),
+    fetchVideo: (videoId) => dispatch(fetchVideo(videoId)),
+    closeModal: modal => dispatch(closeModal(modal))
 });
 
-export default connect(mapStateToProps, null)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

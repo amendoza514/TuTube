@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginFormContainer  from './login_form_container';
-import { Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 const AuthComponent = (props) => {
     if (!props.loggedIn) {

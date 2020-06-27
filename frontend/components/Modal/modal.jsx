@@ -5,6 +5,7 @@ import LoginFormContainer from '../Greeting/login_form_container';
 import SignupFormContainer from '../Greeting/signup_form_container';
 import LogoutFormContainer from '../Greeting/logout_form_container'
 
+
 function Modal({ modal, closeModal }) {
     if (!modal) {
         return null;
@@ -20,6 +21,7 @@ function Modal({ modal, closeModal }) {
         case 'logout':
             component = <LogoutFormContainer />;
             break;
+      
         default:
             return null;
     }
