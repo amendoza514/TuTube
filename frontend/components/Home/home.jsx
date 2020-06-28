@@ -1,5 +1,4 @@
 import React from 'react'
-import Sidebar from './sidebar'
 
 class Home extends React.Component {
     constructor(props) {
@@ -26,13 +25,16 @@ class Home extends React.Component {
         if (!this.props.videos) return null
 
         return (
-            <>
-                <Sidebar />
+            
+            <>            
                     <ul className='temp-container'>
                         {this.props.videos.map((video, idx) => (  
                             <div>
+                                <video className="video-content" autoPlay controls>
+                                    <source src={video.videoUrl} type="video/mp4"/>
+                                </video>
                                 <img className='temp' src={temp[idx]} />
-                                <figcaption className='temp-title'>{video.title}</figcaption>
+                                <figcaption className='temp-title'>{video.description}</figcaption>
                             </div>
                         ))}
                     </ul>

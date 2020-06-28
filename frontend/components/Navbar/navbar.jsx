@@ -1,18 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import GreetingContainer from '../Greeting/greeting_container'
+import Sidebar from '../Home/sidebar'
 
 class Navbar extends React.Component {
-    constructor(props){
-        super(props)
-    }
 
     render() {
         return(
             <>
+                <Sidebar />
                 <section className='main-header'>
                     <button id='hamburger-icon'>
-                        <i class="fas fa-bars"></i>
+                        <i className="fas fa-bars"></i>
                     </button>
                     <Link to='./' id="main-logo">
                         <i className="fab fa-youtube"></i>

@@ -21,7 +21,6 @@ function Modal({ modal, closeModal }) {
         case 'logout':
             component = <LogoutFormContainer />;
             break;
-      
         default:
             return null;
     }
@@ -35,6 +34,14 @@ function Modal({ modal, closeModal }) {
     if (modal === 'logout') {
         modalReturn = <div className="user-modal-background" onClick={closeModal}>
             <div className="user-modal-child" onClick={e => e.stopPropagation()}>
+                {component}
+            </div>
+        </div>;
+    }
+
+    if (modal === 'sidebar') {
+        modalReturn = <div className="sidebar-modal-background" onClick={closeModal}>
+            <div className="sidebar-modal-child" onClick={e => e.stopPropagation()}>
                 {component}
             </div>
         </div>;

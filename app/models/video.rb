@@ -21,5 +21,5 @@ class Video < ApplicationRecord
         foreign_key: :user_id,
         class_name: :User
 
-    # QUESTION wut am i doing
+    
 end

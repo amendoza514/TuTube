@@ -17,7 +17,7 @@ class Sidebar extends React.Component {
                         <i className="fab fa-linkedin"></i>
                     </a>
                     <a href='https://github.com/amendoza514/TuTube' className='linkedin-icon' className='subs-icon'>
-                        <i class="fab fa-github"></i>
+                        <i className="fab fa-github"></i>
                     </a>
                 </div> 
             </>

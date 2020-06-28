@@ -6,7 +6,7 @@ import { closeModal } from '../../actions/modal_actions'
 import { fetchVideo, fetchVideos } from '../../actions/video_actions'
 
 const mapStateToProps = state => ({
-    videos: Object.values(state.entities.videos),
+    videos: Object.values(state.entities.videos)
 
 });
 
