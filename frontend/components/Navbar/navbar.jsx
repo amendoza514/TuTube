@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import GreetingContainer from '../Greeting/greeting_container'
-import Sidebar from '../Home/sidebar'
+// import Sidebar from '../Home/sidebar'
 
 class Navbar extends React.Component {
 
     render() {
         return(
             <>
-                <Sidebar />
+                {/* <Sidebar /> */}
                 <section className='main-header'>
                     <button id='hamburger-icon'>
                         <i className="fas fa-bars"></i>

@@ -15,20 +15,25 @@ class SessionForm extends React.Component {
             this.setState({ [type]: e.target.value })
         }
     }
-
+    
     usernameParse() {
         let s = this.props.currentUser.email;
         let searchString = "@";
-        let idx = s.indexOf(searchString);
-        return s.slice(0, idx);
+        s = s.slice(0, s.indexOf(searchString))
+        s = s.split('_').join(' ')
+        let words = s.split(' ')
+        let newWords = []
+        words.forEach(word => newWords.push(word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase()));
+        return newWords.join(' ')
     }
+    
     buttonParse() {
         let s = this.props.currentUser.email;
         return s.slice(0, 1);
     }
 
     demoLogin() {
-        this.props.processForm({ email: 'cargo_pants@gmail.com', password: '123456' })
+        this.props.processForm({ email: 'demo_user@gmail.com', password: '123456' })
         .then(() => this.props.closeModal());
     }
 

@@ -6,8 +6,12 @@ class Video extends React.Component {
     usernameParse() {
         let s = this.props.video.user;
         let searchString = "@";
-        let idx = s.indexOf(searchString);
-        return s.slice(0, idx);
+        s = s.slice(0, s.indexOf(searchString))
+        s = s.split('_').join(' ')
+        let words = s.split(' ')
+        let newWords = []
+        words.forEach(word => newWords.push(word.slice(0,1).toUpperCase() + word.slice(1).toLowerCase()));
+        return newWords.join(' ')
     }
 
     buttonParse() {
@@ -41,19 +45,18 @@ class Video extends React.Component {
 
         // $(".user-button-menu").css("color", randomColor)
 
-        let temp = [
-            window.corgiOneUrl,
-            window.corgiTwoUrl,
-            window.corgiThreeUrl,
-            window.corgiFourUrl,
-            window.corgiFiveUrl,
-            window.goatOneUrl
-        ]
+        // let temp = [
+        //     window.corgiOneUrl,
+        //     window.corgiTwoUrl,
+        //     window.corgiThreeUrl,
+        //     window.corgiFourUrl,
+        //     window.corgiFiveUrl,
+        //     window.goatOneUrl
+        // ]
 
         return (
-                /* <img className='temp' src={thumbnail} /> */
             <div>
-                <img className='temp' src={temp[this.props.idx]} />
+                <Link to={`/watch/${this.props.video.id}`}><img className='thumb' src={this.props.video.thumbUrl} /></Link>
                 <div className='title-container'>
                     <div className='user-button-video-index' >{this.buttonParse()}</div>
                     <Link to={`/watch/${this.props.video.id}`} className='video-title'>

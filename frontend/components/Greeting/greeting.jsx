@@ -4,16 +4,9 @@ import { Link } from 'react-router-dom';
 class Greeting extends React.Component {
     constructor(props){
         super(props)
-        this.usernameParse = this.usernameParse.bind(this);
         this.buttonParse = this.buttonParse.bind(this);
     }
 
-    usernameParse() {
-        let s = this.props.currentUser.email;
-        let searchString = "@";
-        let idx = s.indexOf(searchString);
-        return s.slice(0, idx);
-    }
     buttonParse() {
         let s = this.props.currentUser.email;
         return s.slice(0, 1);
@@ -44,7 +37,6 @@ class Greeting extends React.Component {
         return (
             <>
                 {button }
-                {/* {sessionLinks()} */}
             </>
         )
     }

@@ -16,6 +16,7 @@
 class Video < ApplicationRecord
     validates :title, presence:true 
     has_one_attached :video 
+    has_one_attached :thumbnail 
 
 
     belongs_to :user,

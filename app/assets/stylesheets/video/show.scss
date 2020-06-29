@@ -1,0 +1,65 @@
+.show-container {
+    padding: 25px;
+    background-color: hsla(0, 0%, 96%, 1);
+    width: -webkit-fill-available;
+}
+
+.video-content {
+        width: 82%;
+        object-fit: fill;
+}
+
+.info-container {
+    width: 82%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.large-title {
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+.expanded-video-info {
+    margin-top: 11px;
+    color: #5f5f5f;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.user-button-video-show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    background: lightseagreen;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    margin-right: 15px;
+    text-transform: capitalize;
+}
+
+.channel-info {
+    width: 82%;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #dddddd;
+    height: 38px;
+}
+
+.video-creator {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.sub-count {
+    color: #5f5f5f;
+    font-size: 12px;
+    padding-bottom: 15px;
+    padding-top: 3px;
+    line-height: inherit;
+}

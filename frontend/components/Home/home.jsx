@@ -1,5 +1,6 @@
 import React from 'react'
 import Video from '../Video/video'
+import Sidebar from './sidebar'
 
 class Home extends React.Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class Home extends React.Component {
 
     componentDidMount() {
         this.props.fetchVideos();
+        this.props.fetchUsers();
     }
 
 
@@ -18,11 +20,12 @@ class Home extends React.Component {
         return (
             
             <>            
-                    <ul className='temp-container'>
-                        {this.props.videos.map((video, idx) => (  
-                           <Video key={video.id} video={video} idx={idx}/>
-                        ))}
-                    </ul>
+             <Sidebar /> 
+                <ul className='temp-container'>
+                    {this.props.videos.map((video, idx) => (  
+                        <Video key={video.id} video={video} idx={idx}/>
+                    ))}
+                </ul>
             </>
         )
     }
