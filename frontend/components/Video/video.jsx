@@ -55,17 +55,15 @@ class Video extends React.Component {
             <div>
                 <img className='temp' src={temp[this.props.idx]} />
                 <div className='title-container'>
-                    <div className='user-button-menu' >{this.buttonParse()}</div>
-                    <div className='video-title'>
-                    <Link to={`/watch/${this.props.video.id}`}>
-                            {this.props.video.title}
-                        </Link>
-                    </div>
+                    <div className='user-button-video-index' >{this.buttonParse()}</div>
+                    <Link to={`/watch/${this.props.video.id}`} className='video-title'>
+                        {this.props.video.title}
+                    </Link>
+        
                 </div>
-                <div className='video-creator'>{this.usernameParse()}</div>
                 <div className='video-info'>
-                    <div className='video-views'>{this.viewCounter()} views •</div>
-                    <div className='video-uploaded'>3 weeks ago</div>
+                    <div className='video-creator'>{this.usernameParse()}</div>
+                    <div className='video-views'>{this.viewCounter()} views • 3 weeks ago</div>
                 </div>
             </div>
         )
