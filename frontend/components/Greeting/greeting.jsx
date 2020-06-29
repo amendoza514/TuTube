@@ -31,12 +31,12 @@ class Greeting extends React.Component {
         //     button = <button className='user-button' onClick={this.props.logout}>{this.buttonParse()}</button>};
 
         if (this.props.currentUser) {
-            button = <button className='user-button' onClick={() => this.props.openModal('logout')}>{this.buttonParse()}</button>
+            button = <button className='user-button' style={{ backgroundColor: this.props.currentUser.icon_color }} onClick={() => this.props.openModal('logout')}>{this.buttonParse()}</button>
         };
 
         return (
             <>
-                {button }
+                {button}
             </>
         )
     }

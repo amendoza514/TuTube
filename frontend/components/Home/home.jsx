@@ -9,7 +9,7 @@ class Home extends React.Component {
 
     componentDidMount() {
         this.props.fetchVideos();
-        this.props.fetchUsers();
+        // this.props.fetchUsers();
     }
 
 
@@ -23,7 +23,7 @@ class Home extends React.Component {
              <Sidebar /> 
                 <ul className='temp-container'>
                     {this.props.videos.map((video, idx) => (  
-                        <Video key={video.id} video={video} idx={idx}/>
+                        <Video key={video.id} video={video} idx={idx} color={video.userColor}/>
                     ))}
                 </ul>
             </>

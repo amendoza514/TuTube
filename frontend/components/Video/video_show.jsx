@@ -13,8 +13,12 @@ class VideoShow extends React.Component {
     usernameParse() {
         let s = this.props.video.user;
         let searchString = "@";
-        let idx = s.indexOf(searchString);
-        return s.slice(0, idx);
+        s = s.slice(0, s.indexOf(searchString))
+        s = s.split('_').join(' ')
+        let words = s.split(' ')
+        let newWords = []
+        words.forEach(word => newWords.push(word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase()));
+        return newWords.join(' ')
     }
 
     buttonParse() {
@@ -31,7 +35,11 @@ class VideoShow extends React.Component {
     render() {
         console.dir(this.props.video)
         if (!this.props.video) return null
-        // debugger
+        
+        let vIcon = <i class="fas fa-check-circle"></i>
+        if (!this.props.video.user_verified) {
+            vIcon = ''
+        }
 
         return(
             <>
@@ -52,8 +60,8 @@ class VideoShow extends React.Component {
                         </div>
                     </div>
                     <div className='channel-info'>
-                        <div className='user-button-video-show' >{this.buttonParse()}</div>
-                        <div className='video-creator'>{this.usernameParse()}</div>
+                        <div className='user-button-video-show' style={{ backgroundColor: this.props.video.userColor }}>{this.buttonParse()}</div>
+                        <div className='video-creator'>{this.usernameParse()} {vIcon}</div>
                         <div className='sub-count'>67.4K subscribers</div>
                     </div>
                 </div>

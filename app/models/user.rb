@@ -9,6 +9,8 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  username        :string
+#  verified        :boolean
+#  icon_color      :string
 #
 class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true 

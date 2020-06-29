@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     fetchVideos: () => dispatch(fetchVideos()),
     fetchVideo: (videoId) => dispatch(fetchVideo(videoId)),
-    fetchUsers: () => dispatch(fetchUsers()),
+    // fetchUsers: () => dispatch(fetchUsers()),
     closeModal: modal => dispatch(closeModal(modal))
 });
 

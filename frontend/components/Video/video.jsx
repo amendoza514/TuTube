@@ -36,37 +36,40 @@ class Video extends React.Component {
         }
     }
 
+    titleSpan() {
+        let title = this.props.video.title;
+        if (title.split('').length > 60) {
+            return title.split('').slice(0,60).join('') + '...'
+        } else {
+            return title
+        }
+    }
+
     //what is the best way to make these more modular? I'm recycling in many components
 
     render() {
 
-        // let color = ['#E27D60', '#85DCB', '#E8A87C', '#C38D9E', '#8EE4AF', '#05386B', '#FC4445', '#97CAEF']
-        // let randomColor = color[Math.floor(Math.random() * color.length)];
-
-        // $(".user-button-menu").css("color", randomColor)
-
-        // let temp = [
-        //     window.corgiOneUrl,
-        //     window.corgiTwoUrl,
-        //     window.corgiThreeUrl,
-        //     window.corgiFourUrl,
-        //     window.corgiFiveUrl,
-        //     window.goatOneUrl
-        // ]
+        let span = ['days', 'weeks', 'hours', 'minutes', 'months', 'years']
+        let randomTime = Math.floor(Math.random() * 24) + 1
+        let randomSpan = span[Math.floor(Math.random() * span.length)];
+        let vIcon = <i class="fas fa-check-circle"></i>
+        if (!this.props.video.user_verified) {
+            vIcon = ''
+        }
 
         return (
             <div>
                 <Link to={`/watch/${this.props.video.id}`}><img className='thumb' src={this.props.video.thumbUrl} /></Link>
                 <div className='title-container'>
-                    <div className='user-button-video-index' >{this.buttonParse()}</div>
+                    <div className='user-button-video-index' style={{ backgroundColor: this.props.color }}>{this.buttonParse()}</div>
                     <Link to={`/watch/${this.props.video.id}`} className='video-title'>
-                        {this.props.video.title}
+                        {this.titleSpan()}
                     </Link>
         
                 </div>
                 <div className='video-info'>
-                    <div className='video-creator'>{this.usernameParse()}</div>
-                    <div className='video-views'>{this.viewCounter()} views • 3 weeks ago</div>
+                    <div className='video-creator'>{this.usernameParse()} {vIcon}</div>
+                    <div className='video-views'>{this.viewCounter()} views • {randomTime} {randomSpan} ago</div>
                 </div>
             </div>
         )

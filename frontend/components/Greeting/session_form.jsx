@@ -145,7 +145,7 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'logout') form = 
         <form className='user-form'>
             <div >
-                <div className='user-button-menu'>{this.buttonParse()}</div>
+                <div className='user-button-menu' style={{ backgroundColor: this.props.currentUser.icon_color }}>{this.buttonParse()}</div>
                 <div className='user-name-menu'>{this.usernameParse()}
                     <div className='user-email-menu'>
                         {this.props.currentUser.email}
