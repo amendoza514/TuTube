@@ -11,6 +11,9 @@
 //     margin-top: -5px;
 //     justify-content: center;
 // }
+// @mixin random-bgr(){
+//   background: rgb(random(255), random(255), random(255));
+// }
 .user-button {
     float: right;
     background:lightseagreen;
@@ -26,6 +29,7 @@
     text-transform: capitalize;
     cursor: pointer;
 }
+
 
 .user-button-menu {
   display: flex;

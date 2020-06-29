@@ -1,4 +1,5 @@
 import React from 'react'
+import Video from '../Video/video'
 
 class Home extends React.Component {
     constructor(props) {
@@ -6,21 +7,11 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchVideos();
     }
 
 
     render() {
-
-        let temp = [
-            window.corgiOneUrl,
-            window.corgiTwoUrl,
-            window.corgiThreeUrl,
-            window.corgiFourUrl,
-            window.corgiFiveUrl,
-            window.goatOneUrl
-        ]
 
         if (!this.props.videos) return null
 
@@ -29,13 +20,7 @@ class Home extends React.Component {
             <>            
                     <ul className='temp-container'>
                         {this.props.videos.map((video, idx) => (  
-                            <div>
-                                <video className="video-content" autoPlay controls>
-                                    <source src={video.videoUrl} type="video/mp4"/>
-                                </video>
-                                <img className='temp' src={temp[idx]} />
-                                <figcaption className='temp-title'>{video.description}</figcaption>
-                            </div>
+                           <Video key={video.id} video={video} idx={idx}/>
                         ))}
                     </ul>
             </>

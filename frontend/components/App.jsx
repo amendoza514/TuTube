@@ -6,6 +6,7 @@ import Modal  from '../components/Modal/modal'
 import AuthComponenetContainer from './Greeting/auth_component_container'
 import SignupComponentContainer from './Greeting/signup_component_container'
 import HomeComponentContainer from './Home/home_container'
+import VideoShowContainer from './Video/video_show_container'
 
 const App  = () => (
     <div>
@@ -14,6 +15,8 @@ const App  = () => (
         <Switch>
             <Route path="/login" component={AuthComponenetContainer} />
             <Route path="/signup" component={SignupComponentContainer} />
+            <Route path="/watch/:videoId" component={VideoShowContainer} />
+        {/* QUESTION does this need to be exact path? I'm copying react1 format */}
             <Route exact path="/" component={HomeComponentContainer} />
             <Redirect to="/" component={HomeComponentContainer} />
         </Switch>

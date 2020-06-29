@@ -11,6 +11,7 @@
 #  comment_visibility :boolean          default(TRUE), not null
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  views              :integer
 #
 require 'test_helper'
 
