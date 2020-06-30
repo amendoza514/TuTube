@@ -1,19 +1,21 @@
 .show-container {
     padding: 25px;
-    background-color: hsla(0, 0%, 96%, 1);
+    background-color: whitesmoke;
     width: -webkit-fill-available;
 }
 
 .video-content {
-        width: 82%;
-        object-fit: fill;
+    width: 70%;
+    object-fit: fill;
+    float: left;
 }
 
 .info-container {
-    width: 82%;
-    padding-top: 15px;
+    width: 68%;
+    padding-top: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid #dddddd;
+    display: flow-root;
 }
 
 .large-title {
@@ -44,7 +46,7 @@
 }
 
 .channel-info {
-    width: 82%;
+    width: 68%;
     padding-top: 15px;
     padding-bottom: 25px;
     border-bottom: 1px solid #dddddd;
@@ -65,3 +67,4 @@
     padding-top: 3px;
     line-height: inherit;
 }
+

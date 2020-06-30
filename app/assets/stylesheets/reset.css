@@ -23,6 +23,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 body {
   line-height: 1;
   color: black;
+  background-color: #f5f5f5;
 }
 ol, ul {
   list-style: none;

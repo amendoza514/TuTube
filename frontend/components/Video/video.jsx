@@ -38,8 +38,8 @@ class Video extends React.Component {
 
     titleSpan() {
         let title = this.props.video.title;
-        if (title.split('').length > 60) {
-            return title.split('').slice(0,60).join('') + '...'
+        if (title.split('').length > 65) {
+            return title.split('').slice(0,65).join('') + '...'
         } else {
             return title
         }
@@ -52,14 +52,16 @@ class Video extends React.Component {
         let span = ['days', 'weeks', 'hours', 'minutes', 'months', 'years']
         let randomTime = Math.floor(Math.random() * 24) + 1
         let randomSpan = span[Math.floor(Math.random() * span.length)];
-        let vIcon = <i class="fas fa-check-circle"></i>
+        let vIcon = <i className="fas fa-check-circle"></i>
         if (!this.props.video.user_verified) {
             vIcon = ''
         }
 
         return (
             <div>
-                <Link to={`/watch/${this.props.video.id}`}><img className='thumb' src={this.props.video.thumbUrl} /></Link>
+                <Link to={`/watch/${this.props.video.id}`}>
+                    <img className='thumb' src={this.props.video.thumbUrl} />
+                </Link>
                 <div className='title-container'>
                     <div className='user-button-video-index' style={{ backgroundColor: this.props.color }}>{this.buttonParse()}</div>
                     <Link to={`/watch/${this.props.video.id}`} className='video-title'>

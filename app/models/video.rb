@@ -23,5 +23,12 @@ class Video < ApplicationRecord
         foreign_key: :user_id,
         class_name: :User
 
-    
+    has_many :comments,
+        foreign_key: :video_id,
+        class_name: :Comment
+
+    def self.previews(id)
+        self.where.not(id: id).limit(10).shuffle
+        #active record method
+    end
 end

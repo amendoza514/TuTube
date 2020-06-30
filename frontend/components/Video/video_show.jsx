@@ -1,13 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import VideoPreview from './video_preview'
 
 class VideoShow extends React.Component {
     constructor(props) {
         super(props)
+        // this.subscribe = this.props.subscribe.bind(this)
     }
 
     componentDidMount() {
-        this.props.fetchVideo(this.props.match.params.videoId)
+        this.props.fetchVideo(this.props.match.params.videoId);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.videoId !== this.props.match.params.videoId){
+            this.props.fetchVideo(this.props.match.params.videoId);
+        }
     }
 
     usernameParse() {
@@ -32,42 +40,55 @@ class VideoShow extends React.Component {
         return s.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     }
 
+    // subscribe() {
+
+    // }
+
     render() {
-        console.dir(this.props.video)
         if (!this.props.video) return null
+
+        let span = ['days', 'weeks', 'hours', 'minutes', 'months', 'years']
+        let randomNumber = Math.floor(Math.random() * 24) + 1
+        let randomSpan = span[Math.floor(Math.random() * span.length)];
         
-        let vIcon = <i class="fas fa-check-circle"></i>
+        let vIcon = <i className="fas fa-check-circle"></i>
         if (!this.props.video.user_verified) {
-            vIcon = ''
+            vIcon = '';
         }
 
+        const previewVideos = this.props.previewIds.map(id => this.props.allVideos[id])
+        //QUESTION lost what happens here
+        console.log(this.props.video.videoUrl)
         return(
             <>
                 <div className ="show-container">
                         <video
                             className="video-content"
+                            src={this.props.video.videoUrl} type="video/mp4" 
                             autoPlay
-                            controls
-                            >
-                            <source src={this.props.video.videoUrl} type="video/mp4" />
-                            {/* <source src="https://tutube-seeds.s3-us-west-1.amazonaws.com/2012+Celtics+BIG+Playoffs+Commercial.mp4" type="video/mp4" /> */}
-                            
+                            controls>
+                            {/* <source src={this.props.video.videoUrl} type="video/mp4" /> */}
                         </video>
+                    <div className='video-playlist-container'>
+                        <span className='next-text'>Up next</span>
+                        <ul className='video-playlist'>
+                            {previewVideos.map( video => <VideoPreview video={video}/>)}
+                        </ul>
+                    </div>
                     <div className='info-container'>
                         <div className='large-title'>{this.props.video.title}</div> 
                         <div className='expanded-video-info'>
-                            <div className='video-views'>{this.viewDisplay()} views • 3 weeks ago</div>
+                            <div className='video-views'>{this.viewDisplay()} views • {randomNumber} {randomSpan} ago</div>
+                            {/* UPDATE WEEKS AGO REFERENCE */}
                         </div>
                     </div>
                     <div className='channel-info'>
                         <div className='user-button-video-show' style={{ backgroundColor: this.props.video.userColor }}>{this.buttonParse()}</div>
                         <div className='video-creator'>{this.usernameParse()} {vIcon}</div>
-                        <div className='sub-count'>67.4K subscribers</div>
+                        <div className='sub-count'>{randomNumber}.4K subscribers</div>
+                        {/* <div className='sub-button' onClick={subscribe()}></div> */}
                     </div>
                 </div>
-                
-                {/* {this.props.video.description} */}
-                {/* {this.props.video.user} */}
             </>
         ) 
     }
