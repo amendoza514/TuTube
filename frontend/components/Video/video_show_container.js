@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     let vid = state.entities.videos[ownProps.match.params.videoId]
     return { 
       video: vid,
+      comments: Object.values(state.entities.comments),
       allVideos: state.entities.videos,
       previewIds: vid ? (vid.preview_ids ? vid.preview_ids : []) : []
   }

@@ -4,3 +4,4 @@ json.thumbUrl url_for(video.thumbnail) if video.thumbnail.attached?
 json.user video.user.email
 json.userColor video.user.icon_color
 json.user_verified video.user.verified
+

@@ -5,17 +5,5 @@ class Api::CommentsControllerTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
 
-  def create 
-  end
-
-  def update 
-  end
-
-  def destroy 
-  end
-
-  def comment_params 
-    params.require(:comment).permit(:content)  
-  end
 
 end

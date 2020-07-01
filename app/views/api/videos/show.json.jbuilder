@@ -12,6 +12,15 @@ json.video do
         json.preview_ids preview_ids
 end
 
+json.comments do 
+        @video.comments.each do |comment|
+                json.set! comment.id do 
+                       json.extract!  comment, :content, :user_id, :video_id
+                       json.user comment.user
+                end
+        end
+end
+
 json.previews Video.previews(@video.id).map do |video|
                 json.extract! video, :id, :title, :description, :user_id, :category, :tags, :views
                 json.videoUrl url_for(video.video) if video.video.attached?

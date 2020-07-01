@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import VideoPreview from './video_preview'
+import CommentIndexContainer from '../Comment/comment_index_container'
 
 class VideoShow extends React.Component {
     constructor(props) {
@@ -67,7 +68,6 @@ class VideoShow extends React.Component {
                             src={this.props.video.videoUrl} type="video/mp4" 
                             autoPlay
                             controls>
-                            {/* <source src={this.props.video.videoUrl} type="video/mp4" /> */}
                         </video>
                     <div className='video-playlist-container'>
                         <span className='next-text'>Up next</span>
@@ -88,6 +88,7 @@ class VideoShow extends React.Component {
                         <div className='sub-count'>{randomNumber}.4K subscribers</div>
                         {/* <div className='sub-button' onClick={subscribe()}></div> */}
                     </div>
+                    <CommentIndexContainer />
                 </div>
             </>
         ) 
