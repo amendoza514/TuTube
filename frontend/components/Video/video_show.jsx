@@ -6,8 +6,21 @@ import CommentIndexContainer from '../Comment/comment_index_container'
 class VideoShow extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {subscribe: false}
+        this.state = {subscribe: false, textToggle: false}
         this.subscribed = this.subscribed.bind(this) 
+        this.textToggle = this.textToggle.bind(this)
+    }
+
+    textToggle() {
+        this.setState({ textToggle: !this.state.textToggle })
+    }
+
+    textReducer() {
+        if (this.props.video.description.length > 300){
+            return this.props.video.description.slice(0,300) + '...'
+        } else {
+            return this.props.video.description
+        }
     }
 
     componentDidMount() {
@@ -45,7 +58,7 @@ class VideoShow extends React.Component {
     subscribed() {
         this.setState({ subscribe: !this.state.subscribe })
         if (!this.state.subscribe){
-            alert("Subscribed! I promise")
+            alert(`Subscribed to ${this.usernameParse()}`)
         } else {
             alert('No worries, you werent subscribed to begin with')
         }
@@ -53,6 +66,19 @@ class VideoShow extends React.Component {
 
     render() {
         if (!this.props.video) return null
+
+        let toggler;
+        let expandText;
+        if (!this.state.textToggle && this.props.video.description.length > 300) {
+            toggler = this.textReducer()
+            expandText = 'SHOW MORE'
+        } else if (this.props.video.description.length <= 300) {
+            toggler = this.props.video.description
+            expandText = ''
+        } else if (this.state.textToggle) {
+            toggler = this.props.video.description
+            expandText = 'SHOW LESS'
+        }
 
         let span = ['days', 'weeks', 'hours', 'minutes', 'months', 'years']
         let randomNumber = Math.floor(Math.random() * 24) + 1
@@ -101,6 +127,8 @@ class VideoShow extends React.Component {
                         <div className='user-button-video-show' style={{ backgroundColor: this.props.video.userColor }}>{this.buttonParse()}</div>
                         <div className='video-creator'>{this.usernameParse()} {vIcon}</div>
                         <div className='sub-count'>{randomNumber}.4K subscribers</div>
+                        <div className='video-description'>{toggler}</div>
+                        <div className='expand-button' onClick={this.textToggle}>{expandText}</div>
                         {/* <div className='sub-button' onClick={subscribe()}></div> */}
                     </div>
                     <CommentIndexContainer />

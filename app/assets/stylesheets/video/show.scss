@@ -19,7 +19,7 @@
 }
 
 .large-title {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bolder;
 }
 
@@ -50,7 +50,13 @@
     padding-top: 15px;
     padding-bottom: 25px;
     border-bottom: 1px solid #dddddd;
-    height: 38px;
+    height: auto;
+}
+
+.video-description {
+    font-size: 14px;
+    margin-left: 63px;
+    line-height: 1.5;
 }
 
 .subscribe_button{
@@ -80,14 +86,43 @@
 }
 
 .unsubscribed_button:active{
-
     background-color: #ea4335;
-  
+}
+
+.comments-text {
+    display: inline-block;
+    margin-left: 7px;
+    font-size: 15px;
+}
+
+.expand-button {
+    font-size: 14px;
+    font-weight: 900;
+    padding-bottom: 1px;
+    margin-top: 15px;
+    margin-left: 60px;
+    font-weight: 900;
+    color: #5e5e5e;
+    cursor: pointer;
+}
+
+.sort-icon {
+    display: inline-block;
+    margin-left: 19px;
+    font-size: 15px;
+    color: #5f5f5f;
+    font-weight: 900;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.sort-icon:active {
+    background-color: #c1c0c0;
 }
 
 .video-creator {
     display: inline-flex;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 900;
     padding-bottom: 1px;
 }
