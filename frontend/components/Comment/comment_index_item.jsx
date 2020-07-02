@@ -89,6 +89,8 @@ class CommentIndexItem extends React.Component {
                     <div className={toggleClass} onClick={this.toggleMenu}>{optionsText}</div>
                     <div className='comment-creator'>{this.usernameParse()}&nbsp;&nbsp;<div className='comment-date'>{this.props.comment.createdAt }</div></div>
                 <div className='comment' >{this.props.comment.content}</div>
+                    <div className='comment-like-button'><i className="fas fa-thumbs-up"></i></div>
+                    <div className='comment-dislike-button'><i className="fas fa-thumbs-down"></i></div>
             </div>
             </>
         )

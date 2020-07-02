@@ -8,7 +8,7 @@
 
 .comment-cluster {
     margin-top: 40px;
-    margin-bottom: 45px;
+    margin-bottom: 65px;
 }
 
 .comment {
@@ -148,11 +148,11 @@ display: none;
     padding-bottom: 19px;
     box-shadow: 0.5px 0.5px 0.5px 1px #909090;
     border-radius: 5px;
-    background-color: #e6dede;
+    background-color: #fbfbfb;
     border: -2.5px solid gray;
 }
 .comment-options-type:hover {
-    background-color: #c4c1c1;
+    background-color: #dcdcdc;
 
 }
 .comment-options-type:active{
@@ -192,6 +192,33 @@ display: none;
     display: none;
 }
 
+
+.comment-like-button {
+color: #8f908f;
+    float: left;
+    /* margin-bottom: -19px; */
+    margin-left: 3px;
+    margin-right: 34px;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.comment-dislike-button {
+    color: #8f908f;
+    float: left;
+    margin-bottom: -16px;
+    margin-right: 55px;
+    padding-top: 23px;
+    cursor: pointer;
+}
+
+.comment-like-button:hover, .comment-dislike-button:hover {
+        color: #6f6f6f;
+}
+
+.comment-like-button:active, .comment-dislike-button:active {
+        color: #454545;
+}
 
 
 @keyframes fadeIn {

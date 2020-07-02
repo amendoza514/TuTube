@@ -2,6 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 class Video extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {hover: false}
+        this.videoPreview = this.videoPreview.bind(this)
+        this.videoClose = this.videoClose.bind(this);
+
+    }
 
     usernameParse() {
         let s = this.props.video.user;
@@ -36,6 +43,14 @@ class Video extends React.Component {
         }
     }
 
+    videoPreview() {
+        setTimeout(() => this.setState({ hover: true }), 500)
+    }
+
+    videoClose() {
+        this.setState({ hover: false })
+    }
+
     titleSpan() {
         let title = this.props.video.title;
         if (title.split('').length > 65) {
@@ -57,10 +72,23 @@ class Video extends React.Component {
             vIcon = ''
         }
 
+        let visual = <img className='thumb' src={this.props.video.thumbUrl} />
+        if (this.state.hover) {
+            visual =
+                <video
+                    className='thumb'
+                    src={this.props.video.videoUrl} type="video/mp4"
+                    autoPlay
+                    muted
+                >
+                </video>
+        }
+
         return (
             <div>
-                <Link to={`/watch/${this.props.video.id}`}>
-                    <img className='thumb' src={this.props.video.thumbUrl} />
+                <Link to={`/watch/${this.props.video.id}`} onMouseEnter={this.videoPreview} onMouseLeave={this.videoClose}>
+                    {visual}
+                    {/* <img className='thumb' src={this.props.video.thumbUrl} /> */}
                 </Link>
                 <div className='title-container'>
                     <div className='user-button-video-index' style={{ backgroundColor: this.props.color }}>{this.buttonParse()}</div>

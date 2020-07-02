@@ -5,7 +5,8 @@ class VideoPreview extends React.Component {
     constructor(props) {
         super(props)
         this.state = {hover: false};
-        this.videoPreview = this.videoPreview.bind(this)
+        this.videoPreview = this.videoPreview.bind(this);
+        this.videoClose = this.videoClose.bind(this);
     }
 
     usernameParse() {
@@ -52,7 +53,11 @@ class VideoPreview extends React.Component {
     }
 
     videoPreview() {
-        this.setState({ hover: !this.state.hover })
+        setTimeout(() => this.setState({ hover: true }) , 500)
+    }
+
+    videoClose() {
+        this.setState({hover: false})
     }
 
     render() {
@@ -66,9 +71,9 @@ class VideoPreview extends React.Component {
         }
 
 
-        let test = <img className='small-thumb' src={this.props.video.thumbUrl} />
+        let visual = <img className='small-thumb' src={this.props.video.thumbUrl} />
         if (this.state.hover) {
-            test =
+            visual =
         <video
             className='small-thumb'
             src={this.props.video.videoUrl} type="video/mp4"
@@ -82,9 +87,9 @@ class VideoPreview extends React.Component {
 
 
                 < div >
-                    <div onMouseEnter={this.videoPreview} onMouseLeave={this.videoPreview}> 
+                    <div onMouseEnter={this.videoPreview} onMouseLeave={this.videoClose}> 
                         <Link to={`/watch/${this.props.video.id}`}  >
-                            {test}
+                            {visual}
 
                             <div className='preview-title'>{this.titleSpan()}</div>
                             <div className='preview-title'>{this.titleSpan()}</div>

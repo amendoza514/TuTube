@@ -30,6 +30,52 @@
     line-height: normal;
 }
 
+.like-button {
+    color: #8f908f;
+    float: right;
+    margin-bottom: -16px;
+    margin-right: 55px;
+    font-size: 18px;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.dislike-button {
+color: #8f908f;
+    float: right;
+    margin-bottom: -16px;
+    margin-right: 52px;
+    font-size: 18px;
+    padding-top: 23px;
+    cursor: pointer;
+}
+
+.share-button {
+color: #8f908f;
+    float: right;
+    margin-bottom: -16px;
+    font-size: 18px;
+    padding-top: 23px;
+    cursor: pointer;
+}
+
+.share-text {
+    font-size: 14px;
+        font-size: 14px;
+    float: right;
+    margin-top: 1px;
+    padding-left: 2px;
+}
+
+
+.dislike-button:hover, .like-button:hover, .share-button:hover {
+    color: #686868;
+}
+.dislike-button:active, .like-button:active, .share-button:hover {
+    color: #4f4f4f;
+}
+
+
 .user-button-video-show {
     display: flex;
     justify-content: center;
@@ -134,4 +180,5 @@
     padding-top: 3px;
     line-height: inherit;
 }
+
 

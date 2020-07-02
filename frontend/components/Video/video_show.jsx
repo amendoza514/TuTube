@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import VideoPreview from './video_preview'
 import CommentIndexContainer from '../Comment/comment_index_container'
 
@@ -119,6 +118,9 @@ class VideoShow extends React.Component {
                     <div className='info-container'>
                         <div className='large-title'>{this.props.video.title}</div> 
                         <div className='expanded-video-info'>
+                            <div className='share-button'><i className="fas fa-share"></i><div className='share-text'>&nbsp;&nbsp;SHARE</div></div>
+                            <div className='dislike-button'><i className="fas fa-thumbs-down"></i></div>
+                            <div className='like-button'><i className="fas fa-thumbs-up"></i></div>
                             <div className='video-views'>{this.viewDisplay()} views • {randomNumber} {randomSpan} ago</div>
                             {/* UPDATE WEEKS AGO REFERENCE */}
                         </div>
@@ -130,7 +132,6 @@ class VideoShow extends React.Component {
                         <div className='sub-count'>{randomNumber}.4K subscribers</div>
                         <div className='video-description'>{toggler}</div>
                         <div className='expand-button' onClick={this.textToggle}>{expandText}</div>
-                        {/* <div className='sub-button' onClick={subscribe()}></div> */}
                     </div>
                     <CommentIndexContainer />
                 </div>
