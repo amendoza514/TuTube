@@ -75,5 +75,5 @@ class VideoPreview extends React.Component {
         )
     }
 }
-
+//FIX seperate link within link
 export default VideoPreview

@@ -53,6 +53,38 @@
     height: 38px;
 }
 
+.subscribe_button{
+    float: right;
+    padding: 9px;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 13px;
+    color: #5f5f5f;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.unsubscribed_button{
+    float: right;
+    padding: 9px;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 13px;
+    color: white;
+    background-color: #d6261bed;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.unsubscribed_button:active{
+
+    background-color: #ea4335;
+  
+}
+
 .video-creator {
     display: inline-flex;
     font-size: 15px;

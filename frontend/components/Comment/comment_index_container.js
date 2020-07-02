@@ -1,18 +1,17 @@
 import CommentIndex from './comment_index'
 import { connect } from 'react-redux';
-// import { fetchVideo } from '../../actions/video_actions'
+import { withRouter } from 'react-router'
+import { createComment, updateComment, deleteComment } from '../../actions/comment_actions'
 
-const mapStateToProps = (state, ownProps) => {
-    let user = state.entities.users[state.session.id]
-    return {
+const mapStateToProps = (state, ownProps) => ({
     comments: Object.values(state.entities.comments),
-    currentUser: user? user : []
-    //   previewIds: vid ? (vid.preview_ids ? vid.preview_ids : []) : []
- }
-};
+    currentUser: state.entities.users[state.session.id]
+});
 
-// const mapDispatchToProps = dispatch => ({
-//     fetchVideo: (videoId) => dispatch(fetchVideo(videoId))
-// });
+const mapDispatchToProps = dispatch => ({
+    createComment: (comment) => dispatch(createComment(comment)),
+    deleteComment: (commentId) => dispatch(deleteComment(commentId)),
+    updateComment: (comment) => dispatch(updateComment(comment))
+});
 
-export default connect(mapStateToProps, null)(CommentIndex)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentIndex))

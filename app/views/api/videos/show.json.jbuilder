@@ -15,8 +15,10 @@ end
 json.comments do 
         @video.comments.each do |comment|
                 json.set! comment.id do 
-                       json.extract!  comment, :content, :user_id, :video_id
-                       json.user comment.user
+                       json.extract!  comment, :content, :user_id, :video_id, :id
+                       json.user comment.user.email
+                       json.userColor comment.user.icon_color
+                       json.createdAt comment.created_at.strftime("%d %b %Y")
                 end
         end
 end

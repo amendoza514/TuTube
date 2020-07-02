@@ -6,7 +6,8 @@ import CommentIndexContainer from '../Comment/comment_index_container'
 class VideoShow extends React.Component {
     constructor(props) {
         super(props)
-        // this.subscribe = this.props.subscribe.bind(this)
+        this.state = {subscribe: false}
+        this.subscribed = this.subscribed.bind(this) 
     }
 
     componentDidMount() {
@@ -41,9 +42,14 @@ class VideoShow extends React.Component {
         return s.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     }
 
-    // subscribe() {
-
-    // }
+    subscribed() {
+        this.setState({ subscribe: !this.state.subscribe })
+        if (!this.state.subscribe){
+            alert("Subscribed! I promise")
+        } else {
+            alert('No worries, you werent subscribed to begin with')
+        }
+    }
 
     render() {
         if (!this.props.video) return null
@@ -60,6 +66,14 @@ class VideoShow extends React.Component {
         const previewVideos = this.props.previewIds.map(id => this.props.allVideos[id])
         //QUESTION lost what happens here
         console.log(this.props.video.videoUrl)
+
+        let subClass = 'unsubscribed_button';
+        let subText = 'SUBSCRIBE'
+        if (this.state.subscribe) {
+            subClass = 'subscribe_button'
+            subText = 'SUBSCRIBED'
+        }
+
         return(
             <>
                 <div className ="show-container">
@@ -83,6 +97,7 @@ class VideoShow extends React.Component {
                         </div>
                     </div>
                     <div className='channel-info'>
+                       <div className={subClass} onClick={this.subscribed}>{subText}</div>
                         <div className='user-button-video-show' style={{ backgroundColor: this.props.video.userColor }}>{this.buttonParse()}</div>
                         <div className='video-creator'>{this.usernameParse()} {vIcon}</div>
                         <div className='sub-count'>{randomNumber}.4K subscribers</div>
