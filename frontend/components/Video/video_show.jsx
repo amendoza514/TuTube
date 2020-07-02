@@ -107,7 +107,8 @@ class VideoShow extends React.Component {
                             className="video-content"
                             src={this.props.video.videoUrl} type="video/mp4" 
                             autoPlay
-                            controls>
+                            controls
+                            >
                         </video>
                     <div className='video-playlist-container'>
                         <span className='next-text'>Up next</span>

@@ -121,6 +121,8 @@ display: none;
 
 .comment-options-type {
     display: flex;
+    height: 100%;
+    width: 100%;
 }
 
 .options-dropdown{
@@ -136,17 +138,24 @@ display: none;
     box-shadow: 0px 1px 3px -1px;
     border-radius: 4px;
     font-weight: 400;
-    padding-top: 19px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 19px;
     cursor: pointer;
 }
-.options-dropdown:hover{
-    background-color: #c4c1c1;
-}
 
-.options-dropdown:active{
+.comment-options-type {
+    padding-top: 19px;
+    padding-left: 25px;
+    padding-right: 5px;
+    padding-bottom: 19px;
+    box-shadow: 0.5px 0.5px 0.5px 1px #909090;
+    border-radius: 5px;
+    background-color: #e6dede;
+    border: -2.5px solid gray;
+}
+.comment-options-type:hover {
+    background-color: #c4c1c1;
+
+}
+.comment-options-type:active{
     background-color: rgb(164, 161, 161);
 }
 

@@ -65,9 +65,9 @@ class CommentIndexItem extends React.Component {
 
         } else {
             optionsText = 
-                <div className="comment-options-type" >
+                <div className="comment-options-type" onClick={this.toggleReport}>
                     <i className="fas fa-flag"></i>
-                    <div onClick={this.toggleReport}>&nbsp;&nbsp;Report</div>
+                    <div >&nbsp;&nbsp;Report</div>
                 </div>
         }
 

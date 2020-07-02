@@ -18,7 +18,7 @@ class CommentForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const comment = { content: this.state.content, user_id: this.props.currentUser.id, video_id: this.props.currentVideo }
-        this.props.createComment(comment).then(this.setState({ content: '' }))
+        this.props.createComment(comment).then(() => this.setState({ content: '', selected: false}))
     
     }
 
@@ -35,7 +35,7 @@ class CommentForm extends React.Component {
 
     toggle() {
         //prevProps, look up why I'm approaching this incorrectly
-       this.setState({ selected: !this.state.selected})
+       this.setState({ selected: true})
     }
 
     render() {
@@ -62,9 +62,9 @@ class CommentForm extends React.Component {
                         onChange={this.handleInput('content')}
                         value={this.state.content}
                     />
-                    <div className={toggleClass}>
-                        <button id='comment-submit-button' onClick={this.handleSubmit}>COMMENT</button>
-                    <button id='comment-cancel-button' onClick={this.toggle} >CANCEL</button>
+                <div className={toggleClass} >
+                    <button id='comment-submit-button' onClick={this.handleSubmit} >COMMENT</button>
+                    <button id='comment-cancel-button' onClick={() => this.setState({selected: false, content: ''})}>CANCEL</button>
                     </div>
                 </form>
         }

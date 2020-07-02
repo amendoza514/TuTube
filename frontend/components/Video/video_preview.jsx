@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 class VideoPreview extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {hover: false};
+        this.videoPreview = this.videoPreview.bind(this)
     }
 
     usernameParse() {
@@ -49,6 +51,10 @@ class VideoPreview extends React.Component {
         }
     }
 
+    videoPreview() {
+        this.setState({ hover: !this.state.hover })
+    }
+
     render() {
         let span = ['days', 'weeks', 'hours', 'minutes', 'months', 'years']
         let randomNumber = Math.floor(Math.random() * 24) + 1
@@ -59,14 +65,28 @@ class VideoPreview extends React.Component {
             vIcon = '';
         }
 
+
+        let test = <img className='small-thumb' src={this.props.video.thumbUrl} />
+        if (this.state.hover) {
+            test =
+        <video
+            className='small-thumb'
+            src={this.props.video.videoUrl} type="video/mp4"
+            autoPlay
+            muted
+        >
+        </video>
+        }
         return (
             <>
 
 
                 < div >
-                    <div>
+                    <div onMouseEnter={this.videoPreview} onMouseLeave={this.videoPreview}> 
                         <Link to={`/watch/${this.props.video.id}`}  >
-                            <img className='small-thumb' src={this.props.video.thumbUrl} />
+                            {test}
+
+                            <div className='preview-title'>{this.titleSpan()}</div>
                             <div className='preview-title'>{this.titleSpan()}</div>
                        
                         {/* <Link to={`/watch/${this.props.video.id}`} className='preview-title'>
