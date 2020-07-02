@@ -112,7 +112,7 @@ class VideoShow extends React.Component {
                     <div className='video-playlist-container'>
                         <span className='next-text'>Up next</span>
                         <ul className='video-playlist'>
-                            {previewVideos.map( video => <VideoPreview video={video}/>)}
+                            {previewVideos.map((video, idx)=> <VideoPreview key={ idx }  video={video}/>)}
                         </ul>
                     </div>
                     <div className='info-container'>

@@ -59,14 +59,14 @@ class CommentIndexItem extends React.Component {
         if ((this.props.currentUser) && (this.props.currentUser.id === this.props.comment.user_id)) {
             optionsText = 
                 <div className="comment-options-type" onClick={this.handleDelete}>
-                    <i class="fas fa-trash-alt"></i>
+                    <i className="fas fa-trash-alt"></i>
                     <div >&nbsp;&nbsp;Delete</div>
                 </div>
 
         } else {
             optionsText = 
                 <div className="comment-options-type" >
-                    <i class="fas fa-flag"></i>
+                    <i className="fas fa-flag"></i>
                     <div onClick={this.toggleReport}>&nbsp;&nbsp;Report</div>
                 </div>
         }

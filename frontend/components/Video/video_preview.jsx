@@ -61,19 +61,54 @@ class VideoPreview extends React.Component {
 
         return (
             <>
-                <div>
-                    <Link to={`/watch/${this.props.video.id}`}  >
-                        <img className='small-thumb' src={this.props.video.thumbUrl} />
-                        <Link to={`/watch/${this.props.video.id}`} className='preview-title'>
+
+
+                < div >
+                    <div>
+                        <Link to={`/watch/${this.props.video.id}`}  >
+                            <img className='small-thumb' src={this.props.video.thumbUrl} />
+                            <div className='preview-title'>{this.titleSpan()}</div>
+                       
+                        {/* <Link to={`/watch/${this.props.video.id}`} className='preview-title'>
                             {this.titleSpan()}
-                        </Link>
-                    </Link>
-                        <div className='preview-creator'>{this.usernameParse()} {vIcon}</div>
-                        <div className='preview-views'>{this.viewCounter()} views • {randomNumber} {randomSpan} ago</div>
-                </div>
+                        </Link> */}
+                    
+                    <div className='preview-creator'>{this.usernameParse()} {vIcon}</div>
+                    <div className='preview-views'>{this.viewCounter()} views • {randomNumber} {randomSpan} ago</div>
+                     </Link>
+                    </div>
+                </div >
+                
             </>
         )
     }
 }
 //FIX seperate link within link
 export default VideoPreview
+
+
+    // < div >
+    // <div>
+    //     <Link to={`/watch/${this.props.video.id}`}  >
+    //         <img className='small-thumb' src={this.props.video.thumbUrl} />
+    //     </Link>
+    //     <Link to={`/watch/${this.props.video.id}`} className='preview-title'>
+    //         {this.titleSpan()}
+    //     </Link>
+    // </div>
+    // <div className='preview-creator'>{this.usernameParse()} {vIcon}</div>
+    // <div className='preview-views'>{this.viewCounter()} views • {randomNumber} {randomSpan} ago</div>
+    //             </div >
+
+
+    // < div >
+    // <div></div>
+    // <Link to={`/watch/${this.props.video.id}`}  >
+    //     <img className='small-thumb' src={this.props.video.thumbUrl} />
+    //     <Link to={`/watch/${this.props.video.id}`} className='preview-title'>
+    //         {this.titleSpan()}
+    //     </Link>
+    // </Link>
+    // <div className='preview-creator'>{this.usernameParse()} {vIcon}</div>
+    // <div className='preview-views'>{this.viewCounter()} views • {randomNumber} {randomSpan} ago</div>
+    //             </div >
