@@ -44,7 +44,8 @@ class Video extends React.Component {
     }
 
     videoPreview() {
-        setTimeout(() => this.setState({ hover: true }), 500)
+        this.setState({ hover: true })
+        // setTimeout(() => this.setState({ hover: true }), 500)
     }
 
     videoClose() {

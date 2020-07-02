@@ -13,6 +13,17 @@
     cursor: pointer;
     margin: 10px;
     object-fit: cover;
+   animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: .5;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .user-button-video-index {
