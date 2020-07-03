@@ -13,7 +13,7 @@ Comment.destroy_all
 
 user1 = User.create!(email: "king_james@gmail.com", password:"123456", verified: true, icon_color: '#6a0dad')
 user2 = User.create!(email: "russel_3x2@gmail.com", password:"123456", verified: true, icon_color: '#FF4500')
-user3 = User.create!(email: "mamba_mentality@gmail.com", password:"123456", verified: true, icon_color: '#DAA520')
+user3 = User.create!(email: "metta_world_peace@gmail.com", password:"123456", verified: true, icon_color: '#DAA520')
 user4 = User.create!(email: "boston_sportz@gmail.com", password:"123456", verified: true, icon_color: '#008000')
 user5 = User.create!(email: "demo_user@gmail.com", password:"123456", verified: false, icon_color: '#1fc5c5')
 user6 = User.create!(email: "big_fundamental@gmail.com", password:"123456", verified: true, icon_color: '#000000')
@@ -70,6 +70,11 @@ And I yelled to the cabbie 'Yo homes smell ya later'
 I looked at my kingdom
 I was finally there
 To sit on my throne as the Prince of Bel Air", category: "History", tags:["dallas", "nba", "mavs?"], comment_visibility: true)
+videoInfo10 = Video.create!(user_id: user6.id, views: 34578, title:"Manu: 1  Bat: 0", description:"San Antonio is a major city in south-central Texas with a rich colonial heritage. The Alamo, an 18th-century Spanish mission preserved as a museum, marks an infamous 1836 battle for Texan independence from Mexico. Following the San Antonio River, the miles-long River Walk is a landmark pedestrian promenade lined with cafes and shops. HemisFair Park’s 750-ft. Tower of the Americas overlooks the city.", category: "Animals", tags:["bats", "nba"], comment_visibility: true)
+videoInfo11 = Video.create!(user_id: user1.id, views: 232323, title:"Zhuri: 'TACO TUESDAY'", description:"WHAT IS IT...TACO TUE...SIKE", category: "Food", tags:["tacos", "lebron"], comment_visibility: true)
+videoInfo12 = Video.create!(user_id: user1.id, views: 23, title:"MIAMI HEAT HARLAM SHAKE", description:"doo doo doo do dooo, doo doo do doo do do doo, doo doo doo dooo", category: "Dance", tags:["harlem", "heat"], comment_visibility: true)
+
+
 
 videoFile1 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/2012+Celtics+BIG+Playoffs+Commercial.mp4')
 thumbFile1 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/celtics2.jpg')
@@ -116,9 +121,46 @@ videoInfo8.video.attach(io: videoFile8, filename: 'dallas.mp4')
 thumbFile8 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/mavs_ap.jpg')
 videoInfo8.thumbnail.attach(io: thumbFile8, filename: 'dallas.jpg')
 
-comment1 = Comment.create!(user_id: user1.id, video_id: videoInfo1.id, content: "PLEASE WORK, PLEASE")
+videoFile10 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/Manu+Ginobili+versus+The+Bat.mp4')
+videoInfo10.video.attach(io: videoFile10, filename: 'bats.mp4')
+thumbFile10 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/images.jpg')
+videoInfo10.thumbnail.attach(io: thumbFile10, filename: 'bats.jpg')
 
-comment2 = Comment.create!(user_id: user2.id, video_id: videoInfo1.id, content: "DID IT WORK?")
+videoFile11 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/The+Taco+Tuesday+Song+ft.+LeBron+James.mp4')
+videoInfo11.video.attach(io: videoFile11, filename: 'taco.mp4')
+thumbFile11 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/taco.jpg')
+videoInfo11.thumbnail.attach(io: thumbFile11, filename: 'taco.jpg')
 
-comment3 = Comment.create!(user_id: user3.id, video_id: videoInfo5.id, content: "PLEASE DONT SHOW")
+videoFile12 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/Harlem+Shake+Miami+Heat+Edition.mp4')
+videoInfo12.video.attach(io: videoFile12, filename: 'harlem.mp4')
+thumbFile12 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/harlem.jpg')
+videoInfo12.thumbnail.attach(io: thumbFile12, filename: 'harlem.jpg')
+
+
+comment1 = Comment.create!(user_id: user3.id, video_id: videoInfo1.id, content: "One ring in the past 30 years and you all act like this smh")
+comment2 = Comment.create!(user_id: user4.id, video_id: videoInfo1.id, content: "ANYTHING IS POSSIBLEEEEEEEEE")
+comment3 = Comment.create!(user_id: user1.id, video_id: videoInfo1.id, content: "LOL remember when I beat the celtics so many times they gave up and became the nets")
+
+
+comment4 = Comment.create!(user_id: user1.id, video_id: videoInfo11.id, content: "WHAT IS IT")
+comment5 = Comment.create!(user_id: user1.id, video_id: videoInfo11.id, content: "SIKE")
+comment6 = Comment.create!(user_id: user1.id, video_id: videoInfo12.id, content: "Looking back, DWade should have probably been resting his knees")
+comment7 = Comment.create!(user_id: user1.id, video_id: videoInfo5.id, content: "FUN FACT: My career average is a 27/7/7, but in 17 years Ive never had a stat line of 27/7/7 in-game")
+comment8 = Comment.create!(user_id: user1.id, video_id: videoInfo7.id, content: "FUN FACT: In the 2016 NBA Finals I averaged the most points, rebounds, assists, blocks, and steals between both teams")
+
+comment9 = Comment.create!(user_id: user6.id, video_id: videoInfo5.id, content: "Keeping the ball high after a rebound is crucial for any low-post game")
+comment10 = Comment.create!(user_id: user6.id, video_id: videoInfo5.id, content: "Remember, a solid chest pass will always beat a flashy behind the back pass. Keep it straight forward and simple, I always say")
+comment11 = Comment.create!(user_id: user6.id, video_id: videoInfo9.id, content: "Make sure to keep paper copies of your important documents in one place, in case of a fire! #evacuationPreparedness #fundamentalsOnAndOffTheCourt")
+comment12 = Comment.create!(user_id: user8.id, video_id: videoInfo10.id, content: "BUT CAN HE BE TRUSTED")
+comment13 = Comment.create!(user_id: user9.id, video_id: videoInfo10.id, content: "WHERE'S POPOVICH, WHERE IS HE")
+comment14 = Comment.create!(user_id: user2.id, video_id: videoInfo2.id, content: "snakes in the grass...")
+
+
+
+comment15 = Comment.create!(user_id: user2.id, video_id: videoInfo1.id, content: "GIVE THIS COMMENT AT LEAST 10 LIKES LETS GO")
+
+comment16 = Comment.create!(user_id: user3.id, video_id: videoInfo2.id, content: "Why this song tho")
+
+comment16 = Comment.create!(user_id: user1.id, video_id: videoInfo7.id, content: "Just rip the sleeves off")
+
 
