@@ -1,24 +1,69 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## TuTube
 
-Things you may want to cover:
+TuTube is a Youtube clone that aims to incoporate all commonly associated features and aesthetic design for use in real time. TuTube allows users to engage with demo content in the same way they would with YouTube, including: comments, likes, and subscribes. A video upload component (located in the header or in user profile if selected) allows users to share their own content as well, including the ability to upload their own personal videos, video thumbnails, and user icons (will otherwise default to username slice).
 
-* Ruby version
+## Technologies Used
 
-* System dependencies
+### Hosting 
 
-* Configuration
+• Heroku
 
-* Database creation
+• AWS S3
 
-* Database initialization
+### Backend 
 
-* How to run the test suite
+• PostgreSQL
 
-* Services (job queues, cache servers, search engines, etc.)
+• Ruby on Rails
 
-* Deployment instructions
+### Frontend 
 
-* ...
+• Javascript
+
+• React / Redux
+
+• CSS/SCSS
+
+• JQuery
+
+## Core Features
+
+### User Authentication
+• Custom errors and backend validations for invalid login/signup credentials 
+
+• Demo account login allows users to bypass signup process and dive straight into TuTube
+
+### Main Index/Home
+• Embedded video preview mimicks user interactivity on YouTube
+
+### Video Show
+• Standard video player options allow for users to select from floating Picture-in-Picture option or full screen
+
+• Full video playlist on righthand side of screen shuffles newer content, complete with video preview playback
+
+• Logged in users can submit, review and delete messages posted to a video show page (as well as report non-user submitted videos to be stored)
+
+## Future Updates
+
+• Likes (videos, comments and replies)
+
+• Comment replies
+
+• Subscribes
+
+• Search bar feature
+
+• Message sorting options
+
+• User profile page with subcribed content section
+
+• Dark mode!
+
+• Video Upload, thumbnail upload and user profile thumbnail upload
+
+• Infinite scroll (need to add more videos first!)
+
+
+
