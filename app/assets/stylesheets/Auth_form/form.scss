@@ -122,6 +122,10 @@ input[type=text]:focus, input[type=password]:focus{
     background-color: #3882e3;
 }
 
+#demo-button:active {
+    background: #2468c1;
+}
+
 .action-buttons {
     display: flex;
     font-size: 15px;
@@ -206,24 +210,26 @@ input[type=text]:focus, input[type=password]:focus{
 
 #submit-button {
     display: flex;
-    align-self: flex-end;
     margin-left: 80px;
     font-size: 15px;
-    border-radius: 3px;
     width: 100px;
     height: 45px;
-    padding-left: 22px;
-    box-sizing: border-box;
     margin-top: 15px;
     color: white;
     background-color: #1a73e8;
+    border: #1a73e8;
     border-radius: 3px;
     cursor: pointer;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
 }
 
 #submit-button:hover {
     background: #3882e3;
+}
+
+#submit-button:active {
+    background: #2468c1;
 }
 
 #signup-form-button {
@@ -241,6 +247,14 @@ input[type=text]:focus, input[type=password]:focus{
     color: #1a73e8;
 }
 
+#signup-form-button:hover {
+    color: #3882e3;
+}
+
+#signup-form-button:active {
+    color: #2468c1;
+}
+
 #create-account-form-button {
   display: flex;
     align-self: flex-start;
@@ -254,6 +268,14 @@ input[type=text]:focus, input[type=password]:focus{
     cursor: pointer;
     margin-top: 18px;
     color: #1a73e8;
+}
+
+#create-account-form-button:hover {
+    color: #3882e3;
+}
+
+#create-account-form-button:active {
+    color: #2468c1;
 }
 
 

@@ -10,6 +10,7 @@
 #hamburger-icon {
     display: flex;
     cursor: pointer;
+    background-color: white;
     border-style: none;
     position: absolute;
     margin: 1px;
@@ -74,10 +75,12 @@ cursor: pointer;
     border-left: none;
     position: absolute;
     margin-right: -60px;
+    border: 1px solid rgb(193, 191, 191);    
+
 }
 
 #search-button:hover {
-    border: 1px solid rgb(193, 191, 191);    
+    background-color: #d0cfcf;    
 }
 
 #search-button:active {

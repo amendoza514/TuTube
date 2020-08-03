@@ -126,10 +126,10 @@ videoInfo10.video.attach(io: videoFile10, filename: 'bats.mp4')
 thumbFile10 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/images.jpg')
 videoInfo10.thumbnail.attach(io: thumbFile10, filename: 'bats.jpg')
 
-videoFile11 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/The+Taco+Tuesday+Song+ft.+LeBron+James.mp4')
+videoFile11 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/tacotuesday.mp4')
 videoInfo11.video.attach(io: videoFile11, filename: 'taco.mp4')
 thumbFile11 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/taco.jpg')
-videoInfo11.thumbnail.attach(io: thumbFile11, filename: 'taco.jpg')
+videoInfo11.thumbnail.attach(io: thumbFile11, filename: 'tacotuesday.jpg')
 
 videoFile12 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/Harlem+Shake+Miami+Heat+Edition.mp4')
 videoInfo12.video.attach(io: videoFile12, filename: 'harlem.mp4')
