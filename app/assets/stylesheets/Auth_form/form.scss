@@ -17,7 +17,7 @@
     align-items: center;
     box-sizing: border-box;
     width: 500px;
-    height: 470px;
+    height: 500px;
     background-color: white;
     padding: 25px;
 }
@@ -99,23 +99,20 @@ input[type=text]:focus, input[type=password]:focus{
 }
 #demo-button {
     display: flex;
-    /* align-self: flex-start; */
-    /* margin-left: 50px; */
     font-size: 13px;
     border-radius: 3px;
     width: 77%;
     height: 45px;
-    /* padding: 15px; */
+    padding: 20px;
     box-sizing: border-box;
     cursor: pointer;
-    /* margin-top: 18px; */
-    color: #1a73e8;
     font-weight: bolder;
     color: white;
     justify-content: space-around;
     align-items: center;
     background-color: #1a73e8;
     margin-bottom: 4px;
+    margin-top: 25px;
 }
 
 #demo-button:hover {
