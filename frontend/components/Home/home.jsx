@@ -11,13 +11,11 @@ class Home extends React.Component {
         this.props.fetchVideos();
     }
 
-
     render() {
 
         if (!this.props.videos) return null
 
         return (
-            
             <>            
              <Sidebar /> 
                 <ul className='temp-container'>

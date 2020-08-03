@@ -7,6 +7,11 @@ class VideoPreview extends React.Component {
         this.state = {hover: false};
         this.videoPreview = this.videoPreview.bind(this);
         this.videoClose = this.videoClose.bind(this);
+        this.time = Math.floor(Math.random() * 24) + 1;
+        this.span = ["days", "weeks", "hours", "minutes", "months", "years"];
+        this.randomSpan = this.span[
+          Math.floor(Math.random() * this.span.length)
+        ];
     }
 
     usernameParse() {
@@ -62,9 +67,6 @@ class VideoPreview extends React.Component {
     }
 
     render() {
-        let span = ['days', 'weeks', 'hours', 'minutes', 'months', 'years']
-        let randomNumber = Math.floor(Math.random() * 24) + 1
-        let randomSpan = span[Math.floor(Math.random() * span.length)];
 
         let vIcon = <i className="fas fa-check-circle" ></i>
         if (!this.props.video.user_verified) {
@@ -100,7 +102,7 @@ class VideoPreview extends React.Component {
                         </Link> */}
                     
                     <div className='preview-creator'>{this.usernameParse()} {vIcon}</div>
-                    <div className='preview-views'>{this.viewCounter()} views • {randomNumber} {randomSpan} ago</div>
+                    <div className='preview-views'>{this.viewCounter()} views • {this.time} {this.randomSpan} ago</div>
                      </Link>
                     </div>
                 </div >

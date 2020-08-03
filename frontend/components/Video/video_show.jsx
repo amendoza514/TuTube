@@ -6,8 +6,13 @@ class VideoShow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {subscribe: false, textToggle: false}
-        this.subscribed = this.subscribed.bind(this) 
-        this.textToggle = this.textToggle.bind(this)
+        this.subscribed = this.subscribed.bind(this); 
+        this.textToggle = this.textToggle.bind(this);
+        this.time = Math.floor(Math.random() * 24) + 1;
+        this.span = ["days", "weeks", "hours", "minutes", "months", "years"];
+        this.randomSpan = this.span[
+          Math.floor(Math.random() * this.span.length)
+        ];
     }
 
     textToggle() {
@@ -79,17 +84,13 @@ class VideoShow extends React.Component {
             expandText = 'SHOW LESS'
         }
 
-        let span = ['days', 'weeks', 'hours', 'minutes', 'months', 'years']
-        let randomNumber = Math.floor(Math.random() * 24) + 1
-        let randomSpan = span[Math.floor(Math.random() * span.length)];
-        
         let vIcon = <i className="fas fa-check-circle"></i>
         if (!this.props.video.user_verified) {
             vIcon = '';
         }
 
         const previewVideos = this.props.previewIds.map(id => this.props.allVideos[id])
-        //QUESTION lost what happens here
+        //QUESTION something happening here
         console.log(this.props.video.videoUrl)
 
         let subClass = 'unsubscribed_button';
@@ -121,7 +122,7 @@ class VideoShow extends React.Component {
                             <div className='share-button'><i className="fas fa-share"></i><div className='share-text'>&nbsp;&nbsp;SHARE</div></div>
                             <div className='dislike-button'><i className="fas fa-thumbs-down"></i></div>
                             <div className='like-button'><i className="fas fa-thumbs-up"></i></div>
-                            <div className='video-views'>{this.viewDisplay()} views • {randomNumber} {randomSpan} ago</div>
+                            <div className='video-views'>{this.viewDisplay()} views • {this.time} {this.randomSpan} ago</div>
                             {/* UPDATE WEEKS AGO REFERENCE */}
                         </div>
                     </div>
@@ -129,7 +130,7 @@ class VideoShow extends React.Component {
                        <div className={subClass} onClick={this.subscribed}>{subText}</div>
                         <div className='user-button-video-show' style={{ backgroundColor: this.props.video.userColor }}>{this.buttonParse()}</div>
                         <div className='video-creator'>{this.usernameParse()} {vIcon}</div>
-                        <div className='sub-count'>{randomNumber}.4K subscribers</div>
+                        <div className='sub-count'>{this.time}.4K subscribers</div>
                         <div className='video-description'>{toggler}</div>
                         <div className='expand-button' onClick={this.textToggle}>{expandText}</div>
                     </div>

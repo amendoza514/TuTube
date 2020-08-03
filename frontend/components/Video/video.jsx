@@ -7,7 +7,9 @@ class Video extends React.Component {
         this.state = {hover: false}
         this.videoPreview = this.videoPreview.bind(this)
         this.videoClose = this.videoClose.bind(this);
-
+        this.time = Math.floor(Math.random() * 24) + 1;
+        this.span = ["days", "weeks", "hours", "minutes", "months", "years"];
+        this.randomSpan = this.span[Math.floor(Math.random() * this.span.length)];
     }
 
     usernameParse() {
@@ -64,10 +66,6 @@ class Video extends React.Component {
     //what is the best way to make these more modular? I'm recycling in many components
 
     render() {
-
-        let span = ['days', 'weeks', 'hours', 'minutes', 'months', 'years']
-        let randomTime = Math.floor(Math.random() * 24) + 1
-        let randomSpan = span[Math.floor(Math.random() * span.length)];
         let vIcon = <i className="fas fa-check-circle"></i>
         if (!this.props.video.user_verified) {
             vIcon = ''
@@ -89,7 +87,6 @@ class Video extends React.Component {
             <div>
                 <Link to={`/watch/${this.props.video.id}`} onMouseEnter={this.videoPreview} onMouseLeave={this.videoClose}>
                     {visual}
-                    {/* <img className='thumb' src={this.props.video.thumbUrl} /> */}
                 </Link>
                 <div className='title-container'>
                     <div className='user-button-video-index' style={{ backgroundColor: this.props.color }}>{this.buttonParse()}</div>
@@ -100,7 +97,7 @@ class Video extends React.Component {
                 </div>
                 <div className='video-info'>
                     <div className='video-creator'>{this.usernameParse()} {vIcon}</div>
-                    <div className='video-views'>{this.viewCounter()} views • {randomTime} {randomSpan} ago</div>
+                    <div className='video-views'>{this.viewCounter()} views • {this.time} {this.randomSpan} ago</div>
                 </div>
             </div>
         )
