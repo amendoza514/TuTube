@@ -24,6 +24,8 @@ body {
   line-height: 1;
   color: black;
   background-color: #f5f5f5;
+  /* dark mode below */
+  /* background-color: #181818; */
 }
 ol, ul {
   list-style: none;
