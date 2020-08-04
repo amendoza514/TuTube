@@ -33,8 +33,9 @@ class Navbar extends React.Component {
 
     resetSearch() {
         this.setState({ search: '' });
-        this.props.search(this.state.search);
-        // window.location.href = 'http://localhost:3000/#/';
+        // this.props.search(this.state.search);
+        this.props.search("");
+        // QUESTION Why does this second work on first click, first takes two?
     }
 
     render() {
