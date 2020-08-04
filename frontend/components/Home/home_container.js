@@ -7,8 +7,8 @@ import { fetchVideo, fetchVideos } from '../../actions/video_actions'
 import { fetchUsers } from '../../actions/user_actions'
 
 const mapStateToProps = state => ({
-    videos: Object.values(state.entities.videos)
-
+    videos: Object.values(state.entities.videos),
+    searchTerms: state.ui.search
 });
 
 const mapDispatchToProps = dispatch => ({

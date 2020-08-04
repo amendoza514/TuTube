@@ -7,19 +7,38 @@ class Home extends React.Component {
         super(props)
     }
 
+    componentDidUpdate() {
+        if (this.props.searchTerms) {
+          console.log("WOW LOOK SEARCHES COOL");
+        }
+    }
+
     componentDidMount() {
         this.props.fetchVideos();
     }
 
     render() {
-
+        let filteredVideos;
+        if (this.props.searchTerms !== '') {
+            filteredVideos = this.props.videos.filter(
+              (video) =>
+                video.title
+                  .toLowerCase()
+                  .includes(this.props.searchTerms.toLowerCase()) ||
+                video.title
+                  .toLowerCase()
+                  .includes(this.props.searchTerms.toLowerCase().slice(0, this.props.searchTerms.length - 1))
+            );
+        } else {
+            filteredVideos = this.props.videos
+        }
         if (!this.props.videos) return null
 
         return (
             <>            
              <Sidebar /> 
                 <ul className='temp-container'>
-                    {this.props.videos.map((video, idx) => (  
+                    {filteredVideos.map((video, idx) => (  
                         <Video key={video.id} video={video} idx={idx} color={video.userColor}/>
                     ))}
                 </ul>

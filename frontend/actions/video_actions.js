@@ -14,7 +14,7 @@ export const receiveVideos = videos => ({
 });
 
 export const fetchVideo = id => dispatch => VideoAPIUtil.fetchVideo(id)
-    .then( video => dispatch(receiveVideo(video)));
+    .then(video => dispatch(receiveVideo(video)));
 
 export const fetchVideos = () => dispatch => VideoAPIUtil.fetchVideos()
     .then(videos => dispatch(receiveVideos(videos)));
