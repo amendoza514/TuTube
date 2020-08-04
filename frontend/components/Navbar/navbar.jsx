@@ -15,7 +15,7 @@ class Navbar extends React.Component {
                     </button>
                     <Link to='./' id="main-logo">
                         <i className="fab fa-youtube"></i>
-                    </Link>
+                    </Link> 
                     <Link to='./' id="main-text">
                         TuTube
                     </Link>
@@ -33,5 +33,3 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
-
-{/* <input value="text" id="search-bar" placeholder="search"><button id="search-button">🔍</button></input>  */}

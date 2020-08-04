@@ -142,22 +142,78 @@ class SessionForm extends React.Component {
             </div>
         </form>;
 
-        if (this.props.formType === 'logout') form = 
-        <form className='user-form'>
-            <div >
-                <div className='user-button-menu' style={{ backgroundColor: this.props.currentUser.icon_color }}>{this.buttonParse()}</div>
-                <div className='user-name-menu'>{this.usernameParse()}
-                    <div className='user-email-menu'>
-                        {this.props.currentUser.email}
-                    </div>
-                </div>
-            </div>
-            
-            <i id='user-icon' className="fas fa-user"><div id='user-show-text' onClick={<Link to='/login'></Link>}>&nbsp;&nbsp;&nbsp;Your profile</div></i>
-            <i id='dark-mode-icon' className="fas fa-adjust"><div id='dark-mode-text' onClick={<Link to='/login'></Link>}>&nbsp;&nbsp;&nbsp;Dark mode</div></i>
-            <i id='logout-icon' className="fas fa-sign-out-alt"><div id='logout-text' onClick={this.handleLogout}>&nbsp;&nbsp;&nbsp; Sign out</div></i>
-            <div id='back-button' onClick={this.props.closeModal} >back</div>
-        </form>;
+        if (this.props.formType === 'logout') form = (
+                                                <form className="user-form">
+                                                  <div>
+                                                    <div
+                                                      className="user-button-menu"
+                                                      style={{
+                                                        backgroundColor: this
+                                                          .props.currentUser
+                                                          .icon_color,
+                                                      }}
+                                                    >
+                                                      {this.buttonParse()}
+                                                    </div>
+                                                    <div className="user-name-menu">
+                                                      {this.usernameParse()}
+                                                      <div className="user-email-menu">
+                                                        {
+                                                          this.props.currentUser
+                                                            .email
+                                                        }
+                                                      </div>
+                                                    </div>
+                                                  </div>
+
+                                                  <i
+                                                    id="user-icon"
+                                                    className="fas fa-user"
+                                                  >
+                                                    <div
+                                                      id="user-show-text"
+                                                      onClick={
+                                                        <Link to="/login"></Link>
+                                                      }
+                                                    >
+                                                      &nbsp;&nbsp;&nbsp;Your
+                                                      profile
+                                                    </div>
+                                                  </i>
+                                                  <i
+                                                    id="dark-mode-icon"
+                                                    className="fas fa-adjust"
+                                                  >
+                                                    <div
+                                                      id="dark-mode-text"
+                                                      onClick={
+                                                        <Link to="/login"></Link>
+                                                      }
+                                                    >
+                                                      &nbsp;&nbsp;&nbsp;Dark
+                                                      mode
+                                                    </div>
+                                                  </i>
+                                                  <i
+                                                    id="logout-icon"
+                                                    className="fas fa-sign-out-alt"
+                                                    onClick={this.handleLogout}
+                                                  >
+                                                    <div id="logout-text">
+                                                      &nbsp;&nbsp;&nbsp; Sign
+                                                      out
+                                                    </div>
+                                                  </i>
+                                                  <div
+                                                    id="back-button"
+                                                    onClick={
+                                                      this.props.closeModal
+                                                    }
+                                                  >
+                                                    back
+                                                  </div>
+                                                </form>
+                                              );
         
         return (
             <>

@@ -4,7 +4,7 @@ import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions'
 
 const mapStateToProps = state => ({
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id] 
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -13,6 +13,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Greeting)
-
-//QUESTION I need to walk back own the dispatch process here
-// function having same name as action creator has been confusi
