@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link, Redirect, withRouter } from 'react-router-dom'
 import GreetingContainer from '../Greeting/greeting_container'
 
 class Navbar extends React.Component {
@@ -21,21 +21,17 @@ class Navbar extends React.Component {
     handleInput(type) {
         return e => {
             this.setState({[type]: e.target.value})
-            // console.log(e.target.value)
         }
     }
 
     handleSearch() {
-        // console.log(this.state.search);
-        this.props.search(this.state.search)
-        // this.setState({search: ''});
+        this.props.search(this.state.search);
+        this.props.history.push('./')
     }
 
     resetSearch() {
         this.setState({ search: '' });
-        // this.props.search(this.state.search);
         this.props.search("");
-        // QUESTION Why does this second work on first click, first takes two?
     }
 
     render() {
@@ -71,4 +67,4 @@ class Navbar extends React.Component {
     }
 }
 
-export default Navbar;
+export default withRouter(Navbar);

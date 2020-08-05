@@ -16,7 +16,7 @@ const App  = () => (
             <Route path="/login" component={AuthComponenetContainer} />
             <Route path="/signup" component={SignupComponentContainer} />
             <Route path="/watch/:videoId" component={VideoShowContainer} />
-        {/* QUESTION does this need to be exact path? I'm copying react1 format */}
+            {/* <Route path="/search/:videoId" component={VideoShowContainer} /> */}
             <Route exact path="/" component={HomeComponentContainer} />
             <Redirect to="/" component={HomeComponentContainer} />
         </Switch>
