@@ -30,7 +30,7 @@ videoInfo3 = Video.create!(user_id: user9.id, views: 765, title:"BIG Color", des
 videoInfo4 = Video.create!(user_id: user3.id, views: 52312, title:"You Miss 100% of the Hesi Pullup Fadeaways You Don't Take", description:"5 seconds on the clock, with 2 shooters wide open...Do you take the shot, or do you take the shot?", category:"Lifestyle", tags:["nba", "midrange", "style"], comment_visibility: true)
 videoInfo6 = Video.create!(user_id: user8.id, views: 765348, title:"Great Ad, Terrible Jerseys: A Story of the League's Worst Ever Uniforms", description:"Comment below with your least favorite unis. #bigPajamas #lebronJustRipsEm #keepingItFresh #yikes", category: "Fashion", tags:["sleeves", "nba", "marketing"], comment_visibility: true)
 videoInfo7 = Video.create!(user_id: user1.id, views: 96352, title:"Caring For Your Goat Part 3 | When It's Time for the Next Generation", description:"In some rare occasions, even an exceptional goat may need to step down for a more qualified entrant. Some tips on mentally preppring for the change", category: "Animals", tags:["GOAT", "nba"], comment_visibility: false)
-videoInfo8 = Video.create!(user_id: user7.id, views: 12, title:"Many Teams to Choose From, Many Reasons to Jump Off the Bandwagon: The Texas Sports Team Problem", description:"Now, this is a story all about how
+videoInfo8 = Video.create!(user_id: user7.id, views: 12, title:"Texas Has Too Many Sports Teams | Change My Mind", description:"Now, this is a story all about how
 My life got flipped-turned upside down
 And I'd like to take a minute
 Just sit right there

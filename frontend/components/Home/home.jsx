@@ -18,6 +18,14 @@ class Home extends React.Component {
     }
 
     render() {
+        let search = this.props.searchTerms ? true : false;
+        let displayType = !this.props.searchTerms ? 'main-video-index' : 'search-video-index';
+        let searchResults;
+        if (this.props.searchTerms) {
+            searchResults = (
+            <div className="search-results">Results for:    {this.props.searchTerms}</div>
+            )
+        }
         let filteredVideos;
         if (this.props.searchTerms !== '') {
             filteredVideos = this.props.videos.filter(
@@ -37,9 +45,10 @@ class Home extends React.Component {
         return (
             <>            
              <Sidebar /> 
-                <ul className='temp-container'>
+                <ul className={displayType}>
+                    {searchResults}
                     {filteredVideos.map((video, idx) => (  
-                        <Video key={video.id} video={video} idx={idx} color={video.userColor}/>
+                        <Video key={video.id} video={video} idx={idx} color={video.userColor} search={search}/>
                     ))}
                 </ul>
             </>
@@ -48,7 +57,6 @@ class Home extends React.Component {
 }
 
 export default Home;
-// <Video key={video.id] video={video} fetchVideo={this.props.fetchVideo}/>
 
 // <div>
 //     <Modal />
