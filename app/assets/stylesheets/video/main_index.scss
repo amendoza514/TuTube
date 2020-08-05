@@ -20,9 +20,22 @@
 
 
 .search-results {
-    background-color: pink;
+    font-size: 14px;
+    font-weight: 100;
+    padding: 13px;
 }
 
+.search-term {
+    font-style: italic;
+    display: inline;
+    font-weight: 900;
+}
+
+.search-description {
+    margin-top: 10px;
+    width: 80%;
+    font-size: 14px;
+}
 
 .thumbnail {
     width: 290px;

@@ -23,7 +23,7 @@ class Home extends React.Component {
         let searchResults;
         if (this.props.searchTerms) {
             searchResults = (
-            <div className="search-results">Results for:    {this.props.searchTerms}</div>
+            <div className="search-results">Results for:  <div className='search-term'>{this.props.searchTerms}</div></div>
             )
         }
         let filteredVideos;

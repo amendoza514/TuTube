@@ -10,6 +10,7 @@ class Video extends React.Component {
         this.time = Math.floor(Math.random() * 24) + 1;
         this.span = ["days", "weeks", "hours", "minutes", "months", "years"];
         this.randomSpan = this.span[Math.floor(Math.random() * this.span.length)];
+        this.descriptionSpan = this.descriptionSpan.bind(this);
     }
 
     usernameParse() {
@@ -63,6 +64,15 @@ class Video extends React.Component {
         }
     }
 
+    descriptionSpan() {
+        let description = this.props.video.description;
+        if (description.split(' ').length > 40) {
+            return description.split(' ').slice(0,40).join(' ') + '...';
+        } else {
+            return description;
+        }
+    }
+
     //what is the best way to make these more modular? I'm recycling in many components
 
     render() {
@@ -94,6 +104,7 @@ class Video extends React.Component {
                         <div className='show-video-creator'>{this.usernameParse()} {vIcon}
                         <div className='search-video-views'>{this.viewCounter()} views • {this.time} {this.randomSpan} ago</div>
                     </div>
+                        <div className='search-description'>{this.descriptionSpan()}</div>
                     </div>
                 </div>
                 </>
