@@ -94,26 +94,27 @@ class SearchResults extends React.Component {
         </div>
       </>
     );
-
-    if (this.state.hover) {
-      visual = (
-        <video
-          className='search-thumbnail'
-          src={this.props.video.videoUrl}
-          type="video/mp4"
-          autoPlay
-          muted
-        ></video>
-      );
-    }
+     let visual = <img className="search-thumbnail" src={this.props.video.thumbUrl} />;
+     if (this.state.hover) {
+       visual = (
+         <video
+           className="search-thumbnail"
+           src={this.props.video.videoUrl}
+           type="video/mp4"
+           autoPlay
+           muted
+         ></video>
+       );
+     }
 
     return (
       <div>
         <Link
           to={`/watch/${this.props.video.id}`}
           onMouseEnter={this.videoPreview}
-          onMouseLeave={this.videoClose}>
-          <img className="search-thumbnail" src={this.props.video.thumbUrl} />
+          onMouseLeave={this.videoClose}
+        >
+          {visual}
         </Link>
         <div className="search-title-container">{userIcon}</div>
       </div>
