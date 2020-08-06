@@ -22,7 +22,6 @@ class Home extends React.Component {
             arr[idx] = arr[randIdx];
             arr[randIdx] = temp; 
         }
-
     return arr;
     }
 
@@ -30,9 +29,20 @@ class Home extends React.Component {
         let randomizedArr = this.shuffle(this.props.videos)
         if (!this.props.videos) return null
 
+        let allCategories = []
+        this.props.videos.map(video => {
+            video.tags.map(tag => allCategories.includes(tag) ? '' : allCategories.push(tag))
+            // console.log(video)
+        });
+
         return (
             <>            
              <Sidebar /> 
+                <div className='video-categories'>
+                    {allCategories.map(c => (
+                        <div>{c}</div>
+                    ))}
+                </div>
                 <ul className='main-video-index'>
                     {randomizedArr.map((video, idx) => (  
                         <Video key={video.id} video={video} idx={idx} color={video.userColor}/>
