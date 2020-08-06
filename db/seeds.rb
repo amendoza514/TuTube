@@ -29,7 +29,7 @@ videoInfo2 = Video.create!(user_id: user2.id, views: 7, title:"Alternate Reality
 videoInfo3 = Video.create!(user_id: user9.id, views: 765, title:"BIG Color", description:"Still better than the sleeved jerseys. Comment below on your favorite.", category:"Fashion", tags:["color", "nba", "BIG"], comment_visibility: true)
 videoInfo4 = Video.create!(user_id: user3.id, views: 52312, title:"You Miss 100% of the Hesi Pullup Fadeaways You Don't Take", description:"5 seconds on the clock, with 2 shooters wide open...Do you take the shot, or do you take the shot?", category:"Lifestyle", tags:["nba", "midrange", "style"], comment_visibility: true)
 videoInfo6 = Video.create!(user_id: user8.id, views: 765348, title:"Great Ad, Terrible Jerseys: A Story of the League's Worst Ever Uniforms", description:"Comment below with your least favorite unis. #bigPajamas #lebronJustRipsEm #keepingItFresh #yikes", category: "Fashion", tags:["sleeves", "nba", "marketing"], comment_visibility: true)
-videoInfo7 = Video.create!(user_id: user1.id, views: 96352, title:"Caring For Your Goat Part 3 | When It's Time for the Next Generation", description:"In some rare occasions, even an exceptional goat may need to step down for a more qualified entrant. Some tips on mentally preppring for the change", category: "Animals", tags:["GOAT", "nba"], comment_visibility: false)
+videoInfo7 = Video.create!(user_id: user1.id, views: 96352, title:"Caring For Your Goat Part 3 | When It's Time for the Next Generation", description:"In some rare occasions, even an exceptional goat may need to step down for a more qualified entrant. Some tips on mentally prepping for the change and more", category: "Animals", tags:["GOAT", "nba"], comment_visibility: false)
 videoInfo8 = Video.create!(user_id: user7.id, views: 12, title:"Texas Has Too Many Sports Teams | Change My Mind", description:"Now, this is a story all about how
 My life got flipped-turned upside down
 And I'd like to take a minute
@@ -137,9 +137,9 @@ thumbFile12 = open('https://tutube-seeds.s3-us-west-1.amazonaws.com/harlem.jpg')
 videoInfo12.thumbnail.attach(io: thumbFile12, filename: 'harlem.jpg')
 
 
-comment1 = Comment.create!(user_id: user3.id, video_id: videoInfo1.id, content: "One ring in the past 30 years and you all act like this smh")
+comment1 = Comment.create!(user_id: user3.id, video_id: videoInfo1.id, content: "ONE ring in the past 30 years and you all act like this smh")
 comment2 = Comment.create!(user_id: user4.id, video_id: videoInfo1.id, content: "ANYTHING IS POSSIBLEEEEEEEEE")
-comment3 = Comment.create!(user_id: user1.id, video_id: videoInfo1.id, content: "LOL remember when I beat the celtics so many times they gave up and became the nets")
+comment3 = Comment.create!(user_id: user1.id, video_id: videoInfo1.id, content: "remember when I beat the celtics so many times they gave up and became the brooklyn nets")
 
 
 comment4 = Comment.create!(user_id: user1.id, video_id: videoInfo11.id, content: "WHAT IS IT")
@@ -149,7 +149,7 @@ comment7 = Comment.create!(user_id: user1.id, video_id: videoInfo5.id, content: 
 comment8 = Comment.create!(user_id: user1.id, video_id: videoInfo7.id, content: "FUN FACT: In the 2016 NBA Finals I averaged the most points, rebounds, assists, blocks, and steals between both teams")
 
 comment9 = Comment.create!(user_id: user6.id, video_id: videoInfo5.id, content: "Keeping the ball high after a rebound is crucial for any low-post game")
-comment10 = Comment.create!(user_id: user6.id, video_id: videoInfo5.id, content: "Remember, a solid chest pass will always beat a flashy behind the back pass. Keep it straight forward and simple, I always say")
+comment10 = Comment.create!(user_id: user6.id, video_id: videoInfo6.id, content: "Remember, a solid chest pass will always beat a flashy one. Keep it straight forward and simple. Basketball is fun when it's played the right way! #KISS #keepitsimplesilly")
 comment11 = Comment.create!(user_id: user6.id, video_id: videoInfo9.id, content: "Make sure to keep paper copies of your important documents in one place, in case of a fire! #evacuationPreparedness #fundamentalsOnAndOffTheCourt")
 comment12 = Comment.create!(user_id: user8.id, video_id: videoInfo10.id, content: "BUT CAN HE BE TRUSTED")
 comment13 = Comment.create!(user_id: user9.id, video_id: videoInfo10.id, content: "WHERE'S POPOVICH, WHERE IS HE")
@@ -157,10 +157,13 @@ comment14 = Comment.create!(user_id: user2.id, video_id: videoInfo2.id, content:
 
 
 
-comment15 = Comment.create!(user_id: user2.id, video_id: videoInfo1.id, content: "GIVE THIS COMMENT AT LEAST 10 LIKES LETS GO")
+comment15 = Comment.create!(user_id: user2.id, video_id: videoInfo1.id, content: "GIVE THIS COMMENT AT LEAST 10 LIKES AND 10 COMMENTS AND 10 SHARES");
+
+
 
 comment16 = Comment.create!(user_id: user3.id, video_id: videoInfo2.id, content: "Why this song tho")
 
-comment16 = Comment.create!(user_id: user1.id, video_id: videoInfo7.id, content: "Just rip the sleeves off")
+comment16 = Comment.create!(user_id: user1.id, video_id: videoInfo6.id, content: "Just rip the sleeves off")
+comment17 = Comment.create!(user_id: user1.id, video_id: videoInfo8.id, content: "Weird that Dirk was considered a mobile 7 footer. Now look at these guys sheesh.")
 
 
