@@ -72,11 +72,7 @@ class SearchResults extends React.Component {
   }
 
   render() {
-    let vIcon = <i className="fas fa-check-circle"></i>;
-
-    if (!this.props.video.user_verified) {
-      vIcon = "";
-    }
+    let vIcon = this.props.video.user_verified ? <i className="fas fa-check-circle"></i> : '';
     let userIcon = (
       <>
         <div className="search-view">
@@ -99,9 +95,6 @@ class SearchResults extends React.Component {
       </>
     );
 
-    let visual = (
-      <img className="search-thumbnail" src={this.props.video.thumbUrl} />
-    );
     if (this.state.hover) {
       visual = (
         <video
@@ -119,9 +112,8 @@ class SearchResults extends React.Component {
         <Link
           to={`/watch/${this.props.video.id}`}
           onMouseEnter={this.videoPreview}
-          onMouseLeave={this.videoClose}
-        >
-          {visual}
+          onMouseLeave={this.videoClose}>
+          <img className="search-thumbnail" src={this.props.video.thumbUrl} />
         </Link>
         <div className="search-title-container">{userIcon}</div>
       </div>

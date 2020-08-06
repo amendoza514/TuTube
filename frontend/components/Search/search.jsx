@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from "react-router-dom";
 import SearchResults from './search_results';
 import SideBar from '../Home/sidebar'
+// import noResult from './nosearch.png'
 
 class Search extends React.Component {
     constructor(props) {
@@ -19,25 +20,42 @@ class Search extends React.Component {
     }
 
     render() {
+        let results;
 
-        let searchResults = (
-            <div className="search-results">Results for:  <div className='search-term'>{this.props.match.params.search}</div></div>
-            )
-    
+        if (!this.props.videos.length) {
+            results = (
+              <ul className="search-video-index">
+                <div className="search-results">
+                  No search results for:&nbsp;&nbsp;
+                  <div className="search-term">
+                    {this.props.match.params.search}
+                  </div>
+                </div>
+                {this.props.videos.map((video, idx) => (
+                  <SearchResults key={video.id} video={video} idx={idx} />
+                ))}
+              </ul>
+            );
+
+        } else {
+            results = (
+              <ul className="search-video-index">
+                <div className="search-results">
+                  Results for:&nbsp;&nbsp;
+                  <div className="search-term">
+                    {this.props.match.params.search}
+                  </div>
+                </div>
+                {this.props.videos.map((video, idx) => (
+                  <SearchResults key={video.id} video={video} idx={idx} />
+                ))}
+              </ul>
+            );
+        }
         return (
           <>
             <SideBar />
-            <ul className="search-video-index">
-              {searchResults}
-              {this.props.videos.map((video, idx) => (
-                <SearchResults
-                  key={video.id}
-                  video={video}
-                  idx={idx}
-                />
-                // <Video key={video.id} video={video} idx={idx} color={video.userColor} search={search}/>
-              ))}
-            </ul>
+            {results}
           </>
         );
     }
