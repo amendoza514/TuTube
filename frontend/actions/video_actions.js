@@ -13,6 +13,9 @@ export const receiveVideos = videos => ({
     videos
 });
 
+export const searchVideos = search => (dispatch) =>
+  VideoAPIUtil.searchVideos(search).then((videos) => dispatch(receiveVideos(videos)));
+
 export const fetchVideo = id => dispatch => VideoAPIUtil.fetchVideo(id)
     .then(video => dispatch(receiveVideo(video)));
 

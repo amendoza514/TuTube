@@ -1,7 +1,7 @@
 import Navbar from './navbar';
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
-import { searchVideos } from '../../actions/search_actions'
+import { searchVideos } from '../../actions/video_actions'
 
 const mapDispatchToProps = dispatch => ({
     openModal: modal => dispatch(openModal(modal)),

@@ -7,6 +7,7 @@ import AuthComponenetContainer from './Greeting/auth_component_container'
 import SignupComponentContainer from './Greeting/signup_component_container'
 import HomeComponentContainer from './Home/home_container'
 import VideoShowContainer from './Video/video_show_container'
+import SearchContainer from './Search/search_container'
 
 const App  = () => (
     <div>
@@ -16,7 +17,7 @@ const App  = () => (
             <Route path="/login" component={AuthComponenetContainer} />
             <Route path="/signup" component={SignupComponentContainer} />
             <Route path="/watch/:videoId" component={VideoShowContainer} />
-            {/* <Route path="/search/:videoId" component={VideoShowContainer} /> */}
+            <Route path="/search/:search" component={SearchContainer} />
             <Route exact path="/" component={HomeComponentContainer} />
             <Redirect to="/" component={HomeComponentContainer} />
         </Switch>

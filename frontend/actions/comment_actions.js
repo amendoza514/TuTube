@@ -30,9 +30,6 @@ export const createComment = comment => dispatch => CommentAPIUtil.createComment
 export const updateComment = comment => dispatch => CommentAPIUtil.updateComment(comment)
     .then(comment => dispatch(receiveComment(comment)));
 
-
-//QUESTION I didn't need a create comment until this update method? is that correct? 
-
 export const deleteComment = commentId => dispatch => CommentAPIUtil.deleteComment(commentId)
     .then(() => dispatch(removeComment(commentId)));
 

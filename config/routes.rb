@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :videos, only: [:show, :index]
     resources :comments, only: [:create, :destroy, :update]
+    
+    get '/search/:search', to: 'videos#search'
   end
 
 

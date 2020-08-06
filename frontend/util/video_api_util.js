@@ -5,12 +5,18 @@ export const fetchVideo = id => (
     })
 )
 
-// am I passing down a video where I grab video.id? Or like this?
-
 export const fetchVideos = () => (
     $.ajax({
         url: `api/videos/`,
         method: 'GET',
     })
 )
+
+export const searchVideos = search =>
+  $.ajax({
+    url: `api/search/${search}`,
+    method: "GET",
+  });
+
+
 

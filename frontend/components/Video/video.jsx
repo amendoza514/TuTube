@@ -48,7 +48,6 @@ class Video extends React.Component {
 
     videoPreview() {
         this.setState({ hover: true })
-        // setTimeout(() => this.setState({ hover: true }), 500)
     }
 
     videoClose() {
@@ -73,69 +72,30 @@ class Video extends React.Component {
         }
     }
 
-    //what is the best way to make these more modular? I'm recycling in many components
-
     render() {
-        let thumbDisplayType = !this.props.search ? 'thumbnail' : 'search-thumbnail';
-        let titleDisplayType = !this.props.search ? 'title-container' : 'search-title-container';
-        let infoDisplayType = !this.props.search ? 'video-info' : 'search-video-info';
-        let userIcon;
-        if (!this.props.search) {
-            userIcon = (
+        let vIcon = <i className="fas fa-check-circle"></i>
+        if (!this.props.video.user_verified) {
+            vIcon = ''
+        }
+        let userIcon = (
                 <>
                 <div className='user-button-video-index' style={{ backgroundColor: this.props.color }}>{this.buttonParse()}</div>
                 <Link to={`/watch/${this.props.video.id}`} className='video-title'>
                     {this.titleSpan()}
                 </Link>
-                <div className={infoDisplayType}>
+                <div className='video-info'>
                     <div className='video-creator'>{this.usernameParse()} {vIcon}</div>
                 <div className='video-views'>{this.viewCounter()} views • {this.time} {this.randomSpan} ago</div>
                 </div>
                 </>
             )
-        } else {
-              userIcon = (
-                <>
-                <div className='search-view'>
-                    <Link to={`/watch/${this.props.video.id}`} className='search-video-title'>
-                        {this.props.video.title}
-                    </Link>
-                    <div className={infoDisplayType}>
-                        <div className='show-video-creator'>{this.usernameParse()} {vIcon}
-                        <div className='search-video-views'>{this.viewCounter()} views • {this.time} {this.randomSpan} ago</div>
-                    </div>
-                        <div className='search-description'>{this.descriptionSpan()}</div>
-                    </div>
-                </div>
-                </>
-              )
-        }
 
-        let vIcon = <i className="fas fa-check-circle"></i>
-        if (!this.props.video.user_verified) {
-            vIcon = ''
-        }
 
-        // let vInfo;
-        // if (!this.props.search) {
-        //     vInfo = (
-        //         <>
-               
-        //         </>
-        //     )
-        // } else {
-        //       vInfo = (
-        //         <>
-                    
-        //         </>
-        //       )
-        // }
-
-        let visual = <img className={thumbDisplayType} src={this.props.video.thumbUrl} />
+        let visual = <img className='thumbnail' src={this.props.video.thumbUrl} />
         if (this.state.hover) {
             visual =
                 <video
-                    className={thumbDisplayType}
+                    className='thumbnail'
                     src={this.props.video.videoUrl} type="video/mp4"
                     autoPlay
                     muted
@@ -148,7 +108,7 @@ class Video extends React.Component {
                 <Link to={`/watch/${this.props.video.id}`} onMouseEnter={this.videoPreview} onMouseLeave={this.videoClose}>
                     {visual}
                 </Link>
-                <div className={titleDisplayType}>
+                <div className='title-container'>
                     {userIcon}
                 </div>
                 
@@ -158,14 +118,3 @@ class Video extends React.Component {
 }
 
 export default Video;
-
-// const EventIndexItem = ({ event, deleteEvent }) => (
-//     <li>
-//         <Link to={`/events/${event.id}`}>{event.description}</Link>
-//         <Link to={`/events/${event.id}/edit`}>Edit</Link>
-
-//         <button onClick={() => deleteEvent(event.id)}>Delete Event</button>
-//     </li>
-// )
-
-// export default EventIndexItem;
