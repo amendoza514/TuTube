@@ -10,12 +10,6 @@ class SearchBar extends React.Component {
          this.handleEnter = this.handleEnter.bind(this);
     }
 
-    // componentDidMount() {
-    //   // window.location.href.includes('search') ? this.setState({ search: ''}) : ''
-    //        let reset = (this.state.search = "");
-    //        this.setState({ reset });
-    // }
-
     handleEnter(e) {
         if (e.charCode === 13) {
             this.handleSearch();
