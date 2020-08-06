@@ -4,52 +4,38 @@ import Sidebar from './sidebar'
 
 class Home extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.shuffle = this.shuffle.bind(this);
     }
-
-    // componentDidUpdate() {
-    //     if (this.props.searchTerms) {
-    //       console.log("WOW LOOK SEARCHES COOL");
-    //     }
-    // }
 
     componentDidMount() {
         this.props.fetchVideos();
     }
 
+    shuffle(arr) {
+        let idx = arr.length, temp, randIdx;
+
+        while (0 !== idx) {
+            randIdx = Math.floor(Math.random() * idx);
+            idx -= 1;
+            temp = arr[idx];
+            arr[idx] = arr[randIdx];
+            arr[randIdx] = temp; 
+        }
+
+    return arr;
+    }
+
     render() {
-        // let search = this.props.searchTerms ? true : false;
-        // let displayType = !this.props.searchTerms ? 'main-video-index' : 'search-video-index';
-        // let searchResults;
-        // if (this.props.searchTerms) {
-        //     searchResults = (
-        //     <div className="search-results">Results for:  <div className='search-term'>{this.props.searchTerms}</div></div>
-        //     )
-        // }
-        // let filteredVideos;
-        // if (this.props.searchTerms !== '') {
-        //     filteredVideos = this.props.videos.filter(
-        //       (video) =>
-        //         video.title
-        //           .toLowerCase()
-        //           .includes(this.props.searchTerms.toLowerCase()) ||
-        //         video.title
-        //           .toLowerCase()
-        //           .includes(this.props.searchTerms.toLowerCase().slice(0, this.props.searchTerms.length - 1))
-        //     );
-        // } else {
-        //     filteredVideos = this.props.videos
-        // }
+        let randomizedArr = this.shuffle(this.props.videos)
         if (!this.props.videos) return null
 
         return (
             <>            
              <Sidebar /> 
                 <ul className='main-video-index'>
-                    {/* {searchResults} */}
-                    {this.props.videos.map((video, idx) => (  
+                    {randomizedArr.map((video, idx) => (  
                         <Video key={video.id} video={video} idx={idx} color={video.userColor}/>
-                        // <Video key={video.id} video={video} idx={idx} color={video.userColor} search={search}/>
                     ))}
                 </ul>
             </>

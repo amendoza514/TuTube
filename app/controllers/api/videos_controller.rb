@@ -11,8 +11,7 @@ class Api::VideosController < ApplicationController
 
     def search 
         search = params[:search].downcase[0...-1]
-        @videos = Video.where("lower(title) LIKE :search OR lower(tags) LIKE :search", search: "%#{search}%").uniq
-                            # where("lower(stores.name) LIKE :search OR lower(cars.name) LIKE :search", search: "%#{search.downcase}%").uniq   
+        @videos = Video.where("lower(title) LIKE :search OR lower(tags) LIKE :search  OR lower(category) LIKE :search", search: "%#{search}%").uniq
         render :index
     end
 
