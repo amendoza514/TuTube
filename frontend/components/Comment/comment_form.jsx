@@ -62,6 +62,7 @@ class CommentForm extends React.Component {
                         onChange={this.handleInput('content')}
                         value={this.state.content}
                     />
+                <div className='comment-buttons-underline'></div>
                 <div className={toggleClass} >
                     <button id='comment-submit-button' onClick={this.handleSubmit} >COMMENT</button>
                     <button id='comment-cancel-button' onClick={() => this.setState({selected: false, content: ''})}>CANCEL</button>

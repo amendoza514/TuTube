@@ -92,6 +92,7 @@
     font-weight: 500;
     background-color: inherit;
     border: none;
+    color: #5d5b5b;
     margin-top: 2px;
 }
 
@@ -107,12 +108,18 @@
 .comment-options {
     float: right;
     position: absolute;
-    font-size: 18px;
     margin-top: 15px;
     color: #909090;
     cursor: pointer;
-    /* margin-right: 50px; */
     margin-left: 60%;
+}
+
+.comment-options-report {
+    color: #696969;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    width: 100%;
 }
 
 .comment-options-off {
@@ -130,36 +137,42 @@ display: none;
     width: 100%;
 }
 
-.options-dropdown{
+.comment-options-type:hover {
+    color: black;
+}
+
+.options-dropdown {
     position: absolute;
-    /* width: 111px; */
-    text-align: center;
-    /* height: 58px; */
-    /* display: flex; */
-    margin-left: 55%;
-    margin-top: 2.5%;
+    margin-left: 60%;
+    /* margin-top: 3.5%; */
     color: #606060;
     background-color: white;
-    box-shadow: 0px 1px 3px -1px;
-    border-radius: 4px;
-    font-weight: 400;
     cursor: pointer;
 }
-
-.comment-options-type {
-    padding-top: 19px;
-    padding-left: 25px;
-    padding-right: 5px;
-    padding-bottom: 19px;
+.options-user {
     box-shadow: 0.5px 0.5px 0.5px 1px #909090;
-    border-radius: 5px;
-    background-color: #fbfbfb;
-    border: -2.5px solid gray;
+    border-radius: 2px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+    height: 69px;
+    z-index: 1000;
+    font-size: 14px;
 }
-.comment-options-type:hover {
-    background-color: #dcdcdc;
 
+.options {
+    box-shadow: 0.5px 0.5px 0.5px 1px #909090;
+    border-radius: 2px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+    height: 51px;
+    z-index: 1000;
+    font-size: 14px;
 }
+
 .comment-options-type:active{
     background-color: rgb(164, 161, 161);
 }
@@ -179,6 +192,7 @@ display: none;
     border-radius: 3px;
     cursor: pointer;
     font-weight: 500;
+    border: none;
 }
 
 .comment-buttons {
@@ -191,6 +205,18 @@ display: none;
     margin-left: 53px;
     padding-right: -10px;
     animation: fadeIn  .5s;
+}
+
+.comment-buttons-underline {
+    border-top: 1px solid #dddddd;
+    width: 55%;
+    float: right;
+    padding-top: 3px;
+    position: absolute;
+    margin-top: -11px;
+    margin-left: 58px;
+    padding-right: -10px;
+    animation: fadeIn .5s;
 }
 
 .comment-buttons-off {

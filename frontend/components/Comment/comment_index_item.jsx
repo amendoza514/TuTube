@@ -74,29 +74,53 @@ class CommentIndexItem extends React.Component {
 
         let optionsText;
         if ((this.props.currentUser) && (this.props.currentUser.id === this.props.comment.user_id)) {
-            optionsText = 
-            <>
-                <div className="comment-options-type" onClick={this.handleDelete}>
-                    <i className="fas fa-trash-alt"></i>
-                    <div >&nbsp;&nbsp;Delete</div>
-                </div>
+            optionsText = (
+              <>
+                <div className="options-user" onMouseLeave={() => this.setState({ toggle: false})}>
 
-                   <div
-                     className="comment-options-type"
-                     onClick={this.handleUpdate}
-                   >
-                     <i className="fas fa-trash-alt"></i>
-                     <div>&nbsp;&nbsp;Update</div>
-                   </div>
-            </>
+                  <div
+                    className="comment-options-type"
+                    onClick={this.handleUpdate}
+                  >
+                    <i className="fas fa-trash-alt"></i>
+                    <div>&nbsp;&nbsp;Update</div>
+                  </div>
+
+                  <div
+                    className="comment-options-type"
+                    onClick={this.handleDelete}
+                  >
+                    <i className="fas fa-trash-alt"></i>
+                    <div>&nbsp;&nbsp;Delete</div>
+                  </div>
+
+                  <div
+                    className="comment-options-type"
+                    onClick={() => this.setState({ needsEdit: false })}
+                  >
+                    <i className="fas fa-trash-alt"></i>
+                    <div>&nbsp;&nbsp;Back</div>
+                  </div>
+                </div>
+              </>
+            );
         } else {
                  optionsText = (
-                   <div
-                     className="comment-options-type"
-                     onClick={this.toggleReport}
-                   >
-                     <i className="fas fa-flag"></i>
-                     <div>&nbsp;&nbsp;Report</div>
+                   <div className="options" onMouseLeave={() => this.setState({ toggle: false})}>
+                     <div
+                       className="comment-options-report"
+                       onClick={this.toggleReport}
+                     >
+                       <i className="fas fa-flag"></i>
+                       <div>&nbsp;&nbsp;Report</div>
+                     </div>
+                     <div
+                    className="comment-options-type"
+                    onClick={() => this.setState({ needsEdit: false })}
+                    >
+                    <i className="fas fa-trash-alt"></i>
+                    <div>&nbsp;&nbsp;Back</div>
+                  </div>
                    </div>
                  );
                }

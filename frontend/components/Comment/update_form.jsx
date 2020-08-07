@@ -31,9 +31,8 @@ class UpdateForm extends React.Component {
       user_id: this.props.currentUser.id,
     //   video_id: this.props.currentVideo,
     };
-    this.props.updateComment(comment)
-    //   .then(() => this.setState({ content: "", selected: false }));
-   this.props.handleUpdate
+    this.props.updateComment(comment);    
+   this.props.handleUpdate(e)
   }
 
   buttonParse() {
@@ -79,7 +78,13 @@ class UpdateForm extends React.Component {
             value={this.state.content}
           />
           <div className={toggleClass}>
-            <button id="comment-submit-button" onClick={this.handleSubmit}>
+            <button id="comment-submit-button" 
+            onClick={this.handleSubmit}
+            // onClick={(e) => {
+            //     this.handleSubmit(e)
+            //     this.props.handleUpdate(e)
+            // }}
+            >
               UPDATE
             </button>
             <button
