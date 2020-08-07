@@ -12,9 +12,11 @@
 }
 
 .comment {
-font-size: 14px;
+    font-size: 14px;
     padding-top: 9px;
-        line-height: 1.2;
+    line-height: 1.2;
+    margin-left: 55px;
+    width: 55%;
 }
 
 .comment-date {
@@ -104,11 +106,13 @@ font-size: 14px;
 
 .comment-options {
     float: right;
+    position: absolute;
     font-size: 18px;
     margin-top: 15px;
     color: #909090;
     cursor: pointer;
-    margin-right: 50px;
+    /* margin-right: 50px; */
+    margin-left: 60%;
 }
 
 .comment-options-off {
@@ -193,6 +197,10 @@ display: none;
     display: none;
 }
 
+.thumbs {
+    margin-left: 55px;
+}
+
 
 .comment-like-button {
 color: #8f908f;
@@ -220,6 +228,8 @@ color: #8f908f;
 .comment-like-button:active, .comment-dislike-button:active {
         color: #454545;
 }
+
+
 
 
 @keyframes fadeIn {

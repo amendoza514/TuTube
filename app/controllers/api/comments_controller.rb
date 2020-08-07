@@ -11,18 +11,18 @@ class Api::CommentsController < ApplicationController
   end
 
   def update 
-    @comment = Comment.find_by(id: params[:id])
-    if @comment && @comment.update(comment_params)
-
+    @comment = Comment.find_by(user_id: comment_params[:user_id])
+    if @comment && @comment.update(content: comment_params[:content])
+      render :create
     else
-      render json: @event.errors.full_messages, status: 422
+      # render json: @event.errors.full_messages, status: 422
+      render json: ["Can't update this comment"], status: 422
     end
   end
 
   def destroy 
     @comment = Comment.find(params[:id])
     @comment.destroy
-    
   end
 
   def comment_params 

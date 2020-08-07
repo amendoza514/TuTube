@@ -1,18 +1,32 @@
-import React from 'react'
+import React from 'react';
+import UpdateForm from "./update_form";
+import { withRouter } from "react-router-dom";
 
 class CommentIndexItem extends React.Component {
     constructor(props){
-        super(props)
-        this.state = {hover: false, toggle:false}
-        this.handleDelete = this.handleDelete.bind(this)
-        this.toggleHover = this.toggleHover.bind(this)
-        this.toggleMenu = this.toggleMenu.bind(this)
-        this.toggleReport = this.toggleReport.bind(this)
+        super(props);
+        this.state = {hover: false, toggle:false, needsEdit: false};
+        this.handleDelete = this.handleDelete.bind(this);
+        this.toggleHover = this.toggleHover.bind(this);
+        this.toggleMenu = this.toggleMenu.bind(this);
+        this.toggleReport = this.toggleReport.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     handleDelete(e) {
         e.preventDefault()
             this.props.deleteComment(this.props.comment.id)
+    }
+
+    handleUpdate(e) {
+        e.preventDefault()
+        //     this.props.updateComment(this.props.comment.id)
+        // this.setState({ needsEdit: true});
+        this.setState({
+          needsEdit: !this.state.needsEdit,
+          hover: false,
+          toggle: false
+        });
     }
 
     usernameParse() {
@@ -40,36 +54,52 @@ class CommentIndexItem extends React.Component {
     }
 
     toggleReport() {
-            alert("comment reported")
+            alert("comment reported :)")
     }
 
     render() {
         let span = ['days', 'weeks', 'hours', 'months']
         // let randomNumber = Math.floor(Math.random() * 8) + 1
         // let randomSpan = span[Math.floor(Math.random() * span.length)];
-        let hoverClass;
-        if (this.state.hover) {
-            hoverClass = 'comment-options'
-        } else {
-            hoverClass = 'comment-options-off'
-        }
 
+        // let hoverClass;
+        // if (this.state.hover) {
+        //     hoverClass = 'comment-options'
+        // } else {
+        //     hoverClass = 'comment-options-off'
+        // }
+
+        //temp 
+        let hoverClass = "comment-options";
 
         let optionsText;
         if ((this.props.currentUser) && (this.props.currentUser.id === this.props.comment.user_id)) {
             optionsText = 
+            <>
                 <div className="comment-options-type" onClick={this.handleDelete}>
                     <i className="fas fa-trash-alt"></i>
                     <div >&nbsp;&nbsp;Delete</div>
                 </div>
 
+                   <div
+                     className="comment-options-type"
+                     onClick={this.handleUpdate}
+                   >
+                     <i className="fas fa-trash-alt"></i>
+                     <div>&nbsp;&nbsp;Update</div>
+                   </div>
+            </>
         } else {
-            optionsText = 
-                <div className="comment-options-type" onClick={this.toggleReport}>
-                    <i className="fas fa-flag"></i>
-                    <div >&nbsp;&nbsp;Report</div>
-                </div>
-        }
+                 optionsText = (
+                   <div
+                     className="comment-options-type"
+                     onClick={this.toggleReport}
+                   >
+                     <i className="fas fa-flag"></i>
+                     <div>&nbsp;&nbsp;Report</div>
+                   </div>
+                 );
+               }
 
         
 
@@ -79,8 +109,21 @@ class CommentIndexItem extends React.Component {
         } else {
             toggleClass = 'options-dropdown-off'
         }
-        return(
-            <>
+
+        let editForm;
+        
+        if (this.state.needsEdit === true) {
+            editForm = <UpdateForm
+              currentUser={this.props.currentUser}
+              currentVideo={this.props.match.params.videoId}
+              updateComment={this.props.updateComment}
+              handleUpdate={this.handleUpdate}
+              comment={this.props.comment.content}
+              id={this.props.comment.id}
+            />;
+        } else {
+            editForm = (
+                 <>
             <div className='comment-cluster' onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
                     <div className='user-button-comment' style={{ backgroundColor: this.props.userColor }}>{this.buttonParse()}</div>
                     <div className={hoverClass} onClick={this.toggleMenu} >
@@ -88,16 +131,26 @@ class CommentIndexItem extends React.Component {
                     </div>
                     <div className={toggleClass} onClick={this.toggleMenu}>{optionsText}</div>
                     <div className='comment-creator'>{this.usernameParse()}&nbsp;&nbsp;<div className='comment-date'>{this.props.comment.createdAt }</div></div>
+                    {/* {editForm} */}
                 <div className='comment' >{this.props.comment.content}</div>
+                <div className='thumbs'>
                     <div className='comment-like-button'><i className="fas fa-thumbs-up"></i></div>
                     <div className='comment-dislike-button'><i className="fas fa-thumbs-down"></i></div>
+                </div>
             </div>
+            </>
+            );
+        }
+
+        return(
+            <>
+            {editForm}
             </>
         )
     }
 }
 
-export default CommentIndexItem;
+export default withRouter(CommentIndexItem);
 
 //experiment: {this.props.comment.createdAt}
 // old: {randomNumber} {randomSpan} ago
