@@ -82,7 +82,7 @@ class CommentIndexItem extends React.Component {
                     className="comment-options-type"
                     onClick={this.handleUpdate}
                   >
-                    <i className="fas fa-trash-alt"></i>
+                    <i className="fas fa-redo-alt"></i>
                     <div>&nbsp;&nbsp;Update</div>
                   </div>
 
@@ -98,7 +98,7 @@ class CommentIndexItem extends React.Component {
                     className="comment-options-type"
                     onClick={() => this.setState({ needsEdit: false })}
                   >
-                    <i className="fas fa-trash-alt"></i>
+                    <i className="fas fa-long-arrow-alt-left"></i>
                     <div>&nbsp;&nbsp;Back</div>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ class CommentIndexItem extends React.Component {
                     className="comment-options-type"
                     onClick={() => this.setState({ needsEdit: false })}
                     >
-                    <i className="fas fa-trash-alt"></i>
+                    <i className="fas fa-long-arrow-alt-left"></i>
                     <div>&nbsp;&nbsp;Back</div>
                   </div>
                    </div>
