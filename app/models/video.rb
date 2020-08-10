@@ -7,11 +7,11 @@
 #  title              :string           not null
 #  description        :string
 #  category           :string
-#  tags               :string
 #  comment_visibility :boolean          default(TRUE), not null
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  views              :integer
+#  tags               :string           is an Array
 #
 class Video < ApplicationRecord
     validates :title, presence:true 
@@ -27,8 +27,24 @@ class Video < ApplicationRecord
         foreign_key: :video_id,
         class_name: :Comment
 
+    has_many :likes, as: :likeable, dependent: :destroy
+
     def self.previews(id)
         self.where.not(id: id).limit(10).shuffle
         #active record method
     end
+
+    # def count_likes
+    #     upvotes = 0
+    #     downvotes = 0
+    #     self.likes.each do |like|
+    #         if like.liked
+    #             upvotes += 1
+    #         else
+    #             downvotes += 1
+    #         end
+    #     end
+    #     return [upvotes, downvotes]
+    # end 
+
 end

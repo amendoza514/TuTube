@@ -13,7 +13,7 @@
         json.user video.user.email
         json.userColor video.user.icon_color
         json.user_verified video.user.verified
-
+        json.likes video.likes
         #does this correspond to the key that I set in the video.rb?
     end
 end

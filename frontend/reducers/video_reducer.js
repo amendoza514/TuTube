@@ -1,4 +1,6 @@
 import { RECEIVE_VIDEO, RECEIVE_VIDEOS} from '../actions/video_actions'
+import  { RECEIVE_VIDEO_LIKE, REMOVE_VIDEO_LIKE } from '../actions/like_actions';
+
 
 const videosReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -10,9 +12,18 @@ const videosReducer = (state = {}, action) => {
                 newState[video.id] = video
             });
             return newState;
+
         case RECEIVE_VIDEOS:
-                // debugger
             return action.videos;
+
+        case RECEIVE_VIDEO_LIKE:
+            if (!action.video.video) return state;
+            return Object.assign({}, state, {[action.video.video.id]: action.video.video});
+            
+        case REMOVE_VIDEO_LIKE:
+             if (!action.video.video) return state;
+            return Object.assign({}, state, {[action.video.video.id]: action.video.video});
+            // return Object.assign({}, state, action.payload.video);
 
         default: 
             return state;
@@ -21,4 +32,3 @@ const videosReducer = (state = {}, action) => {
 
 export default videosReducer
 
-//QUESTION: Still not totally sure what I'm doing here. 

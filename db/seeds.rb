@@ -10,6 +10,7 @@ require 'open-uri'
 User.destroy_all
 Video.destroy_all
 Comment.destroy_all
+Like.destroy_all
 
 user1 = User.create!(email: "king_james@gmail.com", password:"123456", verified: true, icon_color: '#6a0dad')
 user2 = User.create!(email: "russel_3x2@gmail.com", password:"123456", verified: true, icon_color: '#FF4500')

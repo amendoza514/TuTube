@@ -1,5 +1,6 @@
-import { RECEIVE_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions'
-import { RECEIVE_VIDEO } from '../actions/video_actions'
+import { RECEIVE_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
+import { RECEIVE_VIDEO } from '../actions/video_actions';
+import  { RECEIVE_COMMENT_LIKE, REMOVE_COMMENT_LIKE } from '../actions/like_actions';
 
 const commentsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -14,7 +15,13 @@ const commentsReducer = (state = {}, action) => {
             delete newState[action.commentId]
             return newState
         case RECEIVE_VIDEO:
-            return action.video.comments ? action.video.comments : []
+            return action.video.comments ? action.video.comments : [];
+
+        case RECEIVE_COMMENT_LIKE:
+            return Object.assign({}, state, action.payload.comment);
+        case REMOVE_COMMENT_LIKE:
+            return Object.assign({}, state, action.payload.comment);
+        
         default:
             return state;
     }

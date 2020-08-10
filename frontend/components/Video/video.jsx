@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 class Video extends React.Component {
     constructor(props){
         super(props)
-        this.state = {hover: false}
+        this.state = { hover: false }
         this.videoPreview = this.videoPreview.bind(this)
         this.videoClose = this.videoClose.bind(this);
         this.time = Math.floor(Math.random() * 24) + 1;

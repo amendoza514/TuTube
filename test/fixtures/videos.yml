@@ -7,11 +7,11 @@
 #  title              :string           not null
 #  description        :string
 #  category           :string
-#  tags               :string
 #  comment_visibility :boolean          default(TRUE), not null
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  views              :integer
+#  tags               :string           is an Array
 #
 
 # This model initially had no columns defined. If you add columns to the

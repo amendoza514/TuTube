@@ -19,6 +19,7 @@ json.comments do
                        json.user comment.user.email
                        json.userColor comment.user.icon_color
                        json.createdAt comment.created_at.strftime("%d %b %Y")
+                       json.likes comment.likes
                 end
         end
 end
@@ -31,5 +32,6 @@ json.previews Video.previews(@video.id).map do |video|
                 json.user video.user.email
                 json.userColor video.user.icon_color
                 json.user_verified video.user.verified
+                # json.likes video.likes
                 preview_ids << video.id
 end
