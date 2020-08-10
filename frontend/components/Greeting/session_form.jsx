@@ -157,7 +157,7 @@ class SessionForm extends React.Component {
             &nbsp;&nbsp;&nbsp;Your profile
           </div>
           </i> */}
-          <i id="dark-mode-icon" className="fas fa-adjust" >
+          <i id="dark-mode-icon" className="fas fa-adjust" onClick={() => alert("Dark Mode coming soon!")}>
           <div id="dark-mode-text" onClick={() => {  <Link to="/login"></Link> }}>
             &nbsp;&nbsp;&nbsp;Dark mode
           </div>
