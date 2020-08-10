@@ -19,7 +19,7 @@ json.comments do
                        json.user comment.user.email
                        json.userColor comment.user.icon_color
                        json.createdAt comment.created_at.strftime("%d %b %Y")
-                       json.likes comment.likes
+                #        json.likes comment.likes
                 end
         end
 end

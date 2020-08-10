@@ -25,12 +25,13 @@ class VideoShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchVideo(this.props.match.params.videoId).then(() => {
-        this.likes = this.props.video.likes;
-        this.likesCount = this.likes.filter(like => like.like === true).length;
-        this.dislikesCount = this.likes.filter(like => like.like === false).length;
+        // this.likes = this.props.video.likes;
+        // this.likesCount = this.likes.filter(like => like.like === true).length;
+        // this.dislikesCount = this.likes.filter(like => like.like === false).length;
 
         if (this.props.currentUser) {
-          this.likes.forEach((like) => {
+        //   this.likes.forEach((like) => {
+          this.props.video.likes.forEach((like) => {
             if (like.user_id === this.props.currentUser.id && like.like === true) {
               this.setState({ liked: true, disliked: false });
             } else if (like.user_id === this.props.currentUser.id && like.like === false) {
@@ -43,7 +44,28 @@ class VideoShow extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
-      this.props.fetchVideo(this.props.match.params.videoId)
+      this.props.fetchVideo(this.props.match.params.videoId).then(() => {
+        // this.likes = this.props.video.likes;
+        // this.likesCount = this.likes.filter(like => like.like === true).length;
+        // this.dislikesCount = this.likes.filter(like => like.like === false).length;
+
+        if (this.props.currentUser) {
+          //   this.likes.forEach((like) => {
+          this.props.video.likes.forEach((like) => {
+            if (
+              like.user_id === this.props.currentUser.id &&
+              like.like === true
+            ) {
+              this.setState({ liked: true, disliked: false });
+            } else if (
+              like.user_id === this.props.currentUser.id &&
+              like.like === false
+            ) {
+              this.setState({ liked: false, disliked: true });
+            }
+          });
+        }
+      });
     }
   }
 
@@ -77,21 +99,24 @@ class VideoShow extends React.Component {
     e.preventDefault();
     if (this.props.currentUser) {
         if (this.state.liked === false && this.state.disliked === false) {
-            this.props.dislikeVideo(this.props.video);
+            this.props.dislikeVideo(this.props.video).then(() => {
             this.setState({ liked: false, disliked: true})
+            })
             
         } else if (this.state.liked === false && this.state.disliked === true) {
             this.props.destroyVideoLike(
                 this.props.video.id, 
-                this.props.video.likes.filter(like => like.user_id === this.props.currentUser.id)[0].id);
+                this.props.video.likes.filter(like => like.user_id === this.props.currentUser.id)[0].id).then(() => {
             this.setState({ liked: false, disliked: false });
+                })
         } else if (this.state.liked === true && this.state.disliked === false) {
             this.props.destroyVideoLike(
                 this.props.video.id, 
                 this.props.video.likes.filter(like => like.user_id === this.props.currentUser.id)[0].id)
                 .then(() => {
-                    this.props.dislikeVideo(this.props.video);
-                    this.setState({ liked: false, disliked: true });
+                    this.props.dislikeVideo(this.props.video).then(() => {
+                    this.setState({ liked: false, disliked: true })
+                    })
                 })
         }
     } else {
@@ -148,6 +173,13 @@ class VideoShow extends React.Component {
 
   render() {
     if (!this.props.video) return null;
+    if (!this.props.video.likes) return null;
+
+     let likes = this.props.video.likes;
+     let likesCount = likes.filter((like) => like.like === true).length;
+     let dislikesCount = likes.filter(
+       (like) => like.like === false
+     ).length;
 
     let toggler;
     let expandText;
@@ -213,11 +245,11 @@ class VideoShow extends React.Component {
               </div>
               <div className={dislikeStatus} onClick={this.handleDislike}>
                 <i className="fas fa-thumbs-down"></i>
-                <div className="dislikes-count">{this.dislikesCount}</div>
+                <div className="dislikes-count">{dislikesCount}</div>
               </div>
               <div className={likeStatus} onClick={this.handleLike}>
                 <i className="fas fa-thumbs-up">
-                  <div className="likes-count">{this.likesCount}</div>
+                  <div className="likes-count">{likesCount}</div>
                 </i>
               </div>
               <div className="video-views">

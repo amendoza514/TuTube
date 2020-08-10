@@ -34,17 +34,24 @@ class Video < ApplicationRecord
         #active record method
     end
 
-    # def count_likes
-    #     upvotes = 0
-    #     downvotes = 0
-    #     self.likes.each do |like|
-    #         if like.liked
-    #             upvotes += 1
-    #         else
-    #             downvotes += 1
-    #         end
-    #     end
-    #     return [upvotes, downvotes]
-    # end 
+    def likes_count
+        likes = 0
+        self.likes.each do |like|
+            if like.like 
+                likes += 1
+            end
+        end
+        return likes
+    end 
+
+      def dislikes_count
+        dislikes = 0
+        self.likes.each do |like|
+            if !like.like
+                dislikes += 1
+            end
+        end
+        return dislikes
+    end 
 
 end
