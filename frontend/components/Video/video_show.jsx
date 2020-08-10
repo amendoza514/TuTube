@@ -204,7 +204,10 @@ class VideoShow extends React.Component {
           <div className="info-container">
             <div className="large-title">{this.props.video.title}</div>
             <div className="expanded-video-info">
-              <div className="share-button">
+              <div
+                className="share-button"
+                onClick={() => alert(window.location.href)}
+              >
                 <i className="fas fa-share"></i>
                 <div className="share-text">&nbsp;&nbsp;SHARE</div>
               </div>
