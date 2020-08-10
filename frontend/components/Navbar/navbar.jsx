@@ -6,30 +6,48 @@ import SearchBar from '../Search/search_bar';
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { videoUploadText: false };
     }
     
     render() {
-        return(
-            <>
-                <section className='main-header'>
-                    <button id='hamburger-icon'>
-                        <i className="fas fa-bars"></i>
-                    </button>
-                    <Link to='./' id="main-logo" >
-                    {/* <Link to='./' id="main-logo" onClick={this.resetSearch}> */}
-                        <i className="fab fa-youtube"></i>
-                    </Link> 
-                    <Link to='./' id="main-text">
-                    {/* <Link to='./' id="main-text" onClick={this.resetSearch}> */}
-                        TuTube
-                    </Link>
-                    <SearchBar />
-                    <GreetingContainer />
-                    <Link to='./' id="notifications-logo"><i className="fas fa-bell"></i></Link>
-                    <Link to='./' id="video-logo"><i className="fas fa-video"></i></Link>
-                </section>
-            </>
-        )
+        let displayHelp;
+        if (this.state.videoUploadText === false) {
+            displayHelp = 'no-help'
+        } else if (this.state.videoUploadText === true) {
+            displayHelp = "show-help";
+        }
+
+        return (
+          <>
+            <section className="main-header">
+              <button id="hamburger-icon">
+                <i className="fas fa-bars"></i>
+              </button>
+              <Link to="./" id="main-logo">
+                {/* <Link to='./' id="main-logo" onClick={this.resetSearch}> */}
+                <i className="fab fa-youtube"></i>
+              </Link>
+              <Link to="./" id="main-text">
+                {/* <Link to='./' id="main-text" onClick={this.resetSearch}> */}
+                TuTube
+              </Link>
+              <SearchBar />
+              <GreetingContainer />
+              <div
+                to="./"
+                id="video-logo"
+                onMouseEnter={() => this.setState({ videoUploadText: true })}
+                onMouseLeave={() => this.setState({ videoUploadText: false })}
+                onClick={() => alert("Video Upload coming soon!")}
+              >
+                <i className="fas fa-video"></i>
+              </div>
+              <div to="./" id={displayHelp}>
+                Upload Video
+              </div>
+            </section>
+          </>
+        );
     }
 }
 

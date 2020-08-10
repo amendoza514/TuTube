@@ -101,10 +101,23 @@
 
 
 
-#video-logo, #notifications-logo{
+// #video-logo, #notifications-logo{
+#video-logo{
     text-decoration: none;
     float: right;
     margin-right: 15px;
     margin-top: 4px;
+    cursor: pointer;
 }
 
+#no-help {
+    display: none
+}
+
+#show-help {
+    text-decoration: none;
+    float: right;
+    font-size: 12px;
+    margin-right: 15px;
+    margin-top: 13px;
+}

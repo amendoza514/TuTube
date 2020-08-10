@@ -72,8 +72,25 @@
     margin-right: 15px;
     color: #606060;
     font-size: 20px;
-    margin-top: 4px;
+    margin-top: 5px;
 }
+
+.fa-bell, .fa-video:hover  {
+    content: "\f0f3";
+    margin-right: 15px;
+    color: #fa0000;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.fa-bell, .fa-video:active  {
+    content: "\f0f3";
+    margin-right: 15px;
+    color: #a40c0c;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
 
 #link {
     color: #3863bf;
