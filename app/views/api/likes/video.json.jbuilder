@@ -35,4 +35,4 @@ json.previews Video.previews(@video.id).map do |video|
                 preview_ids << video.id
 end
 
-I renabled previews so that I can atleast see the sidebar tab
+# I renabled previews so that I can atleast see the sidebar tab
