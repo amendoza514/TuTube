@@ -18,10 +18,12 @@ const commentsReducer = (state = {}, action) => {
             return action.video.comments ? action.video.comments : [];
 
         case RECEIVE_COMMENT_LIKE:
+            if (!action.payload.comment) return state;
             return Object.assign({}, state, action.payload.comment);
         case REMOVE_COMMENT_LIKE:
+            if (!action.payload.comment) return state;
             return Object.assign({}, state, action.payload.comment);
-        
+
         default:
             return state;
     }

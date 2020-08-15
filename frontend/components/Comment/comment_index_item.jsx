@@ -1,6 +1,7 @@
 import React from 'react';
 import UpdateForm from "./update_form";
 import { withRouter } from "react-router-dom";
+import CommentLike from './comment_like'
 
 class CommentIndexItem extends React.Component {
     constructor(props){
@@ -155,12 +156,8 @@ class CommentIndexItem extends React.Component {
                     </div>
                     <div className={toggleClass} onClick={this.toggleMenu}>{optionsText}</div>
                     <div className='comment-creator'>{this.usernameParse()}&nbsp;&nbsp;<div className='comment-date'>{this.props.comment.createdAt }</div></div>
-                    {/* {editForm} */}
                 <div className='comment' >{this.props.comment.content}</div>
-                <div className='thumbs'>
-                    <div className='comment-like-button'><i className="fas fa-thumbs-up"></i></div>
-                    <div className='comment-dislike-button'><i className="fas fa-thumbs-down"></i></div>
-                </div>
+                <CommentLike currentUser={this.props.currentUser} comment={this.props.comment}/>
             </div>
             </>
             );
