@@ -137,12 +137,12 @@ class VideoLike extends React.Component {
       : "dislike-button";
     return (
       <>
-        <div className={dislikeStatus}>
+        {/* <div className={dislikeStatus}> */}
         <div className={dislikeStatus} onClick={this.handleDislike}>
           <i className="fas fa-thumbs-down"></i>
           <div className="dislikes-count">{dislikesCount}</div>
         </div>
-        <div className={likeStatus}>
+        {/* <div className={likeStatus}> */}
         <div className={likeStatus} onClick={this.handleLike}>
           <i className="fas fa-thumbs-up">
             <div className="likes-count">{likesCount}</div>
