@@ -20,53 +20,12 @@ class VideoShow extends React.Component {
   componentDidMount() {
     this.props.fetchVideo(this.props.match.params.videoId);
   }
-  // componentDidMount() {
-  //   this.props.fetchVideo(this.props.match.params.videoId).then(() => {
-  //     if (this.props.currentUser) {
-  //       this.props.video.likes.forEach((like) => {
-  //         if (
-  //           like.user_id === this.props.currentUser.id &&
-  //           like.like === true
-  //         ) {
-  //           this.setState({ liked: true, disliked: false });
-  //         } else if (
-  //           like.user_id === this.props.currentUser.id &&
-  //           like.like === false
-  //         ) {
-  //           this.setState({ liked: false, disliked: true });
-  //         }
-  //       });
-  //     }
-  //   });
-  // }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
       this.props.fetchVideo(this.props.match.params.videoId)
     }
   }
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
-  //     this.props.fetchVideo(this.props.match.params.videoId).then(() => {
-
-  //       if (this.props.currentUser) {
-  //         this.props.video.likes.forEach((like) => {
-  //           if (
-  //             like.user_id === this.props.currentUser.id &&
-  //             like.like === true
-  //           ) {
-  //             this.setState({ liked: true, disliked: false });
-  //           } else if (
-  //             like.user_id === this.props.currentUser.id &&
-  //             like.like === false
-  //           ) {
-  //             this.setState({ liked: false, disliked: true });
-  //           }
-  //         });
-  //       }
-  //     });
-  //   }
-  // }
 
   textToggle() {
     this.setState({ textToggle: !this.state.textToggle });
@@ -117,7 +76,7 @@ class VideoShow extends React.Component {
 
   render() {
     if (!this.props.video) return null;
-    if (!this.props.video.likes) return null;
+    // if (!this.props.video.likes) return null;
 
     let toggler;
     let expandText;

@@ -22,7 +22,7 @@ export const removeVideoLike = (videoId, likeId) =>
   });
 
 
-  
+
 //comment
 export const likeComment = comment =>
   $.ajax({

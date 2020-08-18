@@ -7,20 +7,20 @@ class VideoLike extends React.Component {
     this.state = {
       liked: false,
       disliked: false,
+      temp: false
     };
     this.handleLike = this.handleLike.bind(this);
     this.handleDislike = this.handleDislike.bind(this);
   }
 
   componentDidMount() {
-    // this.props.fetchVideo(this.props.match.params.videoId).then(() => {
-    // this.likes = this.props.video.likes;
-    // this.likesCount = this.likes.filter(like => like.like === true).length;
-    // this.dislikesCount = this.likes.filter(like => like.like === false).length;
-// console.log(this.props)
+    this.likes = this.props.video.likes;
+    this.likesCount = this.likes.filter(like => like.like === true).length;
+    this.dislikesCount = this.likes.filter(like => like.like === false).length;
+   // console.log(this.props)
     if (this.props.currentUser) {
-      //   this.likes.forEach((like) => {
-      this.props.video.likes.forEach((like) => {
+        this.likes.forEach((like) => {
+      // this.props.video.likes.forEach((like) => {
         if (like.user_id === this.props.currentUser.id && like.like === true) {
           this.setState({ liked: true, disliked: false });
         } else if (
@@ -31,7 +31,6 @@ class VideoLike extends React.Component {
         }
       });
     }
-    // });
   }
 
   // componentDidUpdate(prevProps) {
@@ -69,8 +68,10 @@ class VideoLike extends React.Component {
           this.props.video.likes.filter(
             (like) => like.user_id === this.props.currentUser.id
           )[0].id
-        );
-        this.setState({ liked: false, disliked: false });
+        )
+          .then(() => {
+            this.setState({ liked: false, disliked: false, temp: true });
+          });
       } else if (this.state.liked === false && this.state.disliked === true) {
         this.props
           .destroyVideoLike(
@@ -81,7 +82,7 @@ class VideoLike extends React.Component {
           )
           .then(() => {
             this.props.likeVideo(this.props.video);
-            this.setState({ liked: true, disliked: false });
+            this.setState({ liked: true, disliked: false, temp: true});
           });
       }
     } else {
@@ -129,7 +130,9 @@ class VideoLike extends React.Component {
   render() {
     let likes = this.props.video.likes;
     let likesCount = likes.filter((like) => like.like === true).length;
-    let dislikesCount = likes.filter((like) => like.like === false).length;
+    let dislikesCount = this.temp === true ? 
+      likes.filter((like) => like.like === false).length - 1 :
+      likes.filter((like) => like.like === false).length
 
     let likeStatus = this.state.liked ? "liked-button" : "like-button";
     let dislikeStatus = this.state.disliked

@@ -36,8 +36,10 @@ dispatch(removeVideoLike(video))
 );
 
 export const destroyVideoLike = (videoId, likeId) => (dispatch) =>
-LikeAPIUtil.removeVideoLike(videoId, likeId).then(() =>
+LikeAPIUtil.removeVideoLike(videoId, likeId).then((videoId) =>
 dispatch(removeVideoLike(videoId))
+// was originally .then(() =>
+// I wasn't returning anything to refresh ? WHy would I ever want to do that?
 );
 
 //comment likes
@@ -52,6 +54,8 @@ export const dislikeComment = (comment) => (dispatch) =>
   );
 
 export const destroyCommentLike = (commentId, likeId) => (dispatch) =>
-    LikeAPIUtil.removeCommentLike(commentId, likeId).then(() =>
+    LikeAPIUtil.removeCommentLike(commentId, likeId).then((commentId) =>
       dispatch(removeCommentLike(commentId))
+      // was originally .then(() =>
+// I wasn't returning anything to refresh ? WHy would I ever want to do that?
 );
