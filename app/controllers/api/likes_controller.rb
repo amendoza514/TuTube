@@ -51,7 +51,7 @@ class Api::LikesController < ApplicationController
             render :video
         end
     end
-
+# 
     def like_params
         params.require(:like).permit(:user_id, :likeable_id, :likeable_type)
     end

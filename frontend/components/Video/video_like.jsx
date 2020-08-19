@@ -7,20 +7,14 @@ class VideoLike extends React.Component {
     this.state = {
       liked: false,
       disliked: false,
-      temp: false
     };
     this.handleLike = this.handleLike.bind(this);
     this.handleDislike = this.handleDislike.bind(this);
   }
 
   componentDidMount() {
-    this.likes = this.props.video.likes;
-    this.likesCount = this.likes.filter(like => like.like === true).length;
-    this.dislikesCount = this.likes.filter(like => like.like === false).length;
-   // console.log(this.props)
     if (this.props.currentUser) {
-        this.likes.forEach((like) => {
-      // this.props.video.likes.forEach((like) => {
+      this.props.video.likes.forEach((like) => {
         if (like.user_id === this.props.currentUser.id && like.like === true) {
           this.setState({ liked: true, disliked: false });
         } else if (
@@ -33,28 +27,23 @@ class VideoLike extends React.Component {
     }
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
-  //     this.props.fetchVideo(this.props.match.params.videoId).then(() => {
-
-  //       if (this.props.currentUser) {
-  //         this.props.video.likes.forEach((like) => {
-  //           if (
-  //             like.user_id === this.props.currentUser.id &&
-  //             like.like === true
-  //           ) {
-  //             this.setState({ liked: true, disliked: false });
-  //           } else if (
-  //             like.user_id === this.props.currentUser.id &&
-  //             like.like === false
-  //           ) {
-  //             this.setState({ liked: false, disliked: true });
-  //           }
-  //         });
-  //       }
-  //     });
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
+      this.setState({ liked: false, disliked: false });
+      // ^trying to influence more accurate setting on change
+      if (this.props.currentUser) {
+        // debugger
+        this.props.video.likes.forEach((like) => {
+          if (like.user_id === this.props.currentUser.id && like.like === true) {
+            this.setState({ liked: true, disliked: false });
+          } else if (
+            like.user_id === this.props.currentUser.id && like.like === false) {
+            this.setState({ liked: false, disliked: true });
+          }
+        });
+      }
+    }
+  }
 
   handleLike(e) {
     e.preventDefault();
@@ -70,7 +59,7 @@ class VideoLike extends React.Component {
           )[0].id
         )
           .then(() => {
-            this.setState({ liked: false, disliked: false, temp: true });
+            this.setState({ liked: false, disliked: false });
           });
       } else if (this.state.liked === false && this.state.disliked === true) {
         this.props
@@ -82,7 +71,7 @@ class VideoLike extends React.Component {
           )
           .then(() => {
             this.props.likeVideo(this.props.video);
-            this.setState({ liked: true, disliked: false, temp: true});
+            this.setState({ liked: true, disliked: false });
           });
       }
     } else {
@@ -128,11 +117,11 @@ class VideoLike extends React.Component {
   }
 
   render() {
+        if (!this.props.video.likes) return null;
+
     let likes = this.props.video.likes;
     let likesCount = likes.filter((like) => like.like === true).length;
-    let dislikesCount = this.temp === true ? 
-      likes.filter((like) => like.like === false).length - 1 :
-      likes.filter((like) => like.like === false).length
+    let dislikesCount = likes.filter((like) => like.like === false).length;
 
     let likeStatus = this.state.liked ? "liked-button" : "like-button";
     let dislikeStatus = this.state.disliked
@@ -140,12 +129,10 @@ class VideoLike extends React.Component {
       : "dislike-button";
     return (
       <>
-        {/* <div className={dislikeStatus}> */}
         <div className={dislikeStatus} onClick={this.handleDislike}>
           <i className="fas fa-thumbs-down"></i>
           <div className="dislikes-count">{dislikesCount}</div>
         </div>
-        {/* <div className={likeStatus}> */}
         <div className={likeStatus} onClick={this.handleLike}>
           <i className="fas fa-thumbs-up">
             <div className="likes-count">{likesCount}</div>

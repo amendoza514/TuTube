@@ -32,6 +32,6 @@ json.previews Video.previews(@video.id).map do |video|
                 json.user video.user.email
                 json.userColor video.user.icon_color
                 json.user_verified video.user.verified
-                # json.likes video.likes
+                json.likes video.likes
                 preview_ids << video.id
 end
