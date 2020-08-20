@@ -24,7 +24,7 @@ json.comments do
         end
 end
 
-json.previews Video.previews(@video.id).map do |video|
+json.previews @previews.map do |video|
                 json.extract! video, :id, :title, :description, :user_id, :category, :tags, :views
                 json.videoUrl url_for(video.video) if video.video.attached?
                 # dont necessarily need ^
@@ -36,4 +36,3 @@ json.previews Video.previews(@video.id).map do |video|
                 preview_ids << video.id
 end
 
-# I renabled previews so that I can atleast see the sidebar tab

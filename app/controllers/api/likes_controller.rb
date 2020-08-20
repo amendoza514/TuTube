@@ -12,6 +12,7 @@ class Api::LikesController < ApplicationController
 
         if params[:video_id].present?
           @video = Video.find(params[:video_id])
+          @previews = Video.previews(@video.id)
           @like = Like.new({
           user_id: @user.id, 
           like: params[:like],
@@ -48,6 +49,7 @@ class Api::LikesController < ApplicationController
             @like = Like.find(params[:id])
             @like.destroy
             @video = Video.find(params[:video_id])
+            @previews = Video.previews(@video.id)
             render :video
         end
     end

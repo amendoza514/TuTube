@@ -141,30 +141,98 @@ videoInfo12.thumbnail.attach(io: thumbFile12, filename: 'harlem.jpg')
 comment1 = Comment.create!(user_id: user3.id, video_id: videoInfo1.id, content: "ONE ring in the past 30 years and you all act like this smh")
 comment2 = Comment.create!(user_id: user4.id, video_id: videoInfo1.id, content: "ANYTHING IS POSSIBLEEEEEEEEE")
 comment3 = Comment.create!(user_id: user1.id, video_id: videoInfo1.id, content: "remember when I beat the celtics so many times they gave up and became the brooklyn nets")
-
-
 comment4 = Comment.create!(user_id: user1.id, video_id: videoInfo11.id, content: "WHAT IS IT")
 comment5 = Comment.create!(user_id: user1.id, video_id: videoInfo11.id, content: "SIKE")
 comment6 = Comment.create!(user_id: user1.id, video_id: videoInfo12.id, content: "Looking back, DWade should have probably been resting his knees")
 comment7 = Comment.create!(user_id: user1.id, video_id: videoInfo5.id, content: "FUN FACT: My career average is a 27/7/7, but in 17 years Ive never had a stat line of 27/7/7 in-game")
 comment8 = Comment.create!(user_id: user1.id, video_id: videoInfo7.id, content: "FUN FACT: In the 2016 NBA Finals I averaged the most points, rebounds, assists, blocks, and steals between both teams")
-
 comment9 = Comment.create!(user_id: user6.id, video_id: videoInfo5.id, content: "Keeping the ball high after a rebound is crucial for any low-post game")
 comment10 = Comment.create!(user_id: user6.id, video_id: videoInfo6.id, content: "Remember, a solid chest pass will always beat a flashy one. Keep it straight forward and simple. Basketball is fun when it's played the right way! #KISS #keepitsimplesilly")
 comment11 = Comment.create!(user_id: user6.id, video_id: videoInfo9.id, content: "Make sure to keep paper copies of your important documents in one place, in case of a fire! #evacuationPreparedness #fundamentalsOnAndOffTheCourt")
 comment12 = Comment.create!(user_id: user8.id, video_id: videoInfo10.id, content: "BUT CAN HE BE TRUSTED")
 comment13 = Comment.create!(user_id: user9.id, video_id: videoInfo10.id, content: "WHERE'S POPOVICH, WHERE IS HE")
 comment14 = Comment.create!(user_id: user2.id, video_id: videoInfo2.id, content: "snakes in the grass...")
-
-
-
 comment15 = Comment.create!(user_id: user2.id, video_id: videoInfo1.id, content: "GIVE THIS COMMENT AT LEAST 10 LIKES AND 10 COMMENTS AND 10 SHARES");
-
-
-
 comment16 = Comment.create!(user_id: user3.id, video_id: videoInfo2.id, content: "Why this song tho")
-
 comment16 = Comment.create!(user_id: user1.id, video_id: videoInfo6.id, content: "Just rip the sleeves off")
 comment17 = Comment.create!(user_id: user1.id, video_id: videoInfo8.id, content: "Weird that Dirk was considered a mobile 7 footer. Now look at these guys sheesh.")
+
+like1 = Like.create!(user_id: user1.id, like: false, likeable_type: "Video", likeable_id: videoInfo1.id)
+like2 = Like.create!(user_id: user4.id, like: true, likeable_type: "Video", likeable_id: videoInfo1.id)
+like3 = Like.create!(user_id: user2.id, like: false, likeable_type: "Video", likeable_id: videoInfo1.id)
+like4 = Like.create!(user_id: user3.id, like: false, likeable_type: "Video", likeable_id: videoInfo1.id)
+like5 = Like.create!(user_id: user5.id, like: false, likeable_type: "Video", likeable_id: videoInfo1.id)
+like6 = Like.create!(user_id: user6.id, like: false, likeable_type: "Video", likeable_id: videoInfo1.id)
+like7 = Like.create!(user_id: user7.id, like: false, likeable_type: "Video", likeable_id: videoInfo1.id)
+like8 = Like.create!(user_id: user8.id, like: false, likeable_type: "Video", likeable_id: videoInfo1.id)
+
+like9 = Like.create!(user_id: user1.id, like: false, likeable_type: "Video", likeable_id: videoInfo2.id)
+like10 = Like.create!(user_id: user4.id, like: true, likeable_type: "Video", likeable_id: videoInfo2.id)
+like11 = Like.create!(user_id: user2.id, like: false, likeable_type: "Video", likeable_id: videoInfo2.id)
+like12 = Like.create!(user_id: user3.id, like: true, likeable_type: "Video", likeable_id: videoInfo2.id)
+like13 = Like.create!(user_id: user5.id, like: true, likeable_type: "Video", likeable_id: videoInfo2.id)
+like14 = Like.create!(user_id: user6.id, like: true, likeable_type: "Video", likeable_id: videoInfo2.id)
+like15 = Like.create!(user_id: user7.id, like: true, likeable_type: "Video", likeable_id: videoInfo2.id)
+like16 = Like.create!(user_id: user8.id, like: false, likeable_type: "Video", likeable_id: videoInfo2.id)
+
+like17 = Like.create!(user_id: user1.id, like: true, likeable_type: "Video", likeable_id: videoInfo3.id)
+like18 = Like.create!(user_id: user4.id, like: true, likeable_type: "Video", likeable_id: videoInfo3.id)
+like19 = Like.create!(user_id: user2.id, like: false, likeable_type: "Video", likeable_id: videoInfo3.id)
+like20 = Like.create!(user_id: user3.id, like: true, likeable_type: "Video", likeable_id: videoInfo3.id)
+like21 = Like.create!(user_id: user5.id, like: true, likeable_type: "Video", likeable_id: videoInfo3.id)
+like22 = Like.create!(user_id: user6.id, like: true, likeable_type: "Video", likeable_id: videoInfo3.id)
+like23 = Like.create!(user_id: user7.id, like: true, likeable_type: "Video", likeable_id: videoInfo3.id)
+like24 = Like.create!(user_id: user8.id, like: false, likeable_type: "Video", likeable_id: videoInfo3.id)
+
+like25 = Like.create!(user_id: user1.id, like: false, likeable_type: "Video", likeable_id: videoInfo4.id)
+like26 = Like.create!(user_id: user4.id, like: true, likeable_type: "Video", likeable_id: videoInfo4.id)
+like27 = Like.create!(user_id: user2.id, like: false, likeable_type: "Video", likeable_id: videoInfo4.id)
+like28 = Like.create!(user_id: user3.id, like: true, likeable_type: "Video", likeable_id: videoInfo4.id)
+like29 = Like.create!(user_id: user5.id, like: false, likeable_type: "Video", likeable_id: videoInfo4.id)
+like30 = Like.create!(user_id: user6.id, like: false, likeable_type: "Video", likeable_id: videoInfo4.id)
+like31 = Like.create!(user_id: user7.id, like: true, likeable_type: "Video", likeable_id: videoInfo4.id)
+like32 = Like.create!(user_id: user8.id, like: false, likeable_type: "Video", likeable_id: videoInfo4.id)
+
+like33 = Like.create!(user_id: user1.id, like: false, likeable_type: "Video", likeable_id: videoInfo5.id)
+like34 = Like.create!(user_id: user4.id, like: true, likeable_type: "Video", likeable_id: videoInfo5.id)
+like35 = Like.create!(user_id: user2.id, like: false, likeable_type: "Video", likeable_id: videoInfo5.id)
+like36 = Like.create!(user_id: user3.id, like: true, likeable_type: "Video", likeable_id: videoInfo5.id)
+like40 = Like.create!(user_id: user8.id, like: false, likeable_type: "Video", likeable_id: videoInfo5.id)
+
+like41 = Like.create!(user_id: user1.id, like: false, likeable_type: "Video", likeable_id: videoInfo6.id)
+like42 = Like.create!(user_id: user4.id, like: true, likeable_type: "Video", likeable_id: videoInfo6.id)
+like43 = Like.create!(user_id: user3.id, like: true, likeable_type: "Video", likeable_id: videoInfo6.id)
+like44 = Like.create!(user_id: user8.id, like: false, likeable_type: "Video", likeable_id: videoInfo6.id)
+
+like45 = Like.create!(user_id: user1.id, like: true, likeable_type: "Video", likeable_id: videoInfo7.id)
+like46 = Like.create!(user_id: user4.id, like: true, likeable_type: "Video", likeable_id: videoInfo7.id)
+like47 = Like.create!(user_id: user3.id, like: true, likeable_type: "Video", likeable_id: videoInfo7.id)
+like48 = Like.create!(user_id: user8.id, like: false, likeable_type: "Video", likeable_id: videoInfo7.id)
+
+like49 = Like.create!(user_id: user1.id, like: true, likeable_type: "Video", likeable_id: videoInfo8.id)
+like50 = Like.create!(user_id: user4.id, like: true, likeable_type: "Video", likeable_id: videoInfo8.id)
+like51 = Like.create!(user_id: user3.id, like: true, likeable_type: "Video", likeable_id: videoInfo8.id)
+like52 = Like.create!(user_id: user8.id, like: false, likeable_type: "Video", likeable_id: videoInfo8.id)
+
+like53 = Like.create!(user_id: user1.id, like: false, likeable_type: "Video", likeable_id: videoInfo9.id)
+like54 = Like.create!(user_id: user4.id, like: false, likeable_type: "Video", likeable_id: videoInfo9.id)
+like55 = Like.create!(user_id: user3.id, like: true, likeable_type: "Video", likeable_id: videoInfo9.id)
+like56 = Like.create!(user_id: user8.id, like: false, likeable_type: "Video", likeable_id: videoInfo9.id)
+
+like57 = Like.create!(user_id: user1.id, like: false, likeable_type: "Video", likeable_id: videoInfo10.id)
+like58 = Like.create!(user_id: user4.id, like: true, likeable_type: "Video", likeable_id: videoInfo10.id)
+like59 = Like.create!(user_id: user3.id, like: true, likeable_type: "Video", likeable_id: videoInfo10.id)
+like60 = Like.create!(user_id: user8.id, like: true, likeable_type: "Video", likeable_id: videoInfo10.id)
+
+like37 = Like.create!(user_id: user1.id, like: true, likeable_type: "Video", likeable_id: videoInfo11.id)
+like61 = Like.create!(user_id: user4.id, like: true, likeable_type: "Video", likeable_id: videoInfo11.id)
+like62 = Like.create!(user_id: user3.id, like: true, likeable_type: "Video", likeable_id: videoInfo11.id)
+like63 = Like.create!(user_id: user8.id, like: true, likeable_type: "Video", likeable_id: videoInfo11.id)
+
+like64 = Like.create!(user_id: user1.id, like: true, likeable_type: "Video", likeable_id: videoInfo12.id)
+like65 = Like.create!(user_id: user4.id, like: true, likeable_type: "Video", likeable_id: videoInfo12.id)
+like38 = Like.create!(user_id: user3.id, like: true, likeable_type: "Video", likeable_id: videoInfo12.id)
+like66 = Like.create!(user_id: user8.id, like: false, likeable_type: "Video", likeable_id: videoInfo12.id)
+
 
 
