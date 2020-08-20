@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router'
+
 
 class CommentLike extends React.Component {
   constructor(props) {
@@ -12,7 +14,7 @@ class CommentLike extends React.Component {
   }
 
   componentDidMount() {
-      console.log(this.props.comment)
+      // console.log(this.props)
       // debugger
     if (this.props.currentUser) {
         this.props.comment.likes.forEach((like) => {
@@ -111,11 +113,11 @@ class CommentLike extends React.Component {
     return (
       <>
         <div className="thumbs">
-          <div className={commentLikeStatus}>
+          <div className={commentLikeStatus} onClick={this.handleLike}>
             <i className="fas fa-thumbs-up"></i>
             <div className="comment-likes-count">{commentLikesCount}</div>
           </div>
-          <div className={commentDislikeStatus}>
+          <div className={commentDislikeStatus} onClick={this.handleDislike}>
             <i className="fas fa-thumbs-down"></i>
             <div className="comment-dislikes-count">{commentDislikesCount}</div>
           </div>
@@ -125,4 +127,4 @@ class CommentLike extends React.Component {
   }
 }
 
-export default CommentLike;
+export default withRouter(CommentLike);

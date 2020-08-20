@@ -14,6 +14,10 @@ class CommentIndexItem extends React.Component {
         this.handleUpdate = this.handleUpdate.bind(this);
     }
 
+  componentDidMount() {
+  console.log(this.props)
+  }
+
     handleDelete(e) {
         e.preventDefault()
             this.props.deleteComment(this.props.comment.id)

@@ -40,8 +40,8 @@ class Api::LikesController < ApplicationController
     end 
 
     def destroy 
-        if params[:type] == "Comment"
-            @like = Like.find(params[:like_id])
+        if params[:type] === "Comment"
+            @like = Like.find(params[:id])
             @like.destroy
             @comment = Comment.find(params[:comment_id])
             render :comment

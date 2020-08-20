@@ -27,7 +27,18 @@ class CommentIndex extends React.Component {
                 </div>
                 <CommentForm currentUser={this.props.currentUser} currentVideo={this.props.match.params.videoId} createComment={this.props.createComment} />
                 <div className='comment-container'>
-                    {revArr.map((comment, idx) => <CommentIndexItem key={idx} currentUser={this.props.currentUser} comment={comment} deleteComment={this.props.deleteComment} updateComment = {this.props.updateComment}user={comment.user} userColor ={comment.userColor} />)}
+                    {revArr.map((comment, idx) => { return(
+                    <CommentIndexItem 
+                      key={idx} currentUser={this.props.currentUser} 
+                      comment={comment} 
+                      deleteComment={this.props.deleteComment} 
+                      updateComment = {this.props.updateComment}
+                      likeComment={this.props.likeComment}
+                      dislikeComment={this.props.dislikeComment}
+                      destroyCommentLike={this.props.destroyCommentLike}
+                      user={comment.user} 
+                      userColor ={comment.userColor} />)
+                    })}
                 </div>
             </>
         )
