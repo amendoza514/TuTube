@@ -157,7 +157,13 @@ class CommentIndexItem extends React.Component {
                     <div className={toggleClass} onClick={this.toggleMenu}>{optionsText}</div>
                     <div className='comment-creator'>{this.usernameParse()}&nbsp;&nbsp;<div className='comment-date'>{this.props.comment.createdAt }</div></div>
                 <div className='comment' >{this.props.comment.content}</div>
-                <CommentLike currentUser={this.props.currentUser} comment={this.props.comment}/>
+                <CommentLike 
+                  currentUser={this.props.currentUser} 
+                  comment={this.props.comment}
+                  likeComment={this.props.likeComment}
+                  dislikeComment={this.props.dislikeComment}
+                  destroyCommentLike={this.props.destroyCommentLike}
+                  />
             </div>
             </>
             );

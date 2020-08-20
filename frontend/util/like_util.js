@@ -21,8 +21,6 @@ export const removeVideoLike = (videoId, likeId) =>
     data: { id: likeId, video_id: videoId, type: "Video" }
   });
 
-
-
 //comment
 export const likeComment = comment =>
   $.ajax({
