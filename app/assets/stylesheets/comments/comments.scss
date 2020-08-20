@@ -242,6 +242,16 @@ color: #8f908f;
     cursor: pointer;
 }
 
+.comment-liked-button {
+    color: green;
+    float: left;
+    /* margin-bottom: -19px; */
+    margin-left: 3px;
+    margin-right: 34px;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
 .comment-dislike-button {
     color: #8f908f;
     float: left;
@@ -249,6 +259,31 @@ color: #8f908f;
     margin-right: 55px;
     padding-top: 23px;
     cursor: pointer;
+}
+
+.comment-disliked-button {
+    color: green;
+    float: left;
+    margin-bottom: -16px;
+    margin-right: 55px;
+    padding-top: 23px;
+    cursor: pointer;
+}
+
+.comment-dislikes-count {
+    color: #8f908f;
+    float: right;
+    /* margin-top: 0px; */
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.comment-likes-count {
+    color: #8f908f;
+    float: right;
+    margin-top: 3px; 
+    margin-left: 8px;
+    font-size: 14px;
 }
 
 .comment-like-button:hover, .comment-dislike-button:hover {

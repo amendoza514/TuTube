@@ -98,26 +98,26 @@ class CommentLike extends React.Component {
   }
 
   render() {
-          if (!this.props.comment.likes) return null;
+      // if (!this.props.comment.likes) return null;
 
-       let likes = this.props.comment.likes;
-       let likesCount = likes.filter((like) => like.like === true).length;
-       let dislikesCount = likes.filter((like) => like.like === false).length;
+      let likes = this.props.comment.likes;
+      let commentLikesCount = likes.filter((like) => like.like === true).length;
+      let commentDislikesCount = likes.filter((like) => like.like === false).length;
 
-       let likeStatus = this.state.liked ? "liked-button" : "like-button";
-       let dislikeStatus = this.state.disliked
-         ? "disliked-button"
-         : "dislike-button";
+      let commentLikeStatus = this.state.liked ? "comment-liked-button" : "comment-like-button";
+      let commentDislikeStatus = this.state.disliked
+        ? "comment-disliked-button"
+        : "comment-dislike-button";
     return (
       <>
         <div className="thumbs">
-          <div className="comment-like-button">
+          <div className={commentLikeStatus}>
             <i className="fas fa-thumbs-up"></i>
-            {likesCount}
+            <div className="comment-likes-count">{commentLikesCount}</div>
           </div>
-          <div className="comment-dislike-button">
+          <div className={commentDislikeStatus}>
             <i className="fas fa-thumbs-down"></i>
-            {dislikesCount}
+            <div className="comment-dislikes-count">{commentDislikesCount}</div>
           </div>
         </div>
       </>
