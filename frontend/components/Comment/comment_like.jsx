@@ -27,7 +27,27 @@ class CommentLike extends React.Component {
             this.setState({ liked: false, disliked: true });
             }
         });
-        }
+        } 
+  }
+
+  componentDidUpdate(prevProps) {
+    console.log(this.props)
+    if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
+      this.setState({ liked: false, disliked: false });
+      // ^trying to influence more accurate setting on change
+      if (this.props.currentUser) {
+        this.props.comment.likes.forEach((like) => {
+          if (like.user_id === this.props.currentUser.id && like.like === true) {
+            this.setState({ liked: true, disliked: false });
+          } else if (
+            like.user_id === this.props.currentUser.id &&
+            like.like === false
+          ) {
+            this.setState({ liked: false, disliked: true });
+          }
+        });
+      }
+    }
   }
 
   handleLike(e) {
@@ -101,6 +121,7 @@ class CommentLike extends React.Component {
 
   render() {
       // if (!this.props.comment.likes) return null;
+      //QUESTION ^
 
       let likes = this.props.comment.likes;
       let commentLikesCount = likes.filter((like) => like.like === true).length;
