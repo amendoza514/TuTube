@@ -122,11 +122,6 @@ class VideoPreview extends React.Component {
 
               <div className="preview-title">{this.titleSpan()}</div>
               <div className="preview-title">{this.titleSpan()}</div>
-
-              {/* <Link to={`/watch/${this.props.video.id}`} className='preview-title'>
-                            {this.titleSpan()}
-                        </Link> */}
-
               <div className="preview-creator">
                 {this.usernameParse()} {vIcon}
               </div>
