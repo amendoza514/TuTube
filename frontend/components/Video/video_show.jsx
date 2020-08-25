@@ -12,9 +12,6 @@ class VideoShow extends React.Component {
     };
     this.subscribed = this.subscribed.bind(this);
     this.textToggle = this.textToggle.bind(this);
-    // this.time = Math.floor(Math.random() * 24) + 1;
-    // this.span = ["days", "weeks", "hours", "minutes", "months", "years"];
-    // this.randomSpan = this.span[Math.floor(Math.random() * this.span.length)];
     this.datePosted = this.datePosted.bind(this);
   }
 
@@ -30,11 +27,8 @@ class VideoShow extends React.Component {
 
   datePosted(video_date){
     if (video_date) {
-      let oldDate = new Date(video_date).getTime();
-      let newDate = Date.now();
-      let monthsSince =
-        parseInt(newDate - oldDate.toString()) / 1000 / 3600 / 24 / 30;
-
+      let monthCalc = parseInt(Date.now() - new Date(video_date).getTime().toString())
+      let monthsSince = monthCalc/1000/3600/24/30;
       if (monthsSince < 1) {
           let days = Math.floor(monthsSince * 30);
           if (days < 7){
@@ -45,10 +39,10 @@ class VideoShow extends React.Component {
               return Math.floor(days / 7) + " weeks ago";
           }
       } else if (Math.floor(monthsSince) < 12){
-          if (Math.floor(monthsSince) === 1 ) {
-            return '1 month ago';
+          if (Math.floor(monthsSince) < 1 ) {
+            return Math.floor(monthsSince) + " months ago";
           } else {
-            return Math.floor(monthsSince) + ' months ago';
+            return "1 month ago";
           }
       } else {
           return Math.floor(monthsSince) / 12 + " years ago";

@@ -14,7 +14,6 @@ class CommentLike extends React.Component {
   }
 
   componentDidMount() {
-      // console.log(this.props)
       // debugger
     if (this.props.currentUser) {
         this.props.comment.likes.forEach((like) => {
@@ -31,7 +30,6 @@ class CommentLike extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    // console.log(this.props)
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
       this.setState({ liked: false, disliked: false });
       // ^trying to influence more accurate setting on change
