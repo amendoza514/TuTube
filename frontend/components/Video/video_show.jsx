@@ -29,31 +29,31 @@ class VideoShow extends React.Component {
   }
 
   datePosted(video_date){
-    // 
-    if (!video_date) return null;
-    let oldDate = new Date(video_date).getTime();
-    let newDate = Date.now();
-    let monthsSince =
-      parseInt(newDate - oldDate.toString()) / 1000 / 3600 / 24 / 30;
+    if (video_date) {
+      let oldDate = new Date(video_date).getTime();
+      let newDate = Date.now();
+      let monthsSince =
+        parseInt(newDate - oldDate.toString()) / 1000 / 3600 / 24 / 30;
 
-    if (monthsSince < 1) {
-        let days = Math.floor(monthsSince * 30);
-        if (days < 7){
-            if (days === 0 || !days) return 'Today';
-            if (days === 1) return 'Yesterday';
-            return days + ' days ago';
-        } else {
-            let weeks = Math.floor(days/7)
-            return weeks + ' weeks ago';
-        }
-    } else if (Math.floor(monthsSince) < 12){
-        let floorMonths = Math.floor(monthsSince);
-        if (floorMonths === 1 ) return floorMonths + ' month ago';
-        return floorMonths + ' months ago';
-    } else {
-        let years = (Math.floor(monthsSince)/12)
-        return years + ' years ago';
-    }
+      if (monthsSince < 1) {
+          let days = Math.floor(monthsSince * 30);
+          if (days < 7){
+              if (days === 0 || !days) return 'Today';
+              if (days === 1) return 'Yesterday';
+              if (days > 1) return `${days} days ago`;
+          } else {
+              return Math.floor(days / 7) + " weeks ago";
+          }
+      } else if (Math.floor(monthsSince) < 12){
+          if (Math.floor(monthsSince) === 1 ) {
+            return '1 month ago';
+          } else {
+            return Math.floor(monthsSince) + ' months ago';
+          }
+      } else {
+          return Math.floor(monthsSince) / 12 + " years ago";
+      }
+  }
 }
 
   textToggle() {
