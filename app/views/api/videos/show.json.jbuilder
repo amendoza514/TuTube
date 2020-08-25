@@ -33,5 +33,6 @@ json.previews @previews.map do |video|
                 json.userColor video.user.icon_color
                 json.user_verified video.user.verified
                 json.likes video.likes
+                json.created_at video.created_at.to_s
                 preview_ids << video.id
 end

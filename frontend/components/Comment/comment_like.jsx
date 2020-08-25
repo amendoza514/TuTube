@@ -31,7 +31,7 @@ class CommentLike extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log(this.props)
+    // console.log(this.props)
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
       this.setState({ liked: false, disliked: false });
       // ^trying to influence more accurate setting on change

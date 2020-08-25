@@ -7,5 +7,6 @@
         json.userColor video.user.icon_color
         json.user_verified video.user.verified
         json.likes video.likes
+        json.created_at video.created_at.to_s
     end
 end

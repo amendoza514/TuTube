@@ -5,6 +5,7 @@ json.user video.user.email
 json.userColor video.user.icon_color
 json.user_verified video.user.verified
 json.likes video.likes
+json.created_at video.created_at.to_s
 # json.likes do
 #            json.likes_count video.likes_count
 #            json.dislikes_count video.dislikes_count

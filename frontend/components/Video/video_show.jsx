@@ -12,9 +12,10 @@ class VideoShow extends React.Component {
     };
     this.subscribed = this.subscribed.bind(this);
     this.textToggle = this.textToggle.bind(this);
-    this.time = Math.floor(Math.random() * 24) + 1;
-    this.span = ["days", "weeks", "hours", "minutes", "months", "years"];
-    this.randomSpan = this.span[Math.floor(Math.random() * this.span.length)];
+    // this.time = Math.floor(Math.random() * 24) + 1;
+    // this.span = ["days", "weeks", "hours", "minutes", "months", "years"];
+    // this.randomSpan = this.span[Math.floor(Math.random() * this.span.length)];
+    this.datePosted = this.datePosted.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +27,34 @@ class VideoShow extends React.Component {
       this.props.fetchVideo(this.props.match.params.videoId)
     }
   }
+
+  datePosted(video_date){
+    // 
+    if (!video_date) return null;
+    let oldDate = new Date(video_date).getTime();
+    let newDate = Date.now();
+    let monthsSince =
+      parseInt(newDate - oldDate.toString()) / 1000 / 3600 / 24 / 30;
+
+    if (monthsSince < 1) {
+        let days = Math.floor(monthsSince * 30);
+        if (days < 7){
+            if (days === 0 || !days) return 'Today';
+            if (days === 1) return 'Yesterday';
+            return days + ' days ago';
+        } else {
+            let weeks = Math.floor(days/7)
+            return weeks + ' weeks ago';
+        }
+    } else if (Math.floor(monthsSince) < 12){
+        let floorMonths = Math.floor(monthsSince);
+        if (floorMonths === 1 ) return floorMonths + ' month ago';
+        return floorMonths + ' months ago';
+    } else {
+        let years = (Math.floor(monthsSince)/12)
+        return years + ' years ago';
+    }
+}
 
   textToggle() {
     this.setState({ textToggle: !this.state.textToggle });
@@ -76,7 +105,6 @@ class VideoShow extends React.Component {
 
   render() {
     if (!this.props.video) return null;
-    // if (!this.props.video.likes) return null;
 
     let toggler;
     let expandText;
@@ -143,7 +171,8 @@ class VideoShow extends React.Component {
                 dislikeVideo={this.props.dislikeVideo}
               />
               <div className="video-views">
-                {this.viewDisplay()} views • {this.time} {this.randomSpan} ago
+                {/* {this.viewDisplay()} views • {this.time} {this.randomSpan} ago */}
+                {this.viewDisplay()} views • {this.datePosted(this.props.video.created_at)}
               </div>
               {/* UPDATE WEEKS AGO REFERENCE */}
             </div>
