@@ -53,8 +53,6 @@ class CommentIndexItem extends React.Component {
 
   handleUpdate(e) {
     e.preventDefault();
-    //     this.props.updateComment(this.props.comment.id)
-    // this.setState({ needsEdit: true});
     this.setState({
       needsEdit: !this.state.needsEdit,
       hover: false,
@@ -212,6 +210,3 @@ class CommentIndexItem extends React.Component {
 }
 
 export default withRouter(CommentIndexItem);
-
-//experiment: {this.props.comment.createdAt}
-// old: {randomNumber} {randomSpan} ago
