@@ -2,7 +2,7 @@
 
 ## TuTube
 
-TuTube is a Youtube clone that aims to incorporate all commonly associated features and aesthetic design for use in real time. TuTube allows users to engage with demo content in the same way they would with YouTube, including: comments, likes, and subscribes. 
+TuTube (https://tutube-fsp.herokuapp.com/#/) is a Youtube clone that aims to incorporate all commonly associated features and aesthetic design for use in real time. TuTube allows users to engage with demo content in the same way they would with YouTube, including: comments, likes, and subscribes. 
 
 A video upload component (located in the header or in user profile if selected) allows users to share their own content as well, including the ability to upload their own personal videos, video thumbnails, and user icons (will otherwise default to username slice).
 
