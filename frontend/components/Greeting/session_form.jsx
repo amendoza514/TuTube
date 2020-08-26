@@ -8,12 +8,22 @@ class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
+        this.toggleMode = this.toggleMode.bind(this);
     }
 
     handleInput(type){
         return (e) => {
             this.setState({ [type]: e.target.value })
         }
+    }
+
+    toggleMode(){
+        if (this.props.mode === false) {
+            this.props.darkMode()
+        } else {
+            this.props.normalMode()
+        }
+        
     }
     
     usernameParse() {
@@ -91,7 +101,6 @@ class SessionForm extends React.Component {
     render () {
         let submitText = this.props.formType === 'signup' ? 'Sign Up' : 'Sign in';
         let formType = this.props.formType !== 'login' ? "Create an account" : "Sign in";
-        // let redirectPath = this.props.formType === 'login' ? <Link to='/signup'>Sign Up</Link> : <Link to='/login'>Sign in</Link>;
         let otherFormButton = 
             this.props.formType !== 'signup' ? 
                 <div id='signup-form-button'> {this.props.otherForm}</div> : 
@@ -157,7 +166,7 @@ class SessionForm extends React.Component {
             &nbsp;&nbsp;&nbsp;Your profile
           </div>
           </i> */}
-          <i id="dark-mode-icon" className="fas fa-adjust" onClick={() => this.props.darkMode()}>
+          <i id="dark-mode-icon" className="fas fa-adjust" onClick={this.toggleMode}>
           {/* <i id="dark-mode-icon" className="fas fa-adjust" onClick={() => alert("Dark Mode coming soon!")}></i> */}
           <div id="dark-mode-text" >
             &nbsp;&nbsp;&nbsp;Dark mode

@@ -8,7 +8,8 @@ import { darkMode, normalMode } from '../../actions/mode_actions'
 const mapStateToProps = state => ({
     formType: 'logout',
     currentUser: state.entities.users[state.session.id],
-    errors: state.errors.session 
+    errors: state.errors.session ,
+    mode: state.ui.mode
 });
 
 const mapDispatchToProps = dispatch => {
@@ -16,7 +17,8 @@ const mapDispatchToProps = dispatch => {
     return {
         logout: () => dispatch(logout()),
         closeModal: () => dispatch(closeModal()),
-        darkMode: () => dispatch(darkMode())
+        darkMode: () => dispatch(darkMode()),
+        normalMode: () => dispatch(normalMode()),
     }
 };
 
