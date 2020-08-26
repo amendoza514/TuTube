@@ -3,6 +3,7 @@ import React from 'react'
 import SessionForm from './session_form';
 import { logout } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions'
+import { darkMode, normalMode } from '../../actions/mode_actions'
 
 const mapStateToProps = state => ({
     formType: 'logout',
@@ -14,7 +15,8 @@ const mapDispatchToProps = dispatch => {
     // processForm: user => dispatch(login(user))
     return {
         logout: () => dispatch(logout()),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        darkMode: () => dispatch(darkMode())
     }
 };
 
