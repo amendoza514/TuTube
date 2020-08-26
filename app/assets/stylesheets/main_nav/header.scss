@@ -31,10 +31,26 @@
     border-style: none;
     position: absolute;
     margin: 1px;
-    margin-top: 7px;
+    margin-top: 8px;
     font-size: 18px;
     color: #5f5f5f;
+    margin-left: 6px;
 }
+
+#dark-hamburger-icon {
+    display: flex;
+    cursor: pointer;
+    background-color: white;
+    border-style: none;
+    position: absolute;
+    margin: 1px;
+    margin-top: 8px;
+    font-size: 18px;
+    color: #5f5f5f;
+    margin-left: 6px;
+    background-color: #212121;
+}
+
 
 #hamburger-icon:hover {
     color: black
@@ -48,6 +64,14 @@
     color: #FA0000;
     font-size: 28px;
     margin-top: 4px;
+}
+
+div#temp {
+    background-color: white;
+    width: 15px;
+    height: 13px;
+    margin-top: -20px;
+    margin-left: 10px;
 }
 
 #main-text {
