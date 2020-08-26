@@ -28,10 +28,6 @@ class VideoLike extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    //  if ((prevProps.currentUser !== this.props.currentUser)) {
-    //    // this.props.fetchVideo(this.props.match.params.videoId);
-    //    console.log("changed!");
-    //  }
     if (
       prevProps.match.params.videoId !== this.props.match.params.videoId ||
       prevProps.currentUser !== this.props.currentUser
