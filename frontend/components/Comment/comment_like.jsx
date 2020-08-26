@@ -14,7 +14,6 @@ class CommentLike extends React.Component {
   }
 
   componentDidMount() {
-      // debugger
     if (this.props.currentUser) {
         this.props.comment.likes.forEach((like) => {
             if (like.user_id === this.props.currentUser.id && like.like === true) {
@@ -29,22 +28,30 @@ class CommentLike extends React.Component {
         } 
   }
 
+  componentWillUnmount() {
+    this.setState({ liked: false, disliked: false})
+    console.log(this.props.comment.likes)
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
-      this.setState({ liked: false, disliked: false });
-      // ^trying to influence more accurate setting on change
-      if (this.props.currentUser) {
-        this.props.comment.likes.forEach((like) => {
-          if (like.user_id === this.props.currentUser.id && like.like === true) {
-            this.setState({ liked: true, disliked: false });
-          } else if (
-            like.user_id === this.props.currentUser.id &&
-            like.like === false
-          ) {
-            this.setState({ liked: false, disliked: true });
-          }
-        });
-      }
+      console.log(this.props.comment.likes);
+      // this.props.fetchLikes(this.props.comment.id)
+      // .then(() => {
+        if (this.props.currentUser) {
+          this.props.comment.likes.forEach((like) => {
+            if (like.user_id === this.props.currentUser.id && like.like === true) {
+              this.setState({ liked: true, disliked: false });
+            } else if (
+              like.user_id === this.props.currentUser.id &&
+              like.like === false
+            ) {
+              this.setState({ liked: false, disliked: true });
+            }
+          });
+        }
+      // }
+      // );
     }
   }
 

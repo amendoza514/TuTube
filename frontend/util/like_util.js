@@ -1,4 +1,5 @@
 //video
+
 export const likeVideo = (video) =>
   $.ajax({
     url: `api/videos/${video.id}/likes`,
@@ -22,6 +23,7 @@ export const removeVideoLike = (videoId, likeId) =>
   });
 
 //comment
+
 export const likeComment = comment =>
   $.ajax({
     url: `api/comments/${comment.id}/likes`,

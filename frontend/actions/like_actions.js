@@ -3,11 +3,18 @@ export const RECEIVE_COMMENT_LIKE = "RECEIVE_COMMENT_LIKE";
 export const REMOVE_COMMENT_LIKE = "REMOVE_COMMENT_LIKE";
 export const RECEIVE_VIDEO_LIKE = "RECEIVE_VIDEO_LIKE";
 export const REMOVE_VIDEO_LIKE = "REMOVE_VIDEO_LIKE";
+export const RECEIVE_COMMENT_LIKES = "RECEIVE_COMMENT_LIKES"
 
 export const receiveCommentLike = (comment) => ({
   type: RECEIVE_COMMENT_LIKE,
   comment,
 });
+
+export const receiveCommentLikes = (likes) => ({
+  type: RECEIVE_COMMENT_LIKES,
+  likes,
+});
+
 
 export const removeCommentLike = (comment) => ({
   type: REMOVE_COMMENT_LIKE,

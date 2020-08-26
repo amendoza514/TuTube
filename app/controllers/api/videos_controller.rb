@@ -3,6 +3,7 @@ class Api::VideosController < ApplicationController
         @video = Video.includes(comments: :user).find_by(id: params[:id])
         @previews = Video.previews(@video.id)
         # debugger
+        @video.update(views: @video.views + 1)
         render :show
     end
 
