@@ -28,11 +28,6 @@ class CommentLike extends React.Component {
         } 
   }
 
-  componentWillUnmount() {
-    this.setState({ liked: false, disliked: false})
-    console.log(this.props.comment.likes)
-  }
-
   componentDidUpdate(prevProps) {
       if (
         prevProps.match.params.videoId !== this.props.match.params.videoId ||

@@ -170,11 +170,11 @@ class VideoShow extends React.Component {
                 {this.viewDisplay()} views •{" "}
                 {this.datePosted(this.props.video.created_at)}
               </div>
-              {/* UPDATE WEEKS AGO REFERENCE */}
             </div>
           </div>
           <div className="channel-info">
-            <div className={subClass} onClick={this.subscribed}>
+            {/* <div className={subClass} onClick={this.subscribed}> */}
+            <div className={subClass} onClick={() => alert('subscribes coming soon')}>
               {subText}
             </div>
             <div
@@ -186,7 +186,7 @@ class VideoShow extends React.Component {
             <div className="video-creator">
               {this.usernameParse()} {vIcon}
             </div>
-            <div className="sub-count">{this.time}.4K subscribers</div>
+            <div className="sub-count">0 subscribers</div>
             <div className="video-description">{toggler}</div>
             <div className="expand-button" onClick={this.textToggle}>
               {expandText}
