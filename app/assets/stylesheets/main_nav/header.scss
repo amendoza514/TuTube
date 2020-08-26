@@ -12,6 +12,18 @@
     z-index: 1000;
 }
 
+.dark-main-header {
+    display: inline-block;
+    position: fixed;
+    box-sizing: border-box;
+    background-color: #212121;
+    height: 65px;
+    width: 100%;
+    padding: 15px;
+    z-index: 1000;
+}
+
+
 #hamburger-icon {
     display: flex;
     cursor: pointer;

@@ -16,10 +16,14 @@ class Navbar extends React.Component {
         } else if (this.state.videoUploadText === true) {
             displayHelp = "show-help";
         }
+        let headerStyle =
+          this.props.mode === false ? "main-header" : "dark-main-header";
+
+        let uploadColor = this.props.mode === false ? '#909090' : "white"
 
         return (
           <>
-            <section className="main-header">
+            <section className={headerStyle}>
               <button id="hamburger-icon">
                 <i className="fas fa-bars"></i>
               </button>
@@ -40,7 +44,7 @@ class Navbar extends React.Component {
                 onMouseLeave={() => this.setState({ videoUploadText: false })}
                 onClick={() => alert("Video Upload coming soon!")}
               >
-                <i className="fas fa-video"></i>
+                <i className="fas fa-video" style={{ color: uploadColor }}></i>
               </div>
               <div to="./" id={displayHelp}>
                 Upload Video
