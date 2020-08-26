@@ -28,16 +28,28 @@ class VideoLike extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
+    //  if ((prevProps.currentUser !== this.props.currentUser)) {
+    //    // this.props.fetchVideo(this.props.match.params.videoId);
+    //    console.log("changed!");
+    //  }
+    if (
+      prevProps.match.params.videoId !== this.props.match.params.videoId ||
+      prevProps.currentUser !== this.props.currentUser
+    ) {
       this.setState({ liked: false, disliked: false });
       // ^trying to influence more accurate setting on change
       if (this.props.currentUser) {
         // debugger
         this.props.video.likes.forEach((like) => {
-          if (like.user_id === this.props.currentUser.id && like.like === true) {
+          if (
+            like.user_id === this.props.currentUser.id &&
+            like.like === true
+          ) {
             this.setState({ liked: true, disliked: false });
           } else if (
-            like.user_id === this.props.currentUser.id && like.like === false) {
+            like.user_id === this.props.currentUser.id &&
+            like.like === false
+          ) {
             this.setState({ liked: false, disliked: true });
           }
         });
@@ -52,12 +64,13 @@ class VideoLike extends React.Component {
         this.props.likeVideo(this.props.video);
         this.setState({ liked: true, disliked: false });
       } else if (this.state.liked === true && this.state.disliked === false) {
-        this.props.destroyVideoLike(
-          this.props.video.id,
-          this.props.video.likes.filter(
-            (like) => like.user_id === this.props.currentUser.id
-          )[0].id
-        )
+        this.props
+          .destroyVideoLike(
+            this.props.video.id,
+            this.props.video.likes.filter(
+              (like) => like.user_id === this.props.currentUser.id
+            )[0].id
+          )
           .then(() => {
             this.setState({ liked: false, disliked: false });
           });
@@ -117,7 +130,7 @@ class VideoLike extends React.Component {
   }
 
   render() {
-        if (!this.props.video.likes) return null;
+    if (!this.props.video.likes) return null;
 
     let likes = this.props.video.likes;
     let likesCount = likes.filter((like) => like.like === true).length;
