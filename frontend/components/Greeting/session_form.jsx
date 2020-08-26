@@ -23,7 +23,6 @@ class SessionForm extends React.Component {
         } else {
             this.props.normalMode()
         }
-        
     }
     
     usernameParse() {

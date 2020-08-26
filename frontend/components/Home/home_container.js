@@ -8,6 +8,7 @@ import { fetchUsers } from '../../actions/user_actions'
 
 const mapStateToProps = state => ({
     videos: Object.values(state.entities.videos),
+    mode: state.ui.mode,
     searchTerms: state.ui.search
 });
 

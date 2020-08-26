@@ -7,9 +7,11 @@ class Sidebar extends React.Component {
     }
 
     render() {
+        let sidebarStyle =
+          this.props.mode === false ? "main-sidebar" : "dark-main-sidebar";
         return(
             <>
-                <div className='main-sidebar'>
+                <div className={sidebarStyle}>
                     <Link to='./' className='home-icon'>
                         <i className="fas fa-home"></i>
                     </Link>

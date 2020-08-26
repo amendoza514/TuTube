@@ -87,6 +87,8 @@ class Home extends React.Component {
     //   );
     // }
 
+    let indexBackground = this.props.mode === false ? "main-video-index" : "dark-main-video-index" 
+
     if (!this.props.videos) return null;
 
     let allTags = [];
@@ -107,7 +109,7 @@ class Home extends React.Component {
 
     return (
       <>
-        <Sidebar />
+        <Sidebar mode={this.props.mode}/>
          <div
           className='placeholder'
         ></div>
@@ -125,7 +127,7 @@ class Home extends React.Component {
             </div>
           ))}
         </div>
-        <ul className="main-video-index">
+        <ul className={indexBackground}>
           {videos.map((video, idx) => (
             <Video
               key={video.id}

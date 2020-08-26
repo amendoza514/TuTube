@@ -3,10 +3,9 @@
     position: fixed;
     align-items: center;
     flex-direction: column;
-    background-color: white;
-    // dark mode
-    // background-color: #202020;
+    background-color: white; 
     width: 60px;
+    width: 70px;
     height: 100%;
     box-sizing: border-box;
     font-size: 20px;
@@ -16,10 +15,27 @@
     z-index: 1;
 }
 
+.dark-main-sidebar {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    flex-direction: column;
+    width: 70px;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding-top: 27px;
+    margin-top: 55px;
+    color: #909090;
+    z-index: 1;
+    background-color :#212121;
+}
+
+
 .fa-home, .fa-linkedin, .fa-github  {
     content: "\f0f3";
     padding-bottom: 50px;
-    color: #606060;
+    color: #909090;
     font-size: 20px;
 }
 
