@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
       video: vid,
       currentUser: state.entities.users[state.session.id],
       comments: Object.values(state.entities.comments),
+      mode: state.ui.mode,
       allVideos: state.entities.videos,
       previewIds: vid ? (vid.preview_ids ? vid.preview_ids : []) : []
   }

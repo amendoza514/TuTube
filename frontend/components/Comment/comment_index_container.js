@@ -6,6 +6,7 @@ import { likeComment, dislikeComment, destroyCommentLike, fetchLikes} from '../.
 
 const mapStateToProps = (state, ownProps) => ({
     comments: Object.values(state.entities.comments),
+    mode: state.ui.mode,
     currentUser: state.entities.users[state.session.id]
 });
 

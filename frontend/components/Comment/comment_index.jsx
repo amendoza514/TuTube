@@ -18,11 +18,13 @@ class CommentIndex extends React.Component {
         for (let i = this.props.comments.length - 1; i >=0; i--) {
             revArr.push(this.props.comments[i])
         }
+
+        let countStyle = this.props.mode === false ? "comments-count" : "dark-comments-count";
         return (
             <>
-                <div className='comment-count'>
+                <div className={countStyle}>
                     {this.props.comments.length} 
-                    <div className='comments-text'>Comments</div>
+                    <div className="comments-text">Comments</div>
                     <div className='sort-icon'><i className="fas fa-sort"></i>&nbsp;&nbsp;SORT BY</div>
                 </div>
                 <CommentForm currentUser={this.props.currentUser} currentVideo={this.props.match.params.videoId} createComment={this.props.createComment} />

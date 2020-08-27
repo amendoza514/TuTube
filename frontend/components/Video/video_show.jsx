@@ -131,9 +131,20 @@ class VideoShow extends React.Component {
       subText = "SUBSCRIBED";
     }
 
+    let showStyle =
+      this.props.mode === false ? "show-container" : "dark-show-container";
+    let titleStyle = this.props.mode === false ? "large-title" : "dark-large-title";
+    let viewStyle = this.props.mode === false ? "video-views" : "dark-video-views";
+    let subStyle = this.props.mode === false ? "sub-count" : "dark-sub-count";
+    let creatorStyle = this.props.mode === false ? "show-video-creator" : "dark-show-video-creator";
+    let descStyle = this.props.mode === false ? "video-description" : "dark-video-description";
+    let expandStyle = this.props.mode === false ? "expand-button" : "dark-expand-button";
+    let channelStyle = this.props.mode === false ? "channel-info" : "dark-channel-info";
+    let infoStyle = this.props.mode === false ? "info-container" : "dark-info-container";
+
     return (
       <>
-        <div className="show-container">
+        <div className={showStyle}>
           <video
             className="video-content"
             src={this.props.video.videoUrl}
@@ -149,8 +160,8 @@ class VideoShow extends React.Component {
               ))}
             </ul>
           </div>
-          <div className="info-container">
-            <div className="large-title">{this.props.video.title}</div>
+          <div className={infoStyle}>
+            <div className={titleStyle}>{this.props.video.title}</div>
             <div className="expanded-video-info">
               <div
                 className="share-button"
@@ -166,13 +177,13 @@ class VideoShow extends React.Component {
                 destroyVideoLike={this.props.destroyVideoLike}
                 dislikeVideo={this.props.dislikeVideo}
               />
-              <div className="video-views">
+              <div className={viewStyle}>
                 {this.viewDisplay()} views •{" "}
                 {this.datePosted(this.props.video.created_at)}
               </div>
             </div>
           </div>
-          <div className="channel-info">
+          <div className={channelStyle}>
             {/* <div className={subClass} onClick={this.subscribed}> */}
             <div className={subClass} onClick={() => alert('subscribes coming soon')}>
               {subText}
@@ -183,12 +194,12 @@ class VideoShow extends React.Component {
             >
               {this.buttonParse()}
             </div>
-            <div className="video-creator">
+            <div className={creatorStyle}>
               {this.usernameParse()} {vIcon}
             </div>
-            <div className="sub-count">0 subscribers</div>
-            <div className="video-description">{toggler}</div>
-            <div className="expand-button" onClick={this.textToggle}>
+            <div className={subStyle}>0 subscribers</div>
+            <div className={descStyle}>{toggler}</div>
+            <div className={expandStyle} onClick={this.textToggle}>
               {expandText}
             </div>
           </div>
