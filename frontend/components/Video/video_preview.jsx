@@ -94,6 +94,9 @@ class VideoPreview extends React.Component {
   }
 
   render() {
+    let creatorPreviewStyle = this.props.mode === false ? "preview-creator" : "dark-preview-creator";
+    let viewPreviewStyle = this.props.mode === false ? "preview-views" : "dark-preview-views";
+    let titlePreviewStyle = this.props.mode === false ? "preview-title" : "dark-preview-title";
     let vIcon = <i className="fas fa-check-circle"></i>;
     if (!this.props.video.user_verified) {
       vIcon = "";
@@ -120,13 +123,13 @@ class VideoPreview extends React.Component {
             <Link to={`/watch/${this.props.video.id}`}>
               {visual}
 
-              <div className="preview-title">{this.titleSpan()}</div>
-              <div className="preview-title">{this.titleSpan()}</div>
-              <div className="preview-creator">
+              <div className={titlePreviewStyle}>{this.titleSpan()}</div>
+              <div className={creatorPreviewStyle}>
                 {this.usernameParse()} {vIcon}
               </div>
-              <div className="preview-views">
-                    {this.viewCounter()} views • {this.datePosted(this.props.video.created_at)}
+              <div className={viewPreviewStyle}>
+                {this.viewCounter()} views •{" "}
+                {this.datePosted(this.props.video.created_at)}
               </div>
             </Link>
           </div>

@@ -33,6 +33,14 @@
     margin-left: 8px;
     display: block;
     margin-bottom: 12px;
+    color: black;
+}
+
+.dark-next-text {
+    margin-left: 8px;
+    display: block;
+    margin-bottom: 12px;
+    color: white;
 }
 
 .preview-info-container {
@@ -45,13 +53,28 @@
 }
 
 .preview-title {
-cursor: pointer;
+    cursor: pointer;
     font-size: 14px;
     width: auto;
     margin-top: 4px;
     padding-right: 10px;
     text-decoration: none;
     color: black;
+    line-height: normal;
+    font-weight: 900;
+    position: absolute;
+    margin-top: -99px;
+    margin-left: 185px;
+}
+
+.dark-preview-title {
+    cursor: pointer;
+    font-size: 14px;
+    width: auto;
+    margin-top: 4px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: white;
     line-height: normal;
     font-weight: 900;
     position: absolute;
@@ -68,11 +91,29 @@ cursor: pointer;
     color: #5e5e5e;
 }
 
+.dark-preview-creator {
+    display: inline-table;
+    font-size: 13px;
+    font-weight: bolder;
+    padding-top: 44px;
+    position: absolute;
+    color: #aaaaaa;
+}
+
+
 
 .preview-views{
     display: inline-table;
     font-size: 12px;
     color: #5e5e5e;
+    position: absolute;
+    margin-top: 61px;
+}
+
+.dark-preview-views{
+    display: inline-table;
+    font-size: 12px;
+    color: #aaaaaa;
     position: absolute;
     margin-top: 61px;
 }

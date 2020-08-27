@@ -96,6 +96,10 @@ class CommentIndexItem extends React.Component {
     //temp
     let hoverClass = "comment-options";
 
+    let creatorStyle = this.props.mode === false ? 'comment-creator' : 'dark-comment-creator';
+    let dateStyle = this.props.mode === false ? 'comment-date' : 'dark-comment-date';
+    let commentStyle = this.props.mode === false ? 'comment' : 'dark-comment';
+
     let optionsText;
     if (
       this.props.currentUser &&
@@ -188,11 +192,11 @@ class CommentIndexItem extends React.Component {
             <div className={toggleClass} onClick={this.toggleMenu}>
               {optionsText}
             </div>
-            <div className="comment-creator">
+            <div className={creatorStyle}>
               {this.usernameParse()}&nbsp;&nbsp;
-              <div className="comment-date">{this.datePosted(this.props.comment.created_at)}</div>
+              <div className={dateStyle}>{this.datePosted(this.props.comment.created_at)}</div>
             </div>
-            <div className="comment">{this.props.comment.content}</div>
+            <div className={commentStyle}>{this.props.comment.content}</div>
             <CommentLike
               currentUser={this.props.currentUser}
               comment={this.props.comment}

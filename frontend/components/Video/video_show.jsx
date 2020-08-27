@@ -141,6 +141,7 @@ class VideoShow extends React.Component {
     let expandStyle = this.props.mode === false ? "expand-button" : "dark-expand-button";
     let channelStyle = this.props.mode === false ? "channel-info" : "dark-channel-info";
     let infoStyle = this.props.mode === false ? "info-container" : "dark-info-container";
+    let playlistText = this.props.mode === false ? "next-text" : "dark-next-text";
 
     return (
       <>
@@ -153,10 +154,10 @@ class VideoShow extends React.Component {
             controls
           ></video>
           <div className="video-playlist-container">
-            <span className="next-text">Up next</span>
+            <span className={playlistText}>Up next</span>
             <ul className="video-playlist">
               {previewVideos.map((video, idx) => (
-                <VideoPreview key={idx} video={video} />
+                <VideoPreview key={idx} video={video} mode={this.props.mode} />
               ))}
             </ul>
           </div>
