@@ -83,6 +83,17 @@ input[type=text]:focus, input[type=password]:focus {
     cursor: pointer;
 }
 
+input[type=text]:focus, input[type=password]:focus {
+    box-shadow: none;
+    width: 400px;
+    height: 45px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border: 2px solid #1a73e8;
+    border-radius: 3px;
+}
+
 #dark-new-comment-input {
     background-color: #181818;
     color: #a3a3a3;
@@ -294,7 +305,6 @@ display: none;
 .thumbs {
     margin-left: 55px;
 }
-
 
 .comment-like-button {
 color: #8f908f;
