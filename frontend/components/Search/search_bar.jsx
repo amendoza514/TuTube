@@ -30,18 +30,23 @@ class SearchBar extends React.Component {
     }
 
     render (){
+      let searchStyle =
+        this.props.mode === false ? "search-bar" : "dark-search-bar";
+      let buttonStyle =
+        this.props.mode === false ? "search-button" : "dark-search-button";
+
         return (
           <>
             <div className="search">
               <input
                 type="text"
-                id="search-bar"
+                id={searchStyle}
                 placeholder="Search"
                 onKeyPress={this.handleEnter}
                 onChange={this.handleInput("search")}
                 value={this.state.search}
               />
-              <button id="search-button" onClick={this.handleSearch}>
+              <button id={buttonStyle} onClick={this.handleSearch}>
                 🔍
               </button>
             </div>

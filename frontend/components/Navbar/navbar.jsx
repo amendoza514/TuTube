@@ -32,7 +32,7 @@ class Navbar extends React.Component {
                 <i
                   className="fas fa-bars"
                   style={{
-                    color: hamburgerColor
+                    color: hamburgerColor,
                   }}
                 ></i>
               </button>
@@ -45,7 +45,7 @@ class Navbar extends React.Component {
                 {/* <Link to='./' id="main-text" onClick={this.resetSearch}> */}
                 TuTube
               </Link>
-              <SearchBar />
+              <SearchBar mode={this.props.mode} />
               <GreetingContainer />
               <div
                 to="./"
@@ -54,7 +54,7 @@ class Navbar extends React.Component {
                 onMouseLeave={() => this.setState({ videoUploadText: false })}
                 onClick={() => alert("Video Upload coming soon!")}
               >
-                <i className="fas fa-video" style={{ color: uploadColor }}></i>
+                <i className="fas fa-video" style={{ color: uploadColor }} ></i>
               </div>
               <div to="./" id={displayHelp}>
                 Upload Video
