@@ -106,6 +106,9 @@ class Video extends React.Component {
     if (!this.props.video.user_verified) {
       vIcon = "";
     }
+
+    let titleDisplay = this.props.mode === false ? 'video-title' : 'dark-video-title';
+
     let userIcon = (
       <>
         <div
@@ -114,7 +117,7 @@ class Video extends React.Component {
         >
           {this.buttonParse()}
         </div>
-        <Link to={`/watch/${this.props.video.id}`} className="video-title">
+        <Link to={`/watch/${this.props.video.id}`} className={titleDisplay}>
           {this.titleSpan()}
         </Link>
         <div className="video-info">

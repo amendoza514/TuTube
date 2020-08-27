@@ -147,6 +147,7 @@ class Home extends React.Component {
               video={video}
               idx={idx}
               color={video.userColor}
+              mode={this.props.mode}
             />
           ))}
         </ul>
