@@ -44,6 +44,11 @@ class CommentForm extends React.Component {
         if (this.state.selected) {
             toggleClass = 'comment-buttons'        
         }
+
+        let inputStyle = this.props.mode === false ? 'new-comment-input' : 'dark-new-comment-input';
+        let underlineStyle = this.props.mode === false ? 'comment-buttons-underline' : 'dark-comment-buttons-underline';
+        let cancelStyle = this.props.mode === false ? 'comment-cancel-button' : 'dark-comment-cancel-button';
+        let submitStyle = this.props.mode === false ? 'comment-submit-button' : 'dark-comment-submit-button';
       
         let newComment;
         if (this.props.currentUser) {
@@ -53,7 +58,7 @@ class CommentForm extends React.Component {
                         {this.buttonParse()}
                     </div>
                     <input
-                        id='new-comment-input'
+                        id={inputStyle}
                         type ="text"
                         placeholder='Add a public comment...'
                         onKeyPress={this.handleEnter}
@@ -62,10 +67,10 @@ class CommentForm extends React.Component {
                         onChange={this.handleInput('content')}
                         value={this.state.content}
                     />
-                <div className='comment-buttons-underline'></div>
+                <div className={underlineStyle}></div>
                 <div className={toggleClass} >
-                    <button id='comment-submit-button' onClick={this.handleSubmit} >COMMENT</button>
-                    <button id='comment-cancel-button' onClick={() => this.setState({selected: false, content: ''})}>CANCEL</button>
+                    <button id={submitStyle} onClick={this.handleSubmit} >COMMENT</button>
+                    <button id={cancelStyle} onClick={() => this.setState({selected: false, content: ''})}>CANCEL</button>
                     </div>
                 </form>
         }

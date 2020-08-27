@@ -20,14 +20,21 @@ class CommentIndex extends React.Component {
         }
 
         let countStyle = this.props.mode === false ? "comments-count" : "dark-comments-count";
+        let sortStyle = this.props.mode === false ? "sort-icon" : "dark-sort-icon";
+
         return (
             <>
                 <div className={countStyle}>
                     {this.props.comments.length} 
                     <div className="comments-text">Comments</div>
-                    <div className='sort-icon'><i className="fas fa-sort"></i>&nbsp;&nbsp;SORT BY</div>
+                    <div className={sortStyle}><i className="fas fa-sort"></i>&nbsp;&nbsp;SORT BY</div>
                 </div>
-                <CommentForm currentUser={this.props.currentUser} currentVideo={this.props.match.params.videoId} createComment={this.props.createComment} />
+                <CommentForm 
+                    currentUser={this.props.currentUser} 
+                    currentVideo={this.props.match.params.videoId} 
+                    createComment={this.props.createComment} 
+                    mode={this.props.mode}
+                    />
                 <div className='comment-container'>
                     {revArr.map((comment, idx) => { return(
                     <CommentIndexItem 
@@ -39,7 +46,9 @@ class CommentIndex extends React.Component {
                       dislikeComment={this.props.dislikeComment}
                       destroyCommentLike={this.props.destroyCommentLike}
                       user={comment.user} 
-                      userColor ={comment.userColor} />)
+                      userColor ={comment.userColor} 
+                      mode={this.props.mode}
+                      />)
                     })}
                 </div>
             </>

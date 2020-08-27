@@ -56,6 +56,9 @@ class UpdateForm extends React.Component {
     if (this.state.selected) {
       toggleClass = "comment-buttons";
     }
+    
+    let inputStyle = this.props.mode === false ? 'new-comment-input' : 'dark-new-comment-input' 
+
 
     let newComment;
     if (this.props.currentUser) {
@@ -68,7 +71,7 @@ class UpdateForm extends React.Component {
             {this.buttonParse()}
           </div>
           <input
-            id="new-comment-input"
+            id={inputStyle}
             type="text"
             placeholder={this.props.comment}
             onKeyPress={this.handleEnter}
@@ -78,12 +81,13 @@ class UpdateForm extends React.Component {
             value={this.state.content}
           />
           <div className={toggleClass}>
-            <button id="comment-submit-button" 
-            onClick={this.handleSubmit}
-            // onClick={(e) => {
-            //     this.handleSubmit(e)
-            //     this.props.handleUpdate(e)
-            // }}
+            <button
+              id="comment-submit-button"
+              onClick={this.handleSubmit}
+              // onClick={(e) => {
+              //     this.handleSubmit(e)
+              //     this.props.handleUpdate(e)
+              // }}
             >
               UPDATE
             </button>
