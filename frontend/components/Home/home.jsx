@@ -74,8 +74,21 @@ class Home extends React.Component {
   }
 
   render() {
-    let scrollDisplay =
+    let scrollDisplay;
       this.state.hover === false ? "video-tags-hide" : "video-tags-show";
+      if (this.props.mode === false && this.state.hover === false) {
+        scrollDisplay = "video-tags-hide";
+        $("body").css("background-color", "#f5f5f5");
+      } else if (this.props.mode === true && this.state.hover === false) {
+        scrollDisplay = "dark-video-tags-hide";
+        $("body").css("background-color", "#181818");
+      } else if (this.props.mode === false && this.state.hover === true) {
+        scrollDisplay = "video-tags-show";
+        $("body").css("background-color", "#f5f5f5");
+      } else {
+        scrollDisplay = "dark-video-tags-show";
+        $("body").css("background-color", "#181818");
+      }
 
     // let randomizedArr = this.shuffle(this.props.videos);
     // let filteredVideos;

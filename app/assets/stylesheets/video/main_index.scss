@@ -14,7 +14,6 @@
 }
 
 .placeholder {
-        /* background-color: pink; */
     background: white;
     display: flex;
     font-size: 10px;
@@ -22,7 +21,6 @@
     padding-left: 95px;
     padding-bottom: -2px;
     padding-top: -15px;
-    /* padding-bottom: 0px; */
     justify-content: flex-start;
     align-items: center;
     overflow: auto;
@@ -30,7 +28,7 @@
 }
 
 .video-tags-hide {
-display: flex;
+    display: flex;
     font-size: 10px;
     padding-top: 5px;
     padding-left: 95px;
@@ -46,7 +44,7 @@ display: flex;
 } 
 
 .video-tags-show {
-display: flex;
+    display: flex;
     font-size: 10px;
     padding-top: 5px;
     padding-left: 95px;
@@ -61,17 +59,45 @@ display: flex;
     background: white;
 }
 
+.dark-video-tags-hide {
+    display: flex;
+    font-size: 10px;
+    padding-top: 5px;
+    padding-left: 95px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #303030;
+    border-top: 1px solid #303030;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 45px;
+    background: #202020;
+} 
+
+.dark-video-tags-show {
+    display: flex;
+    font-size: 10px;
+    padding-top: 5px;
+    padding-left: 95px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #303030;
+    border-top: 1px solid #303030;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: overlay;
+    white-space: nowrap;
+    height: 45px;
+    // background: white;
+    background: #202020;
+
+}
+
 .video-tags-show::-webkit-scrollbar{
     width: 5px;
     height: 3px;
 }
 
-// .video-tags-show::-webkit-scrollbar-track{
-//     -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
-//     border: 1px solid black;
-//     background: rgb(41,41,41);
-//     border-radius: 10px;
-// }
 .video-tags-show::-webkit-scrollbar-thumb {
     /* border-radius: 10px; */
     // height: 30px;
@@ -88,6 +114,27 @@ display: flex;
     margin-left: 60px;
 }
 
+.dark-video-tags-show::-webkit-scrollbar{
+    width: 5px;
+    height: 3px;
+}
+
+
+.dark-video-tags-show::-webkit-scrollbar-thumb {
+    /* border-radius: 10px; */
+    // height: 30px;
+    /* width: 8px; */
+    /* border: 1px solid black; */
+    background: #5f5f5f;
+    -webkit-box-shadow: 0 1px 1px black;
+    /* background: -webkit-linear-gradient(#c8c8c8, #969696); */
+}
+
+.dark-video-tags-show::-webkit-scrollbar-track-piece {
+    height: 30px;
+    width: 30px;
+    margin-left: 60px;
+} 
 .tag {
 margin-right: 10px;
     border: 1px solid #d9d9d9;

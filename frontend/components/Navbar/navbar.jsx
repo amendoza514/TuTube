@@ -34,6 +34,7 @@ class Navbar extends React.Component {
                   style={{
                     color: hamburgerColor,
                   }}
+                  onClick={() => alert('home menu popup coming soon')}
                 ></i>
               </button>
               <Link to="./" id="main-logo">
