@@ -72,20 +72,29 @@ class SearchResults extends React.Component {
   }
 
   render() {
+    let titleDisplay =
+      this.props.mode === false ? "search-video-title" : "dark-search-video-title";
+    let infoDisplay =
+      this.props.mode === false ? "search-video-info" : "dark-search-video-info";
+    let creatorDisplay =
+      this.props.mode === false ? "search-video-creator" : "dark-search-video-creator";
+    let viewDisplay =
+      this.props.mode === false ? "search-video-views" : "dark-search-video-views";
+
     let vIcon = this.props.video.user_verified ? <i className="fas fa-check-circle"></i> : '';
     let userIcon = (
       <>
         <div className="search-view">
           <Link
             to={`/watch/${this.props.video.id}`}
-            className="search-video-title"
+            className={titleDisplay}
           >
             {this.props.video.title}
           </Link>
-          <div className="search-video-info">
-            <div className="show-video-creator">
+          <div className={infoDisplay}>
+            <div className={creatorDisplay}>
               {this.usernameParse()} {vIcon}
-              <div className="search-video-views">
+              <div className={viewDisplay}>
                 {this.viewCounter()} views • {this.time} {this.randomSpan} ago
               </div>
             </div>

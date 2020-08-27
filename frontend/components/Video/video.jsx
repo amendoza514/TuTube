@@ -108,6 +108,11 @@ class Video extends React.Component {
     }
 
     let titleDisplay = this.props.mode === false ? 'video-title' : 'dark-video-title';
+    let infoDisplay = this.props.mode === false ? 'video-info' : 'dark-video-info';
+    let creatorDisplay = this.props.mode === false ? 'video-creator' : 'dark-video-creator';
+    let viewDisplay = this.props.mode === false ? 'video-views' : 'dark-video-views';
+
+
 
     let userIcon = (
       <>
@@ -120,11 +125,11 @@ class Video extends React.Component {
         <Link to={`/watch/${this.props.video.id}`} className={titleDisplay}>
           {this.titleSpan()}
         </Link>
-        <div className="video-info">
-          <div className="video-creator">
+        <div className={infoDisplay}>
+          <div className={creatorDisplay}>
             {this.usernameParse()} {vIcon}
           </div>
-          <div className="video-views">
+          <div className={viewDisplay}>
             {this.viewCounter()} views • {this.datePosted(this.props.video.created_at)}
           </div>
         </div>
