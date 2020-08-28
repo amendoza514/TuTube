@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
-import React from 'react'
+import React from 'react';
 import SessionForm from './session_form';
 import { logout } from '../../actions/session_actions';
-import { openModal, closeModal } from '../../actions/modal_actions'
-import { darkMode, normalMode } from '../../actions/mode_actions'
+import { openModal, closeModal } from '../../actions/modal_actions';
+import { darkMode, normalMode } from '../../actions/mode_actions';
 
 const mapStateToProps = state => ({
     formType: 'logout',
     currentUser: state.entities.users[state.session.id],
-    errors: state.errors.session ,
-    mode: state.ui.mode
+    errors: state.errors.session,
+    mode: state.ui.mode,
 });
 
 const mapDispatchToProps = dispatch => {

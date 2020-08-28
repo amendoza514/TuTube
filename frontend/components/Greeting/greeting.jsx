@@ -13,6 +13,7 @@ class Greeting extends React.Component {
     }
 
     render() {
+        let loginStyle = this.props.mode === false ? 'login-button' : 'dark-login-button';
     // const sessionLinks = () => (
     //         <nav className="login-signup">
     //             <button onClick={() => this.props.openModal('login')}>Login</button>
@@ -22,7 +23,7 @@ class Greeting extends React.Component {
     //     );
 
         let button = 
-            <button className='login-button' onClick={() => this.props.openModal('login')}>
+            <button className={loginStyle} onClick={() => this.props.openModal('login')}>
                     <i className="fas fa-user-circle"></i>
                     SIGN IN
             </button>

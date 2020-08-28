@@ -171,6 +171,27 @@ div#temp {
     cursor: pointer;
 }
 
+#home-dark-mode-icon {
+    text-decoration: none;
+    float: right;
+    margin-right: 25px;
+    margin-top: 11px;
+    cursor: pointer;
+    color: #8f908f;
+    font-size: 18px;
+}
+
+#active-home-dark-mode-icon {
+    text-decoration: none;
+    float: right;
+    margin-right: 25px;
+    margin-top: 11px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+
 #no-help {
     display: none
 }
