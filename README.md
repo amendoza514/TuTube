@@ -63,7 +63,6 @@ TuTube (https://tutube-fsp.herokuapp.com/#/) is a Youtube clone that aims to inc
 
 • Video Upload, thumbnail upload and user profile thumbnail upload
 
-• Infinite scroll (need to add more videos first!)
 
 
 
