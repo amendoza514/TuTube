@@ -47,8 +47,6 @@ TuTube (https://tutube-fsp.herokuapp.com/#/) is a Youtube clone that aims to inc
 
 • Logged in users can submit, review and delete messages posted to a video show page (as well as report non-user submitted videos to be stored)
 
-• Likes/dislikes for video show and individual comment threads
-
 • View counts updates in real time
 
 ### Likes 
