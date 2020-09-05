@@ -35,12 +35,12 @@ TuTube (https://tutube-fsp.herokuapp.com/#/) is a Youtube clone that aims to inc
 
 • Demo account login allows users to bypass signup process and dive straight into TuTube
 
-### Main Index/Home
+### Home Preview
 • Embedded video preview mimicks user interactivity on YouTube
 
 • "Dark Mode" enables night theme that persists between navigation
 
-### Video Show
+### Video 
 • Standard video player options allow for users to select from floating Picture-in-Picture option or full screen
 
 • Full video playlist on righthand side of screen shuffles newer content, complete with video preview playback
@@ -50,6 +50,11 @@ TuTube (https://tutube-fsp.herokuapp.com/#/) is a Youtube clone that aims to inc
 • Likes/dislikes for video show and individual comment threads
 
 • View counts updates in real time
+
+### Likes 
+
+• Likes/dislikes for video show and individual comment threads, update in real time
+
 
 ## Future Updates
 
