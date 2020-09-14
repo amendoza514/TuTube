@@ -26,7 +26,7 @@ TuTube (https://tutube-fsp.herokuapp.com/#/) is a Youtube clone that aims to inc
 
 • CSS/SCSS
 
-• JQuery
+• JQuery / JBuilder
 
 ## Core Features
 
