@@ -2,7 +2,7 @@
 
 ## TuTube
 
-TuTube (https://tutube-fsp.herokuapp.com/#/) is a YouTube clone that aims to incorporate all commonly associated features and aesthetic design for use in real time. 
+TuTube (https://tutube-fsp.herokuapp.com/#/) is a YouTube clone built from the ground up that aims to incorporate all commonly associated features and aesthetic design for use in real time. 
 
 ## Technologies Used
 
