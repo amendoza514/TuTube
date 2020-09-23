@@ -51,7 +51,7 @@ TuTube (https://tutube-fsp.herokuapp.com/#/) is a YouTube clone built from the g
 
 ### Likes 
 
-• Likes/dislikes for video show and individual comment threads, update in real time
+• Likes/dislikes for video show and individual comment threads, with updates that generate in real time
 
 
 ## Future Updates
