@@ -18,6 +18,8 @@ TuTube (https://tutube-fsp.herokuapp.com/#/) is a YouTube clone built from the g
 
 • Ruby on Rails
 
+• Active Record
+
 ### Frontend 
 
 • Javascript
