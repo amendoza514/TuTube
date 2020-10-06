@@ -62,7 +62,7 @@ TuTube (https://tutube-fsp.herokuapp.com/#/) is a YouTube clone built from the g
 
 • Subscribes
 
-• Message sorting options
+• Message sorting by newest / oldest / username
 
 • User profile page with subcribed content section
 
