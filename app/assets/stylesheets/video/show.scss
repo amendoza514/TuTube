@@ -217,6 +217,19 @@ color: #8f908f;
     background-color: #ea4335;
 }
 
+.sort-dropdown {
+    position: absolute;
+    margin-left: 60%;
+    /* margin-top: 3.5%; */
+    color: #606060;
+    background-color: white;
+    cursor: pointer;
+}
+
+.sort-dropdown-off {
+    display: none;
+}
+
 .comments-text {
     display: inline-block;
     margin-left: 7px;

@@ -5,8 +5,9 @@ import CommentForm from './comment_form'
 class CommentIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { sorted: false };
+    this.state = { sorted: false, toggle: false };
     this.handleSort = this.handleSort.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   buttonParse() {
@@ -20,7 +21,19 @@ class CommentIndex extends React.Component {
       if (this.state.sorted) this.setState({ sorted: false });
   }
 
+  toggleMenu(e) {
+    e.preventDefault();
+    this.setState({ toggle: !this.state.toggle });
+  }
+
   render() {
+    let toggleClass;
+    if (this.state.toggle) {
+        toggleClass = "sort-dropdown";
+    } else {
+        toggleClass = "sort-dropdown-off";
+    }
+
     let revArr = [];
 
     if (!this.state.sorted) {
@@ -43,7 +56,11 @@ class CommentIndex extends React.Component {
         <div className={countStyle}>
           {this.props.comments.length}
           <div className="comments-text">Comments</div>
-          <div className={sortStyle} onClick={this.handleSort}>
+          <div
+            className={sortStyle}
+            onClick={this.toggleMenu}
+            onMouseLeave={() => this.setState({ toggle: false })}
+          >
             <i className="fas fa-sort"></i>
             &nbsp;&nbsp;SORT BY
           </div>
