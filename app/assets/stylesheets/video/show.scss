@@ -282,8 +282,8 @@ color: #8f908f;
 
 .sort-dropdown {
     position: absolute;
-    margin-left: 6.5%;
-    margin-top: -1.2%;
+    display: inline-block;
+    margin-left: 1.5%;
     color: #606060;
     background-color: white;
     cursor: pointer;
@@ -291,6 +291,26 @@ color: #8f908f;
 
 .sort-dropdown-off {
     display: none;
+}
+
+.sort-options-type {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.sort-options-back {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.sort-options-report {
+    color: #696969;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    width: 100%;
 }
 
 .video-creator {

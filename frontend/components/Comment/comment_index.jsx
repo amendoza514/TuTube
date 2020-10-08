@@ -46,7 +46,7 @@ class CommentIndex extends React.Component {
     let sortStyle = this.props.mode === false ? "sort-icon" : "dark-sort-icon";
 
     let toggleSort;
-        if (!this.state.toggle) {
+        if (this.state.toggle) {
           toggleSort = "sort-dropdown";
         } else {
           toggleSort = "sort-dropdown-off";
@@ -57,15 +57,22 @@ class CommentIndex extends React.Component {
         className="options"
         onMouseLeave={() => this.setState({ toggle: false })}
       >
-        <div className="comment-options-report" onClick={this.toggleReport}>
-          <i className="fas fa-flag"></i>
-          <div>&nbsp;&nbsp;Report</div>
+        <div
+          className="sort-options-report"
+          onClick={() => this.setState({ sorted: true })}
+        >
+          <div>&nbsp;&nbsp;Top Comments</div>
         </div>
         <div
-          className="comment-options-type"
-          onClick={() => this.setState({ needsEdit: false })}
+          className="sort-options-type"
+          onClick={() => this.setState({ sorted: false })}
         >
-          <i className="fas fa-long-arrow-alt-left"></i>
+          <div>&nbsp;&nbsp;Newest first</div>
+        </div>
+        <div
+          className="sort-options-back"
+          onClick={() => this.setState({ sorted: false })}
+        >
           <div>&nbsp;&nbsp;Back</div>
         </div>
       </div>
@@ -79,11 +86,16 @@ class CommentIndex extends React.Component {
           <div
             className={sortStyle}
             onClick={this.toggleMenu}
-            onMouseLeave={() => this.setState({ toggle: false })}
+            // onMouseLeave={() => this.setState({ toggle: false })}
           >
             <i className="fas fa-sort"></i>
             &nbsp;&nbsp;SORT BY
-            <div className={toggleSort}>{sortOptions}</div>
+            <div
+              className={toggleSort}
+              onMouseLeave={() => this.setState({ toggle: false })}
+            >
+              {sortOptions}
+            </div>
           </div>
         </div>
         <CommentForm
