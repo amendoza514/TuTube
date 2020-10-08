@@ -293,16 +293,35 @@ color: #8f908f;
     display: none;
 }
 
+.sort-options {
+    box-shadow: 0.5px 0.5px 0.5px 1px #909090;
+    border-radius: 2px;
+    /* padding: 12px; */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+    padding-right: 25px;
+    padding-left: 5px;
+    padding-top: 6px;
+    height: 65px;
+    z-index: 1000;
+    font-size: 14px;
+}
+
 .sort-options-type {
     display: flex;
     height: 100%;
     width: 100%;
+    padding-bottom: 2px;
+    padding-top: 2px;
 }
 
 .sort-options-back {
     display: flex;
     height: 100%;
     width: 100%;
+    padding-top: 2px;
+    padding-bottom: 5px;
 }
 
 .sort-options-report {
@@ -311,6 +330,8 @@ color: #8f908f;
     display: flex;
     height: 100%;
     width: 100%;
+     padding-top: 5px;
+    padding-bottom: 2px;
 }
 
 .video-creator {

@@ -54,7 +54,7 @@ class CommentIndex extends React.Component {
 
     let sortOptions = (
       <div
-        className="options"
+        className="sort-options"
         onMouseLeave={() => this.setState({ toggle: false })}
       >
         <div
