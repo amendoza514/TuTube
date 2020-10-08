@@ -23,15 +23,15 @@ class CommentIndex extends React.Component {
 
   toggleMenu(e) {
     e.preventDefault();
-    this.setState({ toggle: !this.state.toggle });
+    this.setState({ toggle: true });
   }
 
   render() {
     let toggleClass;
-    if (this.state.toggle) {
-        toggleClass = "sort-dropdown";
+    if (!this.state.toggle) {
+        toggleClass = "sort-icon";
     } else {
-        toggleClass = "sort-dropdown-off";
+        toggleClass = "sort-icon-off";
     }
 
     let revArr = [];
@@ -58,8 +58,9 @@ class CommentIndex extends React.Component {
           <div className="comments-text">Comments</div>
           <div
             className={sortStyle}
+            // className={toggleClass}
             onClick={this.toggleMenu}
-            onMouseLeave={() => this.setState({ toggle: false })}
+            onMouseLeave={() => this.setState({ toggle: false})}
           >
             <i className="fas fa-sort"></i>
             &nbsp;&nbsp;SORT BY
