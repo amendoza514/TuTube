@@ -23,7 +23,8 @@ class CommentIndex extends React.Component {
 
   toggleMenu(e) {
     e.preventDefault();
-    this.setState({ toggle: true });
+    if (!this.state.toggle) this.setState({ toggle: true });
+    if (this.state.toggle) this.setState({ toggle: false });
   }
 
   render() {
