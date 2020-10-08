@@ -256,19 +256,6 @@ color: #8f908f;
     cursor: pointer;
 }
 
-.sort-dropdown {
-    position: absolute;
-    margin-left: 60%;
-    /* margin-top: 3.5%; */
-    color: #606060;
-    background-color: white;
-    cursor: pointer;
-}
-
-.sort-dropdown-off {
-    display: none;
-}
-
 .sort-icon {
     display: inline-block;
     margin-left: 19px;
@@ -291,6 +278,19 @@ color: #8f908f;
 
 .sort-icon:active {
     background-color: #c1c0c0;
+}
+
+.sort-dropdown {
+    position: absolute;
+    margin-left: 6.5%;
+    margin-top: -1.2%;
+    color: #606060;
+    background-color: white;
+    cursor: pointer;
+}
+
+.sort-dropdown-off {
+    display: none;
 }
 
 .video-creator {

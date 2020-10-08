@@ -28,13 +28,6 @@ class CommentIndex extends React.Component {
   }
 
   render() {
-    let toggleClass;
-    if (!this.state.toggle) {
-        toggleClass = "sort-icon";
-    } else {
-        toggleClass = "sort-icon-off";
-    }
-
     let revArr = [];
 
     if (!this.state.sorted) {
@@ -52,6 +45,32 @@ class CommentIndex extends React.Component {
       this.props.mode === false ? "comments-count" : "dark-comments-count";
     let sortStyle = this.props.mode === false ? "sort-icon" : "dark-sort-icon";
 
+    let toggleSort;
+        if (!this.state.toggle) {
+          toggleSort = "sort-dropdown";
+        } else {
+          toggleSort = "sort-dropdown-off";
+        }
+
+    let sortOptions = (
+      <div
+        className="options"
+        onMouseLeave={() => this.setState({ toggle: false })}
+      >
+        <div className="comment-options-report" onClick={this.toggleReport}>
+          <i className="fas fa-flag"></i>
+          <div>&nbsp;&nbsp;Report</div>
+        </div>
+        <div
+          className="comment-options-type"
+          onClick={() => this.setState({ needsEdit: false })}
+        >
+          <i className="fas fa-long-arrow-alt-left"></i>
+          <div>&nbsp;&nbsp;Back</div>
+        </div>
+      </div>
+    );
+
     return (
       <>
         <div className={countStyle}>
@@ -59,12 +78,12 @@ class CommentIndex extends React.Component {
           <div className="comments-text">Comments</div>
           <div
             className={sortStyle}
-            // className={toggleClass}
             onClick={this.toggleMenu}
-            onMouseLeave={() => this.setState({ toggle: false})}
+            onMouseLeave={() => this.setState({ toggle: false })}
           >
             <i className="fas fa-sort"></i>
             &nbsp;&nbsp;SORT BY
+            <div className={toggleSort}>{sortOptions}</div>
           </div>
         </div>
         <CommentForm
