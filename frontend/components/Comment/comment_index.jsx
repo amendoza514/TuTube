@@ -59,13 +59,13 @@ class CommentIndex extends React.Component {
       >
         <div
           className="sort-options-report"
-          onClick={() => this.setState({ sorted: true })}
+          onClick={() => this.setState({ sorted: false })}
         >
           <div>&nbsp;&nbsp;Top Comments</div>
         </div>
         <div
           className="sort-options-type"
-          onClick={() => this.setState({ sorted: false })}
+          onClick={() => this.setState({ sorted: true })}
         >
           <div>&nbsp;&nbsp;Newest first</div>
         </div>
